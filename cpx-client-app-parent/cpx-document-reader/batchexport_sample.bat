@@ -1,0 +1,1 @@
+java -jar target/cpx-read-document-1.0-SNAPSHOT-jar-with-dependencies.jar C:\TEMP\Beispieldokumente C:\TEMP\Texte2\extrahiert

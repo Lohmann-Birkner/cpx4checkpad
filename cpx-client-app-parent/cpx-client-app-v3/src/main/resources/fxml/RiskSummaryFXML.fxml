@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.lb.cpx.client.core.model.fx.textfield.CurrencyTextField?>
+<?import de.lb.cpx.client.core.model.fx.textfield.PercentTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="294.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+  <columnConstraints>
+    <ColumnConstraints fillWidth="false" halignment="LEFT" hgrow="ALWAYS" maxWidth="150.0" minWidth="10.0" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="70.0" minWidth="10.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="70.0" minWidth="10.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="0.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="0.0" prefHeight="30.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <Label fx:id="lblFullAuditId" text="Anfrage - Risiko" GridPane.rowIndex="1">
+         <GridPane.margin>
+            <Insets left="5.0" />
+         </GridPane.margin>
+      </Label>
+      <Label fx:id="lblFullWasteId" text="Verlust - Risiko" GridPane.rowIndex="2">
+         <GridPane.margin>
+            <Insets left="5.0" />
+         </GridPane.margin>
+      </Label>
+      <Label fx:id="lblFullWasteValueId" text="Rückstellungsbetrag" GridPane.rowIndex="3">
+         <GridPane.margin>
+            <Insets left="5.0" />
+         </GridPane.margin>
+      </Label>
+      <PercentTextField fx:id="fullAuditRiskPercentId" GridPane.columnIndex="2" GridPane.rowIndex="1">
+         <GridPane.margin>
+            <Insets bottom="5.0" right="5.0" top="5.0" />
+         </GridPane.margin>
+      </PercentTextField>
+      <PercentTextField fx:id="fullWasteRiskPercentId" text="0%" GridPane.columnIndex="2" GridPane.rowIndex="2">
+         <GridPane.margin>
+            <Insets bottom="5.0" right="5.0" top="5.0" />
+         </GridPane.margin>
+      </PercentTextField>
+      <Label fx:id="fullAuditPercentSuggId" styleClass="labeled-control-label-prompt" text="Label" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1">
+         <GridPane.margin>
+            <Insets left="5.0" />
+         </GridPane.margin></Label>
+      <Label fx:id="fullWastePercentSuggId" styleClass="labeled-control-label-prompt" text="Label" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2">
+         <GridPane.margin>
+            <Insets left="5.0" />
+         </GridPane.margin></Label>
+      <Label fx:id="fullWasteValueSuggId" styleClass="labeled-control-label-prompt" text="Label" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3">
+         <GridPane.margin>
+            <Insets left="5.0" />
+         </GridPane.margin></Label>
+      <Label fx:id="lblDFeeId" text="Delta Erlös">
+         <GridPane.margin>
+            <Insets left="5.0" />
+         </GridPane.margin>
+      </Label>
+      <Label text="Gesamtrisiko in Prozent" GridPane.rowIndex="4">
+         <GridPane.margin>
+            <Insets left="5.0" />
+         </GridPane.margin>
+      </Label>
+      <Label fx:id="calcPercentSuggId" styleClass="labeled-control-label-prompt" text="Label" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="4">
+         <GridPane.margin>
+            <Insets left="5.0" />
+         </GridPane.margin>
+      </Label>
+      <CheckBox fx:id="chkAuditId" minHeight="0.0" mnemonicParsing="false" GridPane.columnIndex="1" GridPane.rowIndex="5">
+         <GridPane.margin>
+            <Insets left="5.0" />
+         </GridPane.margin>
+      </CheckBox>
+      <Label fx:id="lblAuditCheckId" minHeight="0.0" text="Bei Anfrage verwendet" GridPane.rowIndex="5">
+         <GridPane.margin>
+            <Insets left="5.0" />
+         </GridPane.margin>
+      </Label>
+      <Label fx:id="lblFinalChkId" minHeight="0.0" text="Bei Gutachten verwendet" GridPane.rowIndex="6">
+         <padding>
+            <Insets left="5.0" />
+         </padding>
+      </Label>
+      <CheckBox fx:id="chkFinalId" minHeight="0.0" mnemonicParsing="false" GridPane.columnIndex="1" GridPane.rowIndex="6">
+         <GridPane.margin>
+            <Insets left="5.0" />
+         </GridPane.margin>
+      </CheckBox>
+      <Label fx:id="dFeeId" styleClass="labeled-control-label-prompt" text="Label" GridPane.columnIndex="1">
+         <GridPane.margin>
+            <Insets left="5.0" />
+         </GridPane.margin>
+      </Label>
+      <Label fx:id="calcPercentId" styleClass="bordered-risk-label" text="Label" GridPane.columnIndex="2" GridPane.rowIndex="4">
+         <padding>
+            <Insets right="5.0" />
+         </padding>
+      </Label>
+      <Label fx:id="lblAuditFullPercentId" styleClass="bordered-risk-label" GridPane.columnIndex="2" GridPane.rowIndex="1">
+         <GridPane.margin>
+            <Insets right="5.0" />
+         </GridPane.margin>
+      </Label>
+      <Label fx:id="lblWasteFullPercentId" styleClass="bordered-risk-label" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+      <CurrencyTextField fx:id="dFeeNotCalculatedId" GridPane.columnIndex="2">
+         <GridPane.margin>
+            <Insets bottom="5.0" right="5.0" top="5.0" />
+         </GridPane.margin>
+      </CurrencyTextField>
+      <Label fx:id="fullWasteValueId" styleClass="bordered-risk-label" text="Label" GridPane.columnIndex="2" GridPane.rowIndex="3">
+         <padding>
+            <Insets right="5.0" />
+         </padding>
+      </Label>
+   </children>
+</GridPane>

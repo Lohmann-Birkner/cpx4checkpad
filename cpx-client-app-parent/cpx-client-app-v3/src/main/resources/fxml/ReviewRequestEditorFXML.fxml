@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.lb.cpx.client.app.wm.fx.dialog.editor.InsuranceInfoTextField?>
+<?import de.lb.cpx.client.app.wm.fx.dialog.editor.MdInfoTextField?>
+<?import de.lb.cpx.client.app.wm.fx.dialog.editor.ReminderLabeledCheckboxLink?>
+<?import de.lb.cpx.client.core.model.fx.combobox.RequestStateCombobox?>
+<?import de.lb.cpx.client.core.model.fx.labeled.LabeledCheckComboBox?>
+<?import de.lb.cpx.client.core.model.fx.labeled.LabeledDatePicker?>
+<?import de.lb.cpx.client.core.model.fx.labeled.LabeledTextArea?>
+<?import de.lb.cpx.client.core.model.fx.labeled.LabeledTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <VBox prefWidth="700.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <VBox prefWidth="100.0" spacing="8.0">
+               <children>
+                  <HBox fx:id="hbInsName" alignment="BOTTOM_LEFT" prefWidth="200.0" spacing="12.0">
+                     <children>
+                        <InsuranceInfoTextField fx:id="ltfInsName" prefWidth="485.0" title="Versicherungsname" />
+                        <LabeledTextField fx:id="ltfInsEmployee" maxSize="50" prefWidth="186.0" title="Bearbeter" HBox.hgrow="ALWAYS" />
+                     </children>
+                  </HBox>
+                  <HBox spacing="12.0">
+                     <children>
+                        <LabeledTextField fx:id="ltfInsNumber" prefHeight="47.0" prefWidth="182.0" title="IKZ der Versicherung" HBox.hgrow="ALWAYS" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="BOTTOM_LEFT" prefWidth="200.0" spacing="12.0">
+                     <children>
+                        <MdInfoTextField fx:id="tfMdkName" prefHeight="47.0" prefWidth="484.0" title="MD-Name" />
+                        <LabeledTextField fx:id="tfMdkWorker" maxSize="50" prefWidth="186.0" title="Bearbeiter" HBox.hgrow="ALWAYS" />
+                     </children>
+                  </HBox>
+                  <HBox spacing="12.0">
+                     <children>
+                        <LabeledDatePicker fx:id="dpStartInsAuditDate" prefHeight="47.0" prefWidth="200.0" title="Einleitung Prüfverfahren Kasse" />
+                        <LabeledDatePicker fx:id="dpMdkStartAuditDate" title="Einleitung MD-Prüfung" />
+                        <CheckBox fx:id="ckExpertiseActivate" alignment="BOTTOM_CENTER" contentDisplay="BOTTOM" mnemonicParsing="false" textOverrun="CLIP">
+                           <padding>
+                              <Insets top="30.0" />
+                           </padding>
+                        </CheckBox>
+                        <LabeledDatePicker fx:id="dpExpertiseDate" prefHeight="47.0" title="Gutachtendatum" />
+                        <LabeledDatePicker fx:id="dpExpertiseInDate" title="Eingang Gutachten" />
+                     </children>
+                  </HBox>
+                  <HBox spacing="12.0">
+                     <children>
+                        <RequestStateCombobox fx:id="cbStatus" prefWidth="350.0" title="Status der Anfrage" />
+                        <LabeledCheckComboBox fx:id="cbAuditReasons" prefWidth="350.0" title="Prüfgründe" />
+                     </children>
+                  </HBox>
+           <Label fx:id="lbReviewAfterMd" text="Erörterungsverfahren nach MD-Prüfung">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font></Label>
+            <HBox alignment="BOTTOM_LEFT" prefWidth="600.0" spacing="12.0">
+               <children>
+                  <HBox alignment="BOTTOM_LEFT" prefHeight="47.0" prefWidth="170.0" spacing="5.0">
+                     <children>
+                        <CheckBox fx:id="ckEvDeadlineSet" mnemonicParsing="false" />
+                        <LabeledDatePicker fx:id="dpEvDeadlineToDate" prefHeight="47.0" title="EV Frist bis" HBox.hgrow="ALWAYS" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="BOTTOM_LEFT" prefHeight="47.0" prefWidth="240.0">
+                     <children>
+                        <VBox alignment="BOTTOM_LEFT" prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                                    <ReminderLabeledCheckboxLink fx:id="ckEvWvDeadlineToDate" title="Wiedervorlage" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  <HBox alignment="BOTTOM_LEFT" prefHeight="47.0" prefWidth="170.0" spacing="5.0">
+                     <children>
+                        <CheckBox fx:id="ckEvExtendedToDate" mnemonicParsing="false" />
+                        <LabeledDatePicker fx:id="dpEvExtendedToDate" prefWidth="139.0" title="EV Fristverlängerung" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="47.0" prefWidth="110.0">
+                     <children>
+                        <VBox alignment="BOTTOM_LEFT" prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                                    <ReminderLabeledCheckboxLink fx:id="ckEvWvExtendedToDate" title="Wiedervorlage" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </children>
+            </HBox>
+     <HBox alignment="BOTTOM_LEFT" layoutX="10.0" layoutY="10.0" prefWidth="600.0" spacing="12.0">
+         <children>
+            <HBox alignment="BOTTOM_LEFT" prefHeight="47.0" prefWidth="350.0" spacing="5.0">
+               <children>
+                  <CheckBox fx:id="ckEvStarted" mnemonicParsing="false" />
+                  <LabeledDatePicker fx:id="dpEvStartedDate" prefHeight="47.0" title="eingeleitet" HBox.hgrow="ALWAYS" />
+                              <LabeledDatePicker fx:id="dpDeadlineAnswerInsDate" prefHeight="47.0" title="Antwort KK" />
+               </children>
+            </HBox>
+            <HBox alignment="BOTTOM_LEFT" prefHeight="47.0" prefWidth="57.0">
+               <children>
+                  <VBox alignment="BOTTOM_LEFT" prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                                    <ReminderLabeledCheckboxLink fx:id="ckAnswerInsReminder" title="Wiedervorlage" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <HBox alignment="BOTTOM_LEFT" prefHeight="47.0" prefWidth="170.0" spacing="5.0">
+               <children>
+                  <CheckBox fx:id="ckAnsweredIns" mnemonicParsing="false" />
+                  <LabeledDatePicker fx:id="dpAnsweredDate" prefWidth="139.0" title="geantwortet am" />
+               </children>
+            </HBox>
+            <HBox prefHeight="47.0" prefWidth="110.0">
+               <children>
+                  <VBox alignment="BOTTOM_LEFT" prefHeight="200.0" prefWidth="100.0" />
+               </children>
+            </HBox>
+         </children>
+      </HBox>
+           <Label fx:id="lbSendOnDocuments" text="Nachsenden der Dokumenten EV">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font></Label>
+            <HBox alignment="BOTTOM_LEFT" prefWidth="600.0" spacing="12.0">
+               <children>
+                  <HBox alignment="BOTTOM_LEFT" prefHeight="47.0" prefWidth="170.0" spacing="5.0">
+                     <children>
+                        <CheckBox fx:id="ckSendOn" mnemonicParsing="false" />
+                        <LabeledDatePicker fx:id="dpSendOnDeadlineDate" prefHeight="47.0" prefWidth="139.0" title="Nachsendefrist bis" HBox.hgrow="ALWAYS" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="BOTTOM_LEFT" prefHeight="47.0" prefWidth="240.0">
+                     <children>
+                        <VBox alignment="BOTTOM_LEFT" prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                                    <ReminderLabeledCheckboxLink fx:id="ckEvWvSendOn" title="Wiedervorlage" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  <HBox alignment="BOTTOM_LEFT" prefHeight="47.0" prefWidth="170.0" spacing="5.0">
+                     <children>
+                        <CheckBox fx:id="ckSentOn" mnemonicParsing="false" />
+                        <LabeledDatePicker fx:id="dpSentOnDate" prefWidth="139.0" title="gesendet am" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="47.0" prefWidth="110.0">
+                     <children>
+                        <VBox alignment="BOTTOM_LEFT" prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                                    <ReminderLabeledCheckboxLink fx:id="ckEvWvWasSentOn" title="Wiedervorlage" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </children>
+            </HBox>
+           <Label fx:id="lbEndOfReview" text="Abschluß EV">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font></Label>
+            <HBox alignment="BOTTOM_LEFT" prefWidth="600.0" spacing="12.0">
+               <children>
+                  <HBox alignment="BOTTOM_LEFT" prefHeight="47.0" prefWidth="170.0" spacing="5.0">
+                     <children>
+                        <CheckBox fx:id="ckEvEndDeadline" mnemonicParsing="false" />
+                        <LabeledDatePicker fx:id="dpEvEndDeadline" prefHeight="47.0" prefWidth="139.0" title="Abschlußfrist bis" HBox.hgrow="ALWAYS" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="BOTTOM_LEFT" prefHeight="47.0" prefWidth="240.0">
+                     <children>
+                        <VBox alignment="BOTTOM_LEFT" prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                                    <ReminderLabeledCheckboxLink fx:id="ckEvWvEndDeadline" title="Wiedervorlage" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  <HBox alignment="BOTTOM_LEFT" prefHeight="47.0" prefWidth="170.0" spacing="5.0">
+                     <children>
+                        <CheckBox fx:id="ckEvEnded" mnemonicParsing="false" />
+                        <LabeledDatePicker fx:id="dpEvEnded" prefWidth="139.0" title="abgeschloßen am" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="47.0" prefWidth="110.0">
+                     <children>
+                        <VBox alignment="BOTTOM_LEFT" prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                                    <ReminderLabeledCheckboxLink fx:id="ckEvWvCompleted" title="Wiedervorlage" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </children>
+            </HBox>
+                  <HBox fx:id="hbReminders" maxHeight="160.0" />
+			  <LabeledTextArea fx:id="taEvComment" layoutX="10.0" layoutY="10.0" maxHeight="100.0" />
+			  </children>
+            </VBox>
+          </children>
+      </VBox>
+
+    </children>
+</AnchorPane>

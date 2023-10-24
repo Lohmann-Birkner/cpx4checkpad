@@ -1,0 +1,88 @@
+
+**** Error file opened at 20171109 132757 Central European Time Rel. 3.0.15 (2016-07-26) [721.713]
+Error:  >Thu Nov 09 13:27:57,248<    RfcException:
+    message: Connect to SAP gateway failed
+Connection parameters: TYPE=A DEST=ABAP_AS_WITHOUT_POOL ASHOST=sbb244.sbb.dom SYSNR=00 PCS=1
+
+LOCATION    CPIC (TCP/IP) on local host with Unicode
+ERROR       hostname 'sbb244.sbb.dom' unknown
+TIME        Thu Nov 09 13:27:57 2017
+RELEASE     721
+COMPONENT   NI (network interface)
+VERSION     40
+RC          -2
+MODULE      ninti.c
+LINE        897
+DETAIL      NiPGetHostByName: 'sbb244.sbb.dom' not found
+SYSTEM CALL getaddrinfo
+COUNTER     2
+
+    return code: RFC_FAILURE (1)
+    error group: 102
+    key: RFC_ERROR_COMMUNICATION
+
+**** Error file opened at 20171127 140551 Central European Time Rel. 3.0.15 (2016-07-26) [721.713]
+Error:  >Mon Nov 27 14:05:51,295<    RfcException:
+    message: Connect to SAP gateway failed
+Connection parameters: TYPE=A DEST=ABAP_AS_WITHOUT_POOL ASHOST=sbb245.sbb.dom SYSNR=00 PCS=1
+
+LOCATION    CPIC (TCP/IP) on local host with Unicode
+ERROR       hostname 'sbb245.sbb.dom' unknown
+TIME        Mon Nov 27 14:05:51 2017
+RELEASE     721
+COMPONENT   NI (network interface)
+VERSION     40
+RC          -2
+MODULE      ninti.c
+LINE        897
+DETAIL      NiPGetHostByName: 'sbb245.sbb.dom' not found
+SYSTEM CALL getaddrinfo
+COUNTER     2
+
+    return code: RFC_FAILURE (1)
+    error group: 102
+    key: RFC_ERROR_COMMUNICATION
+
+**** Error file opened at 20171127 144853 Central European Time Rel. 3.0.15 (2016-07-26) [721.713]
+Error:  >Mon Nov 27 14:48:53,877<    RfcException:
+    message: Connect to SAP gateway failed
+Connection parameters: TYPE=A DEST=ABAP_AS_WITHOUT_POOL ASHOST=sbb245.sbb.dom SYSNR=00 PCS=1
+
+LOCATION    CPIC (TCP/IP) on local host with Unicode
+ERROR       hostname 'sbb245.sbb.dom' unknown
+TIME        Mon Nov 27 14:48:53 2017
+RELEASE     721
+COMPONENT   NI (network interface)
+VERSION     40
+RC          -2
+MODULE      ninti.c
+LINE        897
+DETAIL      NiPGetHostByName: 'sbb245.sbb.dom' not found
+SYSTEM CALL getaddrinfo
+COUNTER     2
+
+    return code: RFC_FAILURE (1)
+    error group: 102
+    key: RFC_ERROR_COMMUNICATION
+
+**** Error file opened at 20180119 123937 Central European Time Rel. 3.0.15 (2016-07-26) [721.713]
+Error:  >Fri Jan 19 12:39:37,216<    RfcException:
+    message: Connect to SAP gateway failed
+Connection parameters: TYPE=A DEST=ABAP_AS_WITHOUT_POOL ASHOST=sbb245.sbb.dom SYSNR=00 PCS=1
+
+LOCATION    CPIC (TCP/IP) on local host with Unicode
+ERROR       hostname 'sbb245.sbb.dom' unknown
+TIME        Fri Jan 19 12:39:37 2018
+RELEASE     721
+COMPONENT   NI (network interface)
+VERSION     40
+RC          -2
+MODULE      ninti.c
+LINE        897
+DETAIL      NiPGetHostByName: 'sbb245.sbb.dom' not found
+SYSTEM CALL getaddrinfo
+COUNTER     2
+
+    return code: RFC_FAILURE (1)
+    error group: 102
+    key: RFC_ERROR_COMMUNICATION

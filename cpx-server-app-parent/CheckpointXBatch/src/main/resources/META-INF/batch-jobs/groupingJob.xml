@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<job id="groupingJob" xmlns="http://xmlns.jcp.org/xml/ns/javaee" version="1.0">
+    <properties>
+        <property name="admissionDateFrom" value="#{jobParameters['admissionDateFrom']}"/>
+        <property name="admissionDateUntil" value="#{jobParameters['admissionDateUntil']}"/>
+        <property name="dischargeDateFrom" value="#{jobParameters['dischargeDateFrom']}"/>
+        <property name="dischargeDateUntil" value="#{jobParameters['dischargeDateUntil']}"/>
+        <property name="grouped" value="#{jobParameters['grouped']}"/>
+        <property name="extern" value="#{jobParameters['extern']}"/>
+        <!-- add grouperModel to jobContext, otherwise in saveBatchResultTask, all results will be saved as automatic-->
+        <property name="grouperModel" value="#{jobParameters['grouperModel']}"/>
+        <property name="chunkSize" value="30"/>
+    </properties>
+    <listeners>
+        <listener ref="CpxJobListener"/>
+    </listeners>
+    <step id="selectCases" next="groupCases">
+        <batchlet ref="GrouperSelectionTask1"/>
+    </step>
+    <step id="groupCases" next="saveNewBatchResult">
+        <properties>
+            <property name="doRules" value="#{jobParameters['doRules']}"/>
+            <property name="doRulesSimulate" value="#{jobParameters['doRulesSimulate']}"/>
+            <property name="supplementaryFee" value="#{jobParameters['supplementaryFee']}"/>
+            <property name="do4ActualRoleOnly" value="#{jobParameters['do4ActualRoleOnly']}"/>
+            <property name="medAndRemedies" value="#{jobParameters['medAndRemedies']}"/>
+            <property name="doSimulate" value="#{jobParameters['doSimulate']}"/>
+            <property name="grouperModel" value="#{jobParameters['grouperModel']}"/>
+            <property name="extern" value="#{jobParameters['extern']}"/>
+            <!-- test to counter transaction timeout, sets timeout to local, avoid some kind of master transaction -->
+            <!--<property name="jberet.local-tx" value="true"/>-->
+        </properties>
+        <listeners>
+            <listener ref="CpxStepListener"/>
+        </listeners>
+        <chunk checkpoint-policy="item" item-count="#{jobProperties['chunkSize']}">
+            <reader ref="GroupingReader1">
+                <properties>
+                    <property name="firstItem" value="#{partitionPlan['firstItem']}"/>
+                    <property name="partitionItems" value="#{partitionPlan['partitionItems']}"/>
+                </properties>
+            </reader>
+            <writer ref="GroupingWriter1"/>
+        </chunk>
+        <partition>
+            <mapper ref="GroupingPartitionMapper1"/>
+            <collector ref="GroupingCollector"/>
+            <analyzer ref="GroupingAnalyzer"/>
+            <!--reducer ref="GroupingReducer"/-->
+        </partition>
+    </step>
+    <step id="saveNewBatchResult">
+        <batchlet ref="SaveBatchResultTask"/>
+    </step>
+</job>

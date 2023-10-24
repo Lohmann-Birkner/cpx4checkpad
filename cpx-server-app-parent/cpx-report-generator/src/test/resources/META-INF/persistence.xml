@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence
+             http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"
+             version="2.1">
+    <persistence-unit name="test" transaction-type="RESOURCE_LOCAL">
+        <provider>org.hibernate.ejb.HibernatePersistence</provider>
+        <class>de.lb.cpx.model.TAcgDataInfo</class>
+        <class>de.lb.cpx.model.TAcgData</class>
+        <class>de.lb.cpx.model.AbstractEntity</class>
+        <class>de.lb.cpx.model.CAdmissionByLaw</class>
+        <class>de.lb.cpx.model.CCatalog</class>
+        <class>de.lb.cpx.model.CCountry</class>
+        <class>de.lb.cpx.model.CDefinitions</class>
+        <class>de.lb.cpx.model.CDepartment</class>
+        <class>de.lb.cpx.model.CDepartmenttype</class>
+        <class>de.lb.cpx.model.CDiagnosisCatalog</class>
+        <class>de.lb.cpx.model.CIcdCatalog</class>
+        <class>de.lb.cpx.model.COpsCatalog</class>
+        <class>de.lb.cpx.model.CDoctor</class>
+        <class>de.lb.cpx.model.CDrgCaseWeights</class>
+        <class>de.lb.cpx.model.CDrgCatalog</class>
+        <class>de.lb.cpx.model.CDrgExtOccupancyDepartment</class>
+        <class>de.lb.cpx.model.CDrgMainDepartment</class>
+        <class>de.lb.cpx.model.CDrgNeogtiated</class>
+        <class>de.lb.cpx.model.CFeeCatalog</class>
+        <class>de.lb.cpx.server.commonDB.model.CHospital</class>
+        <class>de.lb.cpx.server.commonDB.model.CInsuranceCompany</class>
+        <class>de.lb.cpx.model.CMdcSkCatalog</class>
+        <class>de.lb.cpx.model.CPeppCaseWeights</class>
+        <class>de.lb.cpx.model.CPeppCatalog</class>
+        <class>de.lb.cpx.model.CPeppNegotiated</class>
+        <class>de.lb.cpx.model.CProcedureCatalog</class>
+        <class>de.lb.cpx.model.CSupplementaryFee</class>
+        <class>de.lb.cpx.model.CSupplementFeeType</class>
+        <class>de.lb.cpx.server.commonDB.model.CWard</class>
+        <class>de.lb.cpx.model.TCase</class>
+        <class>de.lb.cpx.model.TCaseBill</class>
+        <class>de.lb.cpx.model.TCaseDepartment</class>
+        <class>de.lb.cpx.model.TCaseDetails</class>
+        <class>de.lb.cpx.model.TCaseDrg</class>
+        <class>de.lb.cpx.model.TCaseFee</class>
+        <class>de.lb.cpx.model.TCaseIcd</class>
+        <class>de.lb.cpx.model.TCaseIcdGrouped</class>
+        <class>de.lb.cpx.model.TCaseMergeMapping</class>
+        <class>de.lb.cpx.model.TCaseOps</class>
+        <class>de.lb.cpx.model.TCaseOpsGrouped</class>
+        <class>de.lb.cpx.model.TCasePepp</class>
+        <class>de.lb.cpx.model.TCasePeppGrades</class>
+        <class>de.lb.cpx.model.TCaseSupplFee</class>
+        <class>de.lb.cpx.model.TCaseWard</class>
+        <class>de.lb.cpx.model.TDrug</class>
+        <class>de.lb.cpx.model.TLab</class>
+        <class>de.lb.cpx.model.TMibi</class>
+        <class>de.lb.cpx.model.TMibiAntibiogram</class>
+        <class>de.lb.cpx.model.TMibiAppraisal</class>
+        <class>de.lb.cpx.model.TGroupingResults</class>
+        <class>de.lb.cpx.model.TCheckResult</class>
+        <class>de.lb.cpx.model.TIn4Med</class>
+        <class>de.lb.cpx.model.TRole2Result</class>
+        <class>de.lb.cpx.model.TRole2Check</class>
+        <class>de.lb.cpx.model.TBatchResult</class>
+        <class>de.lb.cpx.model.TBatchResult2Role</class>
+        <class>de.lb.cpx.model.TBatchCheckResult</class>
+        <class>de.lb.cpx.model.TLock</class>
+        <class>de.lb.cpx.model.TInsurance</class>
+        <class>de.lb.cpx.model.TPatient</class>
+        <class>de.lb.cpx.model.TPatientDetails</class>
+        <class>de.lb.cpx.model.TCaseComment</class>
+        <class>de.lb.cpx.model.TCaseDrgCareGrades</class>
+        <!-- <class>de.lb.cpx.model.VwInputCaseInfo</class> -->
+        <exclude-unlisted-classes>true</exclude-unlisted-classes>
+        <properties>
+            <property name="connection.driver_class" value="org.h2.Driver"/>
+            <property name="hibernate.connection.url" value="jdbc:h2:mem:test;DB_CLOSE_DELAY=-1"/>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>
+            <property name="hibernate.show_sql" value="false"/>
+            <property name="hibernate.connection.autocommit" value="true"/>
+            <property name="log4j.logger.org.hibernate.SQL" value="trace"/>
+            <property name="log4j.logger.org.hibernate.type.descriptor.sql" value="trace"/>
+            <!--      <property name="hibernate.cache.use_query_cache" value="true"/>-->
+            <!--      <property name="hibernate.connection.url"  value="false"/> -->
+            <!--<property name="hibernate.cache.region.factory_class" value="org.hibernate.cache.ehcache.SingletonEhCacheRegionFactory"/>-->
+            <property name="hibernate.hbm2ddl.auto" value="create-drop"/>
+            <property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
+            <property name="hibernate.jpa.compliance.global_id_generators" value="false"/>              
+        </properties>
+    </persistence-unit>
+</persistence>

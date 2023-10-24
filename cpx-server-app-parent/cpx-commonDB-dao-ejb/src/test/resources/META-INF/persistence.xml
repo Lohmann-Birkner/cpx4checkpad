@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence
+             http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"
+             version="2.1">
+    <persistence-unit name="test" transaction-type="RESOURCE_LOCAL">
+        <provider>org.hibernate.ejb.HibernatePersistence</provider>
+        <class>de.lb.cpx.server.commonDB.model.CAtc</class>
+        <class>de.lb.cpx.server.commonDB.model.CCase</class>
+        <class>de.lb.cpx.server.commonDB.model.CCatalog</class>
+        <class>de.lb.cpx.server.commonDB.model.CCountry</class>
+        <class>de.lb.cpx.server.commonDB.model.CdbFilter</class>
+        <class>de.lb.cpx.server.commonDB.model.CdbFilterProperties</class>
+        <class>de.lb.cpx.server.commonDB.model.CdbUser2Role</class>
+        <class>de.lb.cpx.server.commonDB.model.CdbUserRoles</class>
+        <class>de.lb.cpx.server.commonDB.model.CdbUsers</class>
+        <class>de.lb.cpx.server.commonDB.model.CDepartment</class>
+        <class>de.lb.cpx.server.commonDB.model.CDeadline</class>
+        <class>de.lb.cpx.server.commonDB.model.CDoctor</class>
+        <class>de.lb.cpx.server.commonDB.model.CDrgCatalog</class>
+        <class>de.lb.cpx.server.commonDB.model.CDrgCw2DepType</class>
+        <class>de.lb.cpx.server.commonDB.model.CDrgLosDependency</class>
+        <class>de.lb.cpx.server.commonDB.model.CFeeCatalog</class>
+        <class>de.lb.cpx.server.commonDB.model.CFeeDurations</class>
+        <class>de.lb.cpx.server.commonDB.model.CFeeValues</class>
+        <class>de.lb.cpx.server.commonDB.model.CHospital</class>
+        <class>de.lb.cpx.server.commonDB.model.CIcdCatalog</class>
+        <class>de.lb.cpx.server.commonDB.model.rules.CIcdTransferCatalog</class>
+        <class>de.lb.cpx.server.commonDB.model.CInsuranceCompany</class>
+        <class>de.lb.cpx.server.commonDB.model.CMdcSkCatalog</class>
+        <class>de.lb.cpx.server.commonDB.model.COpsCatalog</class>
+        <class>de.lb.cpx.server.commonDB.model.CPeppCaseWeights</class>
+        <class>de.lb.cpx.server.commonDB.model.CPeppCatalog</class>
+        <class>de.lb.cpx.server.commonDB.model.rules.COpsTransferCatalog</class>
+        <class>de.lb.cpx.server.commonDB.model.rules.CrgRule2RoleDev</class>
+        <class>de.lb.cpx.server.commonDB.model.rules.CrgRule2RoleProd</class>
+        <class>de.lb.cpx.server.commonDB.model.rules.CrgRule2TableDev</class>
+        <class>de.lb.cpx.server.commonDB.model.rules.CrgRule2TableProd</class>
+        <class>de.lb.cpx.server.commonDB.model.rules.CrgRulePoolsDev</class>
+        <class>de.lb.cpx.server.commonDB.model.rules.CrgRulePoolsProd</class>
+        <class>de.lb.cpx.server.commonDB.model.rules.CrgRuleTablesDev</class>
+        <class>de.lb.cpx.server.commonDB.model.rules.CrgRuleTablesProd</class>
+        <class>de.lb.cpx.server.commonDB.model.rules.CrgRuleTypesDev</class>
+        <class>de.lb.cpx.server.commonDB.model.rules.CrgRuleTypesProd</class>
+        <class>de.lb.cpx.server.commonDB.model.rules.CrgRulesDev</class>
+        <class>de.lb.cpx.server.commonDB.model.rules.CrgRulesProd</class>
+        <class>de.lb.cpx.server.commonDB.model.CState</class>
+        <class>de.lb.cpx.server.commonDB.model.CSupplementaryFee</class>
+        <class>de.lb.cpx.server.commonDB.model.CWard</class>
+        <class>de.lb.cpx.server.commonDB.model.VwCatalogOverview</class>
+        <exclude-unlisted-classes>true</exclude-unlisted-classes>
+        <properties>
+            <property name="connection.driver_class" value="org.h2.Driver"/>
+            <!-- <property name="hibernate.connection.url" value="jdbc:h2:./db/repository" 
+            /> -->
+            <property name="hibernate.connection.url" value="jdbc:h2:mem:test;DB_CLOSE_DELAY=-1"/>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>
+            <property name="hibernate.hbm2ddl.auto" value="create-drop"/>
+            <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.integration.envers.enabled" value="false"/>
+        </properties>
+    </persistence-unit>
+</persistence>

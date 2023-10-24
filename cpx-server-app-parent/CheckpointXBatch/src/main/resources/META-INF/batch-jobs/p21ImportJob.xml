@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+
+<job id="p21ImportJob" xmlns="http://xmlns.jcp.org/xml/ns/javaee" version="1.0">
+    <properties>
+        <property name="p21ImportDirectory" value="#{jobParameters['p21ImportDirectory']}"/>
+        <property name="checkType" value="#{jobParameters['checkType']}"/>
+        <property name="jobNumber" value="#{jobParameters['jobNumber']}"/>
+        <property name="numberOfJobs" value="#{jobParameters['numberOfJobs']}"/>
+        <property name="numberOfItems" value="#{jobParameters['numberOfItems']}"/>
+        <property name="numberOfAllItems" value="#{jobParameters['numberOfAllItems']}"/>
+        <property name="doGroup" value="#{jobParameters['doGroup']}"/>
+        <property name="grouperModel" value="#{jobParameters['grouperModel']}"/>
+        <property name="database" value="#{jobParameters['database']}"/>
+        <property name="chunkSize" value="100"/>
+    </properties>
+    <listeners>
+        <listener ref="P21ImportListener"/>
+    </listeners>
+    <step id="split" allow-start-if-complete="true" next="init">
+        <properties>
+            <property name="javax.transaction.global.timeout" value="1800"/>
+        </properties>
+        <batchlet ref="SplitFilesTask"/>
+    </step>
+    <step id="init" allow-start-if-complete="true" next="fallImport">
+        <batchlet ref="P21ImporterInitTask"/>
+        <end on="STOPPED"/>
+    </step>
+    <step id="fallImport" allow-start-if-complete="true" next="fabImport">
+        <listeners>
+            <listener ref="CpxStepListener"/>
+        </listeners>
+        <chunk checkpoint-policy="item" item-count="#{jobProperties['chunkSize']}">
+            <reader ref="FallCsvItemReader"/>
+            <writer ref="CsvItemWriter"/>
+        </chunk>
+    </step>
+    <step id="fabImport" allow-start-if-complete="true" next="icdImport">
+        <listeners>
+            <listener ref="CpxStepListener"/>
+        </listeners>
+        <chunk checkpoint-policy="item" item-count="#{jobProperties['chunkSize']}">
+            <reader ref="FabCsvItemReader"/>
+            <writer ref="CsvItemWriter"/>
+        </chunk>
+    </step>            
+    <step id="icdImport" allow-start-if-complete="true" next="opsImport">
+        <listeners>
+            <listener ref="CpxStepListener"/>
+        </listeners>
+        <chunk checkpoint-policy="item" item-count="#{jobProperties['chunkSize']}">
+            <reader ref="IcdCsvItemReader"/>
+            <writer ref="CsvItemWriter"/>
+        </chunk>
+    </step>            
+    <step id="opsImport" allow-start-if-complete="true" next="entgeltImport">
+        <listeners>
+            <listener ref="CpxStepListener"/>
+        </listeners>
+        <chunk checkpoint-policy="item" item-count="#{jobProperties['chunkSize']}">
+            <reader ref="OpsCsvItemReader"/>
+            <writer ref="CsvItemWriter"/>
+        </chunk>
+    </step>            
+    <step id="entgeltImport" allow-start-if-complete="true" next="importCasesInDB">
+        <listeners>
+            <listener ref="CpxStepListener"/>
+        </listeners>
+        <chunk checkpoint-policy="item" item-count="#{jobProperties['chunkSize']}">
+            <reader ref="EntgeltCsvItemReader"/>
+            <writer ref="CsvItemWriter"/>
+        </chunk>
+    </step>
+    <step id="importCasesInDB" allow-start-if-complete="true">
+         <listeners>
+            <listener ref="ImportCasesStepListener"/>
+        </listeners>
+        <chunk checkpoint-policy="item" item-count="5">
+            <reader ref="HashMapImportReader">
+                <properties>
+                    <property name="firstItem" value="#{partitionPlan['firstItem']}"/>
+                    <property name="partitionItems" value="#{partitionPlan['partitionItems']}"/>
+                </properties>
+            </reader>
+            <writer ref="HashMapImportWriter"/>
+        </chunk>
+        <partition>
+            <mapper ref="HashMapPartitionMapper"/>
+        </partition>
+    </step>
+</job>

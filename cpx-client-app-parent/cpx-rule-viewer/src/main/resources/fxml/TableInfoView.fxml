@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane id="AnchorPane" prefHeight="200.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <VBox prefHeight="200.0" prefWidth="300.0" spacing="5.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <HBox fx:id="boxComment" alignment="CENTER_LEFT" spacing="10.0">
+               <children>
+                  <Label fx:id="lblTableNote" text="Tabellennotiz:">
+                     <styleClass>
+                        <String fx:value="cpx-detail-label" />
+                        <String fx:value="text-header" />
+                     </styleClass>
+                  </Label>
+                  <Label fx:id="lblTableComment" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefHeight="17.0" prefWidth="100.0" text="bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb" HBox.hgrow="ALWAYS" />
+               </children>
+            </HBox>
+            <Label fx:id="lblTableContent" text="Tabelleninhalt:">
+               <styleClass>
+                  <String fx:value="cpx-detail-label" />
+                  <String fx:value="text-header" />
+               </styleClass>
+            </Label>
+            <ScrollPane fx:id="spTableContent" fitToHeight="true" fitToWidth="true" prefWidth="200.0" VBox.vgrow="ALWAYS" />
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

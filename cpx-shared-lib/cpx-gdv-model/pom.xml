@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>cpx-gdv-model</artifactId>
+    <packaging>jar</packaging>
+     <name>Gdv Model</name>
+    <parent>
+        <groupId>de.lb.cpx</groupId>
+        <artifactId>cpx-shared-lib</artifactId>
+        <version>0.1.5-SNAPSHOT</version>
+    </parent>
+    <dependencies>
+        <dependency>
+            <groupId>javax.persistence</groupId>
+            <artifactId>javax.persistence-api</artifactId>
+            <version>2.2</version>
+            <type>jar</type>
+        </dependency>
+        <dependency>
+            <groupId>de.lb.cpx</groupId>
+            <artifactId>cpx-commons</artifactId>
+            <version>0.1.5-SNAPSHOT</version>
+            <type>jar</type>
+        </dependency>
+        <dependency>
+            <groupId>javax</groupId>
+            <artifactId>javaee-api</artifactId>
+            <version>7.0</version>
+            <type>jar</type>
+        </dependency>
+    </dependencies>
+</project>

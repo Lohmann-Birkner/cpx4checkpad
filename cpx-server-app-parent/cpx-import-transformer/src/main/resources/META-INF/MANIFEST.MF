@@ -1,0 +1,2 @@
+Manifest-Version: 1.0
+Class-Path: C:\Users\niemeier\Downloads\Wildfly_10\modules\system\layers\base\com\oracle\main\ojdbc7.jar

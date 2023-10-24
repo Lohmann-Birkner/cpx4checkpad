@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.lb.cpx.client.core.model.fx.combobox.RequestStateCombobox?>
+<?import de.lb.cpx.client.core.model.fx.labeled.LabeledCheckBox?>
+<?import de.lb.cpx.client.core.model.fx.labeled.LabeledCheckComboBox?>
+<?import de.lb.cpx.client.core.model.fx.labeled.LabeledCheckboxLink?>
+<?import de.lb.cpx.client.core.model.fx.labeled.LabeledDatePicker?>
+<?import de.lb.cpx.client.core.model.fx.labeled.LabeledTextArea?>
+<?import de.lb.cpx.client.core.model.fx.labeled.LabeledTextField?>
+<?import de.lb.cpx.client.core.model.fx.labeled.LabeledToggleGroup?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefWidth="700.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
+    <stylesheets>
+        <URL value="@/styles/cpx-default.css" />
+    </stylesheets>
+    <children>
+        <VBox spacing="12.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <VBox spacing="12.0">
+                    <children>
+                  <GridPane hgap="12.0" vgap="12.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                                <LabeledTextField fx:id="tfInsuName" contentAlignment="BOTTOM_LEFT" maxSize="250" prefHeight="47.0" />
+                                <!--<Button fx:id="btnInsuSearch" mnemonicParsing="false" text="Button" />-->
+                                <LabeledTextField fx:id="tfEditor" maxSize="50" prefWidth="186.0" GridPane.columnIndex="1" />
+                              <HBox spacing="12.0" GridPane.rowIndex="1">
+                                  <children>
+                                      <LabeledDatePicker fx:id="dpDateOfProcessCreation" minWidth="-Infinity" prefHeight="47.0" prefWidth="139.0" HBox.hgrow="ALWAYS" />
+                              <LabeledDatePicker fx:id="dpReportDate" minWidth="-Infinity" prefWidth="105.0" />
+                                      <RequestStateCombobox fx:id="cbStatus" maxWidth="-Infinity" prefHeight="47.0" prefWidth="276.0" HBox.hgrow="ALWAYS" />
+                                  </children>
+                              </HBox>
+                                <LabeledToggleGroup fx:id="ltgPeTrialState" contentAlignment="BOTTOM_LEFT" minWidth="-Infinity" prefHeight="47.0" prefWidth="203.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                     </children>
+                  </GridPane>
+                        <LabeledCheckComboBox fx:id="ckcbAuditReasons" prefHeight="47.0" prefWidth="452.0" />
+                        <Label fx:id="lbPreTrial" text="Label">
+                            <font>
+                                <Font name="System Bold" size="14.0" />
+                            </font>
+                            <padding>
+                                <Insets top="-10.0" />
+                            </padding>
+                        </Label>
+                        <HBox prefHeight="28.0" prefWidth="700.0" spacing="12.0">
+                            <children>
+                                <HBox spacing="12.0">
+                                    <children>
+                                        <LabeledDatePicker fx:id="dpDataRecordCorrDeadlineDate" prefHeight="47.0" prefWidth="139.0" />
+                                        <LabeledCheckboxLink fx:id="ckLkDataRecordCorrDeadlineDate" prefWidth="100.0" />
+                                    </children>
+                                </HBox>
+                                <HBox alignment="BOTTOM_LEFT" spacing="12.0">
+                                    <children>
+                                        <CheckBox fx:id="ckSentOn" alignment="BOTTOM_LEFT" mnemonicParsing="false" textOverrun="CLIP" />
+                                        <LabeledDatePicker fx:id="dpSentOn" prefHeight="47.0" prefWidth="139.0" />
+                                    </children>
+                                </HBox>
+                                <HBox prefHeight="100.0" prefWidth="200.0" />
+                            </children>
+                            <padding>
+                                <Insets top="-10.0" />
+                            </padding>
+                        </HBox>
+                        <HBox alignment="BOTTOM_LEFT" prefHeight="0.0" prefWidth="700.0" spacing="12.0">
+                            <children>
+                                <HBox spacing="12.0">
+                                    <children>
+                                        <LabeledDatePicker fx:id="dpPrelProcClosedDeadlineDate" prefHeight="47.0" prefWidth="139.0" />
+                                        <LabeledCheckboxLink fx:id="ckLkPrelProcClosedDeadlineDate" prefWidth="100.0" />
+                                    </children>
+                                </HBox>
+                                <HBox alignment="BOTTOM_LEFT" spacing="12.0">
+                                    <children>
+                                        <CheckBox fx:id="ckPreTrialEnd" alignment="BOTTOM_LEFT" mnemonicParsing="false" textOverrun="CLIP" />
+                                        <LabeledDatePicker fx:id="dpPreTrialEnd" prefHeight="47.0" prefWidth="139.0" />
+                                    </children>
+                                </HBox>
+                                <HBox alignment="BOTTOM_LEFT" />
+                                <HBox prefHeight="47.0" prefWidth="231.0" />
+                            </children>
+                        </HBox>
+                        <Label fx:id="lbCaseDialog" text="Label">
+                            <font>
+                                <Font name="System Bold" size="14.0" />
+                            </font>
+                            <VBox.margin>
+                                <Insets top="-5.0" />
+                            </VBox.margin>
+                        </Label>
+                        <HBox prefHeight="0.0" prefWidth="700.0" spacing="12.0">
+                            <children>
+                            
+                                <HBox prefHeight="100.0" spacing="12.0">
+                                    <children>
+                                          <LabeledCheckBox fx:id="ckCaseDialog" contentAlignment="BOTTOM_CENTER" title="" />
+                                        <LabeledDatePicker fx:id="dpRequest" prefWidth="139.0">
+                                 <HBox.margin>
+                                    <Insets right="110.0" />
+                                 </HBox.margin></LabeledDatePicker>
+                                    </children>
+                                </HBox>
+                                  <HBox prefHeight="47.0" prefWidth="300.0" spacing="12.0">
+                                      <children>
+                                        <LabeledDatePicker fx:id="dpPrelProcAnsDeadlineDate" prefHeight="47.0" prefWidth="195.0" />
+                                        <LabeledCheckboxLink fx:id="ckLkPrelProcAnsDeadlineDate" prefHeight="47.0" prefWidth="100.0" />
+                                      </children>
+                                  </HBox>
+                            </children>
+                            <padding>
+                                <Insets top="-10.0" />
+                            </padding>
+                        </HBox>
+                  <HBox layoutX="10.0" layoutY="344.0" prefHeight="0.0" prefWidth="700.0" spacing="12.0">
+                     <children>
+                        <HBox prefHeight="100.0" spacing="12.0">
+                           <children>
+                              <LabeledCheckBox fx:id="ckCaseDialogEnd" contentAlignment="BOTTOM_CENTER" title="" />
+                              <LabeledDatePicker fx:id="dpCaseDialogEndDate" prefWidth="139.0">
+                                 <HBox.margin>
+                                    <Insets right="110.0" />
+                                 </HBox.margin>
+                              </LabeledDatePicker>
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="47.0" prefWidth="300.0" spacing="12.0">
+                           <children>
+                              <LabeledDatePicker fx:id="dpCaseDialogBillCorrDeadlineDate" prefHeight="47.0" prefWidth="195.0" />
+                              <LabeledCheckboxLink fx:id="ckLkCaseDialogBillCorrDeadlineDateRem" prefHeight="47.0" prefWidth="100.0" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </HBox>
+                        <HBox fx:id="hbReminders" maxHeight="160.0" prefHeight="0.0" prefWidth="700.0" spacing="12.0" />
+                        <LabeledTextArea fx:id="taAuditComment" prefHeight="30.0" prefWidth="700.0" />
+                        <LabeledTextArea fx:id="taUserComment" prefHeight="30.0" prefWidth="700.0" VBox.vgrow="ALWAYS" />
+                    </children>
+                </VBox>
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>

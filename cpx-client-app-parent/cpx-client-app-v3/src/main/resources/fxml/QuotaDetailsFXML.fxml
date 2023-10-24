@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<GridPane hgap="5.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" vgap="5.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" />
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+  </columnConstraints>
+  <rowConstraints>
+      <RowConstraints maxHeight="-Infinity" minHeight="10.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="-Infinity" minHeight="10.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="-Infinity" minHeight="10.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="-Infinity" minHeight="0.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="-Infinity" minHeight="0.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="-Infinity" minHeight="0.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="0.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <Label fx:id="lblCaseCountId" text="Anzahl abgerechnete vollstationäre Fälle:" GridPane.rowIndex="3" />
+      <Label fx:id="lblActualComplaintsId" text="davon zur Beanstandung eingeleitet (Istwert):" GridPane.rowIndex="4" />
+      <Label fx:id="lblGivenComplaintsId" text="Max. zulässige Beanstandungen gemäß Prüfquote (Sollwert):" GridPane.rowIndex="5" />
+      <Label fx:id="lblGivenQuotaId" text="Festgesetzte Prüfquote für dieses Quartal:" GridPane.rowIndex="6" />
+      <Label fx:id="lblActualComplaintsValueId" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+      <Label fx:id="lblGivenComplaintsValueId" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+      <Label fx:id="lblGivenQuotaValueId" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+      <Label fx:id="lblDetailsId" text="Details:" GridPane.rowIndex="2" />
+      <Label fx:id="lblCaseCountValueId" text="Label" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3" />
+      <Label fx:id="lblMessageLine1Id" text="Label" GridPane.columnSpan="2" GridPane.hgrow="ALWAYS" />
+      <Label fx:id="lblMessageLine2Id" text="Label" GridPane.columnSpan="2" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1">
+         <GridPane.margin>
+            <Insets bottom="10.0" />
+         </GridPane.margin>
+      </Label>
+   </children>
+   <padding>
+      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+   </padding>
+</GridPane>

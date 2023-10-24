@@ -1,0 +1,89 @@
+/*
+Copyright (c) 2019 Lohmann & Birkner.
+NOTICE:  All information contained herein is, and remains
+the property of Lohmann & Birkner Health Care Consulting GmbH and its suppliers,
+if any.  The intellectual and technical concepts contained
+herein are proprietary to Lohmann & Birkner
+and its suppliers and are protected by trade secret or copyright law.
+Dissemination of this information or reproduction of this material
+is strictly forbidden unless prior written permission is obtained
+from Lohmann & Birkner Health Care Consulting GmbH
+http://www.lohmann-birkner.de
+
+Contributors:
+   2019  wilde - initial API and implementation and/or initial documentation
+*/
+/* 
+    Created on : 20.02.2019, 16:17:26
+    Author     : wilde
+*/
+.edit-popover{
+    /*-fx-background-color:red;*/
+}
+
+.stay-selected-list-view .list-cell:selected  .popover .label{
+    -fx-background-color: white;
+    -fx-text-fill: black;
+}
+.stay-selected-list-view .list-cell:selected  .popover .cpx-icon-button .label{
+    -fx-background-color: white;
+    -fx-text-fill: -green03;
+}
+.combo-box .list-cell >.text{
+    -fx-font-size:15px;
+}
+/*.combo-box .list-cell .list-view-icon .label .text{*/
+/*-fx-font-size:12px;*/
+/*}*/
+.date-picker:editable .date-picker-display-node .text{
+    -fx-font-size:15px;
+}
+.text-value{
+    -fx-text-fill:black; 
+    -fx-font-size:15px;
+}
+.text-value:error{
+    -fx-text-fill:red; 
+}
+.text-value:warning{
+    -fx-text-fill:gold; 
+}
+.text-value:info{
+    -fx-text-fill:skyblue; 
+}
+.text-header{
+    /*-fx-text-fill:black;*/
+    -fx-font-size:15px;
+}
+.icon{
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+    -fx-background-radius: 3px, 3px, 2px, 1px;
+    -fx-padding: 4px 8px 4px 8px;
+    -icons-color: -root03;
+    -fx-text-fill: -root03;
+    -fx-alignment: CENTER;
+    -fx-content-display: LEFT;
+}
+/*.cpx-icon:hover,
+.cpx-icon:pressed {
+    -fx-background-color: transparent;
+}*/
+.icon > .label {
+    -fx-text-fill: -root03;
+}
+
+.wrap-tree-view >.virtual-flow .tree-cell .selectable-text{
+    -fx-warp-text:true;
+    /*-fx-font-size:12px;*/
+}
+
+.wrap-tree-view >.virtual-flow .tree-cell{
+    /*-fx-background-color:black;*/
+}
+.wrap-tree-view:focused .tree-cell:selected .selectable-text{
+    -fx-fill: -table-row-text-selected;
+}
+.selectable-text{
+
+}

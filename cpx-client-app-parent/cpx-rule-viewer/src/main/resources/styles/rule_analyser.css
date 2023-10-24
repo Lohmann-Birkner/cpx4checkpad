@@ -1,0 +1,142 @@
+/*
+Copyright (c) 2019 Lohmann & Birkner.
+NOTICE:  All information contained herein is, and remains
+the property of Lohmann & Birkner Health Care Consulting GmbH and its suppliers,
+if any.  The intellectual and technical concepts contained
+herein are proprietary to Lohmann & Birkner
+and its suppliers and are protected by trade secret or copyright law.
+Dissemination of this information or reproduction of this material
+is strictly forbidden unless prior written permission is obtained
+from Lohmann & Birkner Health Care Consulting GmbH
+http://www.lohmann-birkner.de
+
+Contributors:
+   2019  wilde - initial API and implementation and/or initial documentation
+*/
+/* 
+    Created on : 19.06.2019, 12:08:50
+    Author     : wilde
+*/
+
+.rule-analyser-item .rule-analyser-item-container{
+    -fx-border-color: lightgrey;
+    -fx-cursor:hand;
+    /*-fx-border-width: 1;*/   
+}
+.rule-analyser-item:selected_node .rule-analyser-item-container{
+    -fx-border-color: blue;
+}
+
+.analyser-header{
+    -fx-cursor: hand;
+}
+.rule-test-tree-view .virtual-flow .tree-cell{
+    -fx-text-fill:black;
+}
+.rule-test-tree-view .virtual-flow .tree-cell>.tree-disclosure-node .arrow  {
+    -fx-background-color: black;
+}
+.rule-test-tree-view .virtual-flow .tree-cell:expanded  .tree-disclosure-node  .arrow {
+    -fx-background-color: black;
+}
+.rule-test-tree-view .virtual-flow .tree-cell:test-result_neg{
+    -fx-text-fill:white;
+}
+.rule-test-tree-view .virtual-flow .tree-cell:test-result_neg>.tree-disclosure-node .arrow  {
+    -fx-background-color:white;
+}
+.rule-test-tree-view .virtual-flow .tree-cell:expanded::test-result_neg  .tree-disclosure-node  .arrow{
+    -fx-background-color: white;
+} 
+.analyser-tab-pane{
+
+}
+.analyser-tab-pane:disabled{
+    -fx-opacity: 0.60;
+}
+.analyser-tab-pane > .tab-header-area >.headers-region >.tab:disabled{
+    -fx-opacity: 0.60;
+}
+
+.analyser-tab-pane > .tab-header-area{
+    /*-fx-padding: 0 0 0 0;*/
+}
+.analyser-tab-menu{
+    -fx-border-width:0 0 1 0;
+    -fx-border-color:-green03
+}
+.analyser-tab-menu:disabled{
+    -fx-opacity: 0.60;
+}
+
+.analyser-tab-menu-toggle-button{
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+    -fx-background-radius: 3px, 3px, 2px, 1px;
+    -fx-padding: 4px 8px 4px 8px;
+    -icons-color: -root03;
+    -fx-text-fill: -root03;
+    -fx-alignment: CENTER;
+    -fx-content-display: LEFT;
+    -fx-cursor: hand;
+}
+/*
+.toggle-button:hover,
+.toggle-button:pressed {
+    -fx-background-color: transparent;
+}
+*/
+.analyser-tab-menu-toggle-button > .label {
+    -fx-text-fill: -root03;
+}
+/*
+.toggle-button:hover > .label,
+.toggle-button:pressed > .label{
+    -fx-text-fill: derive(-root03, -20%);
+}
+*/
+.analyser-tab-menu-toggle-button:selected {
+    -fx-background-color: derive(-cpx-menu-button-open, -50%), derive(-cpx-menu-button-open, -40%);
+    -fx-background-insets: 0,1;
+}
+.attribute-menu{
+}
+
+/* header property to resize text set -fx-font-size or commt font-weight for bold*/
+/*.attribute-menu .text{
+    -fx-font-weight: normal;
+}
+.attribute-menu .label{
+    -fx-font-weight: normal;
+}
+.attribute-menu .text-field{
+    -fx-font-weight: normal;
+}*/
+/*.attribute-menu-header .text{
+    -fx-font-weight: bold;
+}
+.attribute-menu-header .label{
+    -fx-font-weight: bold;
+}*/
+.attribute-item{
+    -fx-font-weight: normal;  
+}
+
+.attribute-item .text{
+    -fx-font-weight: normal;
+}
+
+.attribute-item .label{
+    -fx-font-weight: normal;
+}
+.attribute-item .text-field{
+    -fx-font-weight: normal;
+}
+
+.attribute-menu-search-field{
+    -fx-font-weight: normal;
+}
+
+
+
+

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<!-- disable listeners .. these should be special implemented to listen to special job -->
+<job id="mergeJob" xmlns="http://xmlns.jcp.org/xml/ns/javaee" version="1.0">
+    <properties>
+        <property name="grouperModel" value="#{jobParameters['grouperModel']}"/>
+        <property name="grpresType" value="#{jobParameters['grpresType']}"/>
+        <property name="chunkSize" value="5"/>
+    </properties>
+    <listeners>
+        <listener ref="MergeJobListener"/>
+    </listeners>
+    <step id="selectPatients" next="mergeCases">
+        <batchlet ref="MergeSelectionTask"/>
+    </step>
+    <step id="mergeCases">
+        <listeners>
+            <listener ref="MergeChunkListener"/>
+        </listeners>
+        <chunk checkpoint-policy="item" item-count="#{jobProperties['chunkSize']}">
+            <reader ref="MergeReader">
+                <properties>
+                    <property name="firstItem" value="#{partitionPlan['firstItem']}"/>
+                    <property name="partitionItems" value="#{partitionPlan['partitionItems']}"/>
+                </properties>
+            </reader>
+            <writer ref="MergeWriter"/>
+        </chunk>
+        <partition>
+            <mapper ref="MergePartitionMapper"/>
+            <collector ref="MergeCollector"/>
+            <analyzer ref="MergeAnalyzer"/>
+            <!--reducer ref="GroupingReducer"/-->
+        </partition>
+    </step>
+</job>

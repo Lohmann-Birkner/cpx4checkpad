@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.lb.cpx.client.core.model.fx.labeled.LabeledComboBox?>
+<?import de.lb.cpx.client.core.model.fx.labeled.LabeledDatePicker?>
+<?import de.lb.cpx.client.core.model.fx.labeled.LabeledTextField?>
+<?import de.lb.cpx.client.core.model.fx.section.SectionHeader?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.control.TreeView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import org.controlsfx.glyphfont.Glyph?>
+
+<AnchorPane fx:id="apRoot" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" styleClass="default-distances" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.lb.cpx.client.app.job.fx.DocumentImportFXMLController">
+    <children>
+        <SectionHeader title="Dokumentenimport" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+        <GridPane hgap="5.0" vgap="5.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="40.0">
+            <columnConstraints>
+                <ColumnConstraints hgrow="NEVER" maxWidth="1.7976931348623157E308" minWidth="300.0" />
+                <ColumnConstraints hgrow="ALWAYS" maxWidth="1.7976931348623157E308" minWidth="300.0" />
+                <ColumnConstraints hgrow="NEVER" maxWidth="300.0" minWidth="300.0" prefWidth="300.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints maxHeight="141.0" minHeight="0.0" prefHeight="26.0" vgrow="NEVER" />
+                <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" vgrow="ALWAYS" />
+            </rowConstraints>
+            <children>
+                <SplitPane fx:id="splitPane" dividerPositions="0.29797979797979796" prefHeight="160.0" prefWidth="200.0" GridPane.columnSpan="2" GridPane.rowIndex="1">
+                    <items>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefWidth="200.0">
+                            <children>
+                                <TreeView fx:id="fileTree" styleClass="stay-selected-tree-view" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                <HBox alignment="CENTER" prefHeight="30.0" prefWidth="200.0" spacing="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                                    <children>
+                                        <Label fx:id="lblFileSize" alignment="CENTER" text="Größe" visible="false">
+                                            <tooltip>
+                                                <Tooltip text="Dateigröße" />
+                                            </tooltip>
+                                        </Label>
+                                        <Label fx:id="lblFileDate" alignment="CENTER" text="Datum" visible="false">
+                                            <tooltip>
+                                                <Tooltip text="Letztes Änderungsdatum" />
+                                            </tooltip>
+                                        </Label>
+                                        <Label fx:id="lblFileOwner" alignment="CENTER" text="Besitzer" visible="false" HBox.hgrow="ALWAYS">
+                                            <tooltip>
+                                                <Tooltip text="Besitzer" />
+                                            </tooltip>
+                                        </Label>
+                                    </children>
+                                </HBox>
+                            </children>
+                        </AnchorPane>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                            <children>
+                                <AnchorPane fx:id="previewBox" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                <HBox alignment="CENTER" prefHeight="30.0" spacing="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                                    <children>
+                                        <HBox alignment="CENTER">
+                                            <children>
+                                                <Hyperlink fx:id="linkOriginal" alignment="CENTER" prefWidth="100.0" text="Original öffnen" visible="false" HBox.hgrow="NEVER" />
+                                                <Hyperlink fx:id="linkPdf" alignment="CENTER" prefWidth="100.0" text="PDF öffnen" visible="false" HBox.hgrow="NEVER" />
+                                                <Hyperlink fx:id="linkTxt" alignment="CENTER" prefWidth="100.0" text="TXT öffnen" visible="false" HBox.hgrow="NEVER" />
+                                                <Glyph fx:id="glExplorer" alignment="CENTER" prefWidth="45.0" visible="false" HBox.hgrow="NEVER">
+                                                    <tooltip>
+                                                        <Tooltip text="Datei im Explorer anzeigen" />
+                                                    </tooltip>
+                                                    <cursor>
+                                                        <Cursor fx:constant="HAND" />
+                                                    </cursor>
+                                                </Glyph>
+                                            </children>
+                                        </HBox>
+                                    </children>
+                                </HBox>
+                            </children>
+                        </AnchorPane>
+                    </items>
+                </SplitPane>
+                <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.columnSpan="2">
+                    <children>
+                        <Label fx:id="lblFolder" prefHeight="17.0" prefWidth="80.0" text="Verzeichnis" />
+                        <TextField fx:id="txtSelectedFolder" onAction="#setFolder" prefHeight="25.0" HBox.hgrow="ALWAYS" />
+                        <Button fx:id="btnSelectFolder" mnemonicParsing="false" onAction="#chooseFolder" text="...">
+                            <tooltip>
+                                <Tooltip text="Verzeichnis auswählen" />
+                            </tooltip>
+                        </Button>
+                        <Glyph fx:id="glRefreshFolder" onMouseClicked="#refreshFolder">
+                            <tooltip>
+                                <Tooltip text="Verzeichnis aktualisieren" />
+                            </tooltip>                      
+                            <cursor>
+                                <Cursor fx:constant="HAND" />
+                            </cursor>
+                            <padding>
+                                <Insets left="8.0" />
+                            </padding>
+                        </Glyph>
+                        <Glyph fx:id="glFolderInExplorer" onMouseClicked="#openFolderInExplorer">
+                            <tooltip>
+                                <Tooltip text="Pfad im Explorer anzeigen" />
+                            </tooltip>                      
+                            <cursor>
+                                <Cursor fx:constant="HAND" />
+                            </cursor>
+                            <padding>
+                                <Insets left="8.0" />
+                            </padding>
+                        </Glyph>
+                        <Label text="Microsoft Office Unterstützung">
+                            <padding>
+                                <Insets left="30.0" right="10.0" />
+                            </padding>
+                        </Label>
+                        <CheckBox fx:id="cbDocumentImportOfficeEnabled" alignment="CENTER" disable="true" onAction="#toggleDocumentDetection" prefWidth="75.0" selected="true" HBox.hgrow="NEVER" />
+                        <Label text="PDF-Vorschau anzeigen">
+                            <padding>
+                                <Insets left="30.0" right="10.0" />
+                            </padding>
+                        </Label>
+                        <CheckBox fx:id="cbDocumentImportShowPdfEnabled" alignment="CENTER" onAction="#toggleShowPdf" prefWidth="75.0" selected="true" />
+                    </children>
+                </HBox>
+                <Hyperlink fx:id="fileName" alignment="CENTER" onAction="#openFile" text="Dateiname" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS">
+                    <tooltip>
+                        <Tooltip text="Datei öffnen" />
+                    </tooltip>
+                </Hyperlink>
+                <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                    <children>
+                        <StackPane fx:id="stackDetails" VBox.vgrow="NEVER">
+                            <padding>
+                                <Insets left="7.0" />
+                            </padding>
+                        </StackPane>
+                        
+                        <GridPane fx:id="gpCommonGrid" styleClass="default-distances" visible="false">
+                            <columnConstraints>
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                <ColumnConstraints maxWidth="0.0" minWidth="0.0" prefWidth="0.0" />
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints vgrow="NEVER" />
+                                <RowConstraints vgrow="NEVER" />
+                                <RowConstraints vgrow="NEVER" />
+                                <RowConstraints vgrow="NEVER" />
+                                <RowConstraints vgrow="NEVER" />
+                                <RowConstraints minHeight="10.0" vgrow="NEVER" />
+                                <RowConstraints vgrow="NEVER" />
+                                <RowConstraints vgrow="NEVER" />
+                                <RowConstraints vgrow="NEVER" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="NEVER" />
+                                <RowConstraints vgrow="ALWAYS" />
+                            </rowConstraints>
+                            <children>                        
+                                <LabeledComboBox fx:id="cbDocumentType" prefHeight="47.0" prefWidth="149.0" title="Dokumentenart" GridPane.rowIndex="2" />
+                        <LabeledDatePicker fx:id="dpDocumentDate" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                <LabeledComboBox fx:id="cbRequestType" prefHeight="47.0" prefWidth="149.0" title="Anfrage" GridPane.columnSpan="2" GridPane.rowIndex="5" />
+                                <LabeledTextField fx:id="txtReminderAssignedTo" maxWidth="1.7976931348623157E308" title="Wiedervorlage an" GridPane.columnSpan="2" GridPane.rowIndex="6" />
+                                <HBox GridPane.columnIndex="0" GridPane.hgrow="ALWAYS" GridPane.rowIndex="7">
+                                    <children>
+                                        <LabeledComboBox fx:id="cbReminderType" maxWidth="1.7976931348623157E308" title="Wiedervorlageart" />
+                                        <Button fx:id="editReminderComment" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" maxWidth="24.0" mnemonicParsing="false" onAction="#editReminderCommentHandler" styleClass="cpx-icon-button" text=".">
+                                            <HBox.margin>
+                                                <Insets top="22.0" />
+                                            </HBox.margin>
+                                        </Button>
+                                    </children>
+                                </HBox>
+                                <LabeledDatePicker fx:id="dtReminderDueDate" title="Ablaufdatum der WV" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                                <HBox GridPane.columnSpan="2" GridPane.hgrow="ALWAYS" GridPane.rowIndex="8">
+                                    <children>
+                                        <LabeledComboBox fx:id="cbActionType" maxWidth="1.7976931348623157E308" title="Aktion" HBox.hgrow="ALWAYS" />
+                                        <Button fx:id="editActionComment" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" maxWidth="24.0" mnemonicParsing="false" onAction="#editActionCommentHandler" styleClass="cpx-icon-button" text=".">
+                                            <HBox.margin>
+                                                <Insets top="22.0" />
+                                            </HBox.margin>
+                                        </Button>
+                                    </children>
+                                </HBox>                         
+                                <SectionHeader fx:id="headerDocument" title="Dokument" GridPane.columnSpan="2" GridPane.rowIndex="1" />
+                                <!--
+<Glyph fx:id="glClear" alignment="CENTER" prefWidth="45.0" HBox.hgrow="NEVER" GridPane.columnSpan="2" GridPane.rowIndex="1">
+    <tooltip>
+        <Tooltip text="Felder zurücksetzen" />
+    </tooltip>
+    <cursor>
+        <Cursor fx:constant="HAND" />
+    </cursor>
+</Glyph>                                
+                                -->
+                                <SectionHeader fx:id="headerWorkflow" title="Vorgang" GridPane.columnSpan="2" GridPane.rowIndex="4" />
+                                <Button fx:id="btnImport" mnemonicParsing="false" onAction="#importDocument" text="Dokument importieren" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="9" GridPane.valignment="CENTER" />
+                                <Button fx:id="btnImportSelected" mnemonicParsing="false" onAction="#importSelectedDocuments" text="(x) ausgewählte Dokumente importieren" visible="false" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="9" />
+                            </children>
+                            <padding>
+                                <Insets left="7.0" />
+                            </padding>
+                        </GridPane>
+                    </children>
+                    <padding>
+                        <Insets left="5.0" />
+                    </padding>
+                </VBox>
+            </children>
+            <padding>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+            </padding>	    
+        </GridPane>
+    </children>
+    <padding>
+        <Insets bottom="12.0" left="12.0" right="12.0" top="12.0" />
+    </padding>    
+</AnchorPane>

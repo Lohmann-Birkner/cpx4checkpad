@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<HBox alignment="CENTER" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.lb.cpx.client.core.model.fx.login.StartupLoaderFXMLController">
+    <children>
+        <AnchorPane id="AnchorPane" maxHeight="419.0" maxWidth="323.0" prefHeight="419.0" prefWidth="323.0" stylesheets="@../styles/cpx-default.css">
+            <children>
+                <Label fx:id="titleLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="14.0" prefHeight="27.0" prefWidth="311.0" text="CPX is loading...">
+                    <font>
+                        <Font name="System Bold" size="18.0" />
+                    </font>
+                </Label>
+                <CheckBox fx:id="icdDone" disable="true" layoutX="104.0" layoutY="78.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="13.0" style="-fx-opacity: 1;" styleClass="check-box-loading-screen" />
+                <Label fx:id="icdLabel" layoutX="20.0" layoutY="78.0" prefWidth="80.0" text="ICD-Codes" />
+                <CheckBox fx:id="opsDone" disable="true" layoutX="104.0" layoutY="106.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="13.0" style="-fx-opacity: 1;" styleClass="check-box-loading-screen" />
+                <Label fx:id="opsLabel" layoutX="19.0" layoutY="106.0" prefWidth="80.0" text="OPS-Codes" />
+                <ProgressBar fx:id="progress" layoutX="6.0" layoutY="354.0" prefHeight="22.0" prefWidth="311.0" progress="0.0" />
+                <Label fx:id="progressLabel" alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="6.0" layoutY="379.0" prefHeight="34.0" prefWidth="311.0" textAlignment="CENTER" />
+                <CheckBox fx:id="drgDone" disable="true" layoutX="104.0" layoutY="219.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="13.0" style="-fx-opacity: 1;" styleClass="check-box-loading-screen" />
+                <Label fx:id="drgLabel" layoutX="19.0" layoutY="219.0" prefHeight="17.0" prefWidth="80.0" text="DRG" />
+                <CheckBox fx:id="peppDone" disable="true" layoutX="104.0" layoutY="247.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="13.0" style="-fx-opacity: 1;" styleClass="check-box-loading-screen" />
+                <Label fx:id="peppLabel" layoutX="19.0" layoutY="247.0" prefHeight="17.0" prefWidth="80.0" text="PEPP" />
+                <CheckBox fx:id="hospitalsDone" disable="true" layoutX="264.0" layoutY="78.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="13.0" style="-fx-opacity: 1;" styleClass="check-box-loading-screen" />
+                <Label fx:id="hospitalsLabel" layoutX="180.0" layoutY="78.0" prefWidth="80.0" text="Hospitals" />
+                <CheckBox fx:id="insuranceCompanysDone" disable="true" layoutX="264.0" layoutY="105.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="13.0" style="-fx-opacity: 1;" styleClass="check-box-loading-screen" />
+                <Label fx:id="insuranceCompanysLabel" layoutX="180.0" layoutY="105.0" prefWidth="80.0" text="Insurances" />
+                <CheckBox fx:id="doctorsDone" disable="true" layoutX="264.0" layoutY="134.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="13.0" style="-fx-opacity: 1;" styleClass="check-box-loading-screen" />
+                <Label fx:id="doctorsLabel" layoutX="180.0" layoutY="134.0" prefWidth="80.0" text="Doctors" />
+                <CheckBox fx:id="departmentsDone" disable="true" layoutX="264.0" layoutY="162.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="13.0" style="-fx-opacity: 1;" styleClass="check-box-loading-screen" />
+                <Label fx:id="departmentsLabel" layoutX="180.0" layoutY="162.0" prefWidth="80.0" text="Departments" />
+                <Label fx:id="catalogsLabel" alignment="TOP_CENTER" layoutX="20.0" layoutY="50.0" prefHeight="17.0" prefWidth="104.0" text="Catalogs" />
+                <Label fx:id="coreDataLabel" alignment="TOP_CENTER" layoutX="180.0" layoutY="50.0" prefHeight="17.0" prefWidth="104.0" text="Core Data" />
+                <ProgressIndicator fx:id="icdThrobber" layoutX="133.0" layoutY="78.0" prefHeight="18.0" prefWidth="17.0" visible="false" />
+                <ProgressIndicator fx:id="opsThrobber" layoutX="133.0" layoutY="106.0" prefHeight="18.0" prefWidth="17.0" visible="false" />
+                <ProgressIndicator fx:id="hospitalsThrobber" layoutX="293.0" layoutY="78.0" prefHeight="18.0" prefWidth="17.0" visible="false" />
+                <ProgressIndicator fx:id="insuranceCompanysThrobber" layoutX="293.0" layoutY="105.0" prefHeight="18.0" prefWidth="17.0" visible="false" />
+                <ProgressIndicator fx:id="doctorsThrobber" layoutX="293.0" layoutY="134.0" prefHeight="18.0" prefWidth="17.0" visible="false" />
+                <ProgressIndicator fx:id="departmentsThrobber" layoutX="293.0" layoutY="162.0" prefHeight="18.0" prefWidth="17.0" visible="false" />
+                <ProgressIndicator fx:id="pznThrobber" layoutX="133.0" layoutY="162.0" prefHeight="18.0" prefWidth="17.0" visible="false" />
+                <ProgressIndicator fx:id="atcThrobber" layoutX="133.0" layoutY="134.0" prefHeight="18.0" prefWidth="17.0" visible="false" />
+                <ProgressIndicator fx:id="peppThrobber" layoutX="133.0" layoutY="218.0" prefHeight="18.0" prefWidth="17.0" visible="false" />
+                <ProgressIndicator fx:id="drgThrobber" layoutX="133.0" layoutY="190.0" prefHeight="18.0" prefWidth="17.0" visible="false" />
+                <CheckBox fx:id="atcDone" disable="true" layoutX="104.0" layoutY="163.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="13.0" style="-fx-opacity: 1;" styleClass="check-box-loading-screen" />
+                <Label fx:id="atcLabel" layoutX="19.0" layoutY="163.0" prefHeight="17.0" prefWidth="80.0" text="ATC" />
+                <CheckBox fx:id="pznDone" disable="true" layoutX="104.0" layoutY="191.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="13.0" style="-fx-opacity: 1;" styleClass="check-box-loading-screen" />
+                <Label fx:id="pznLabel" layoutX="19.0" layoutY="191.0" prefHeight="17.0" prefWidth="80.0" text="PZN" />
+                <CheckBox fx:id="mdkDone" disable="true" layoutX="264.0" layoutY="190.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="13.0" style="-fx-opacity: 1;" styleClass="check-box-loading-screen" />
+                <Label fx:id="mdkLabel" layoutX="180.0" layoutY="190.0" prefWidth="80.0" text="MDK" />
+                <ProgressIndicator fx:id="mdkThrobber" layoutX="293.0" layoutY="191.0" prefHeight="18.0" prefWidth="17.0" visible="false" />
+                <CheckBox fx:id="drgFeeDone" disable="true" layoutX="104.0" layoutY="274.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="13.0" style="-fx-opacity: 1;" styleClass="check-box-loading-screen" />
+                <Label fx:id="drgFeeLabel" layoutX="19.0" layoutY="274.0" prefHeight="17.0" prefWidth="80.0" text="DRG Fee" />
+                <ProgressIndicator fx:id="drgFeeThrobber" layoutX="133.0" layoutY="245.0" prefHeight="18.0" prefWidth="17.0" visible="false" />
+                <CheckBox fx:id="peppFeeDone" disable="true" layoutX="104.0" layoutY="301.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="13.0" style="-fx-opacity: 1;" styleClass="check-box-loading-screen" />
+                <Label fx:id="peppFeeLabel" layoutX="19.0" layoutY="301.0" prefHeight="17.0" prefWidth="80.0" text="PEPP Fee" />
+                <ProgressIndicator fx:id="peppFeeThrobber" layoutX="133.0" layoutY="272.0" prefHeight="18.0" prefWidth="17.0" visible="false" />
+                <CheckBox fx:id="dailyFeeDone" disable="true" layoutX="104.0" layoutY="327.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="13.0" style="-fx-opacity: 1;" styleClass="check-box-loading-screen" />
+                <Label fx:id="dailyFeeLabel" layoutX="19.0" layoutY="327.0" prefHeight="17.0" prefWidth="80.0" text="Daily Fee" />
+                <ProgressIndicator fx:id="dailyFeeThrobber" layoutX="133.0" layoutY="298.0" prefHeight="18.0" prefWidth="17.0" visible="false" />
+                <CheckBox fx:id="baserateDone" disable="true" layoutX="264.0" layoutY="217.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="13.0" style="-fx-opacity: 1;" styleClass="check-box-loading-screen" />
+                <Label fx:id="baserateLabel" layoutX="180.0" layoutY="217.0" prefWidth="80.0" text="Baserates" />
+                <ProgressIndicator fx:id="baserateThrobber" layoutX="293.0" layoutY="217.0" prefHeight="18.0" prefWidth="17.0" visible="false" />
+                <CheckBox fx:id="icdThesaurusDone" disable="true" layoutX="264.0" layoutY="244.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="13.0" style="-fx-opacity: 1;" styleClass="check-box-loading-screen" />
+                <Label fx:id="icdThesaurusLabel" layoutX="180.0" layoutY="245.0" prefWidth="80.0" text="ICD Thesaurus" />
+                <ProgressIndicator fx:id="icdThesaurusThrobber" layoutX="293.0" layoutY="244.0" prefHeight="18.0" prefWidth="17.0" visible="false" />
+                <CheckBox fx:id="opsThesaurusDone" disable="true" layoutX="264.0" layoutY="272.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="13.0" style="-fx-opacity: 1;" styleClass="check-box-loading-screen" />
+                <Label fx:id="opsThesaurusLabel" layoutX="180.0" layoutY="272.0" prefWidth="80.0" text="OPS Thesaurus" />
+                <ProgressIndicator fx:id="opsThesaurusThrobber" layoutX="293.0" layoutY="272.0" prefHeight="18.0" prefWidth="17.0" visible="false" />
+            <Label fx:id="lexikonLabel" layoutX="180.0" layoutY="299.0" text="Lexikon" />
+            <CheckBox fx:id="lexikonDone" layoutX="264.0" layoutY="298.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="13.0" style="-fx-opacity: 1;" styleClass="check-box-loading-screen" />
+            <ProgressIndicator fx:id="lexikonThrobber" layoutX="293.0" layoutY="298.0" prefHeight="18.0" prefWidth="17.0" visible="false" />
+            <Label fx:id="aopLabel" layoutX="20.0" layoutY="134.0" prefHeight="17.0" prefWidth="66.0" text="AOP" />
+            <CheckBox fx:id="aopDone" layoutX="104.0" layoutY="134.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="13.0" />
+            <ProgressIndicator fx:id="aopThrobber" layoutX="133.0" layoutY="134.0" prefHeight="18.0" prefWidth="17.0" visible="false" />
+            </children>
+        </AnchorPane>
+    </children>
+</HBox>

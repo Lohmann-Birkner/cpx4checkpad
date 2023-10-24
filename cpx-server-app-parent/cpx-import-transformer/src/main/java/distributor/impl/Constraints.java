@@ -1,0 +1,136 @@
+/*
+ * Copyright (c) 2017 Lohmann & Birkner.
+ * NOTICE:  All information contained herein is, and remains
+ * the property of Lohmann & Birkner Health Care Consulting GmbH and its suppliers,
+ * if any.  The intellectual and technical concepts contained
+ * herein are proprietary to Lohmann & Birkner
+ * and its suppliers and are protected by trade secret or copyright law.
+ * Dissemination of this information or reproduction of this material
+ * is strictly forbidden unless prior written permission is obtained
+ * from Lohmann & Birkner Health Care Consulting GmbH
+ * http://www.lohmann-birkner.de
+ *
+ * Contributors:
+ *    2017  niemeier - initial API and implementation and/or initial documentation
+ */
+package distributor.impl;
+
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import module.impl.ImportConfig;
+
+/**
+ *
+ * @author niemeier
+ */
+public class Constraints {
+
+    static final Logger LOG = Logger.getLogger(Constraints.class.getName());
+
+    final String[] dropConstraints = new String[]{
+        "ALTER TABLE T_CASE_DETAILS DROP CONSTRAINT FK8R5R420OK3RHV6PNOA1S9AM5Q",
+        "ALTER TABLE T_CASE_DETAILS DROP CONSTRAINT FK74JACAY6A7XEQP821AATU51GH",
+        "ALTER TABLE T_CASE_DETAILS DROP CONSTRAINT FKSLF9O0X773NN9L92CC7G5KM2K",
+        "ALTER TABLE T_CASE_DEPARTMENT DROP CONSTRAINT FKJQF9LAUW0H5A848IA9TO79M9K",
+        "ALTER TABLE T_CASE_ICD DROP CONSTRAINT FKEV3UIUC83XWRW7CL0G9D2L1RO",
+        "ALTER TABLE T_CASE_ICD DROP CONSTRAINT FKPOUEWLLIGT1AJ6BF9TSY4SIJG",
+        "ALTER TABLE T_CASE_ICD DROP CONSTRAINT FKBRQR8IGXDYOHH78UVLC883CH3",
+        "ALTER TABLE T_CASE_OPS DROP CONSTRAINT FK41X3PXA93U7I00O289CAGD6RW",
+        "ALTER TABLE T_CASE_OPS DROP CONSTRAINT FKCC9CI72PHEL1N9WKGV7X30KQJ",
+        "ALTER TABLE T_WM_DOCUMENT DROP CONSTRAINT FKQ11IEY9CP5OM3338QHNT95AW2",
+        "ALTER TABLE T_WM_EVENT DROP CONSTRAINT FKP6IGLJ0H3ULPJ36KQ6LJ8KS8F",
+        "ALTER TABLE T_CASE_BILL DROP CONSTRAINT FK5FBPQILWPF8HBPIOISVSD5EK1",
+        "ALTER TABLE T_CASE_FEE DROP CONSTRAINT FK1EV49YPOB98P4XS2461MVY33K",
+        "ALTER TABLE T_CASE_MERGE_MAPPING DROP CONSTRAINT FKMP6QBQ2K3TYQTROJVS9R8XG9J",
+        "ALTER TABLE T_CASE_MERGE_MAPPING DROP CONSTRAINT FKHIJ231899CKUX58YPHJ56GRSI",
+        "ALTER TABLE T_GROUPING_RESULTS DROP CONSTRAINT FKP582NH1HWT4FOVGNIDUM2BUCT",
+        "ALTER TABLE T_GROUPING_RESULTS DROP CONSTRAINT FKCO0LNGF5HEN43P7XJCF3WOPA6",
+        "ALTER TABLE T_WM_PROCESS_T_CASE DROP CONSTRAINT FKQ21RX0LR60AWMNXV3RVY7JBIQ",
+        "ALTER TABLE T_CASE_FEE DROP CONSTRAINT FKPALLHGRKDULU3RUK2D5U933TA"
+
+    //  "ALTER TABLE T_CASE DROP CONSTRAINT SYS_C00377583",
+    //  "ALTER TABLE T_CASE_DEPARTMENT DROP CONSTRAINT SYS_C00377594",
+    //  "ALTER TABLE T_CASE_DETAILS DROP CONSTRAINT SYS_C00377604",
+    //  "ALTER TABLE T_CASE_OPS DROP CONSTRAINT SYS_C00377628",
+    //  "ALTER TABLE T_CASE_ICD DROP CONSTRAINT SYS_C00377613"
+    };
+
+    final String[] createConstraints = new String[]{
+        "ALTER TABLE T_CASE_DETAILS ADD CONSTRAINT FK8R5R420OK3RHV6PNOA1S9AM5Q FOREIGN KEY (EXTERN_ID) REFERENCES T_CASE_DETAILS (ID) ",
+        "ALTER TABLE T_CASE_DETAILS ADD CONSTRAINT FK74JACAY6A7XEQP821AATU51GH FOREIGN KEY (PARENT_ID) REFERENCES T_CASE_DETAILS (ID) ",
+        "ALTER TABLE T_CASE_DETAILS ADD CONSTRAINT FKSLF9O0X773NN9L92CC7G5KM2K FOREIGN KEY (T_CASE_DETAILS_ID) REFERENCES T_CASE (ID) ON DELETE CASCADE ",
+        "ALTER TABLE T_CASE_DEPARTMENT ADD CONSTRAINT FKJQF9LAUW0H5A848IA9TO79M9K FOREIGN KEY (T_CASE_DETAILS_ID) REFERENCES T_CASE_DETAILS (ID) ON DELETE CASCADE ",
+        "ALTER TABLE T_CASE_ICD ADD CONSTRAINT FKEV3UIUC83XWRW7CL0G9D2L1RO FOREIGN KEY (T_CASE_DEPARTMENT_ID) REFERENCES T_CASE_DEPARTMENT (ID) ON DELETE CASCADE ",
+        "ALTER TABLE T_CASE_ICD ADD CONSTRAINT FKPOUEWLLIGT1AJ6BF9TSY4SIJG FOREIGN KEY (T_CASE_WARD_ID) REFERENCES T_CASE_WARD (ID) ON DELETE CASCADE ",
+        "ALTER TABLE T_CASE_ICD ADD CONSTRAINT FKBRQR8IGXDYOHH78UVLC883CH3 FOREIGN KEY (T_CASE_ICD_ID) REFERENCES T_CASE_ICD (ID) ",
+        "ALTER TABLE T_CASE_OPS ADD CONSTRAINT FK41X3PXA93U7I00O289CAGD6RW FOREIGN KEY (T_CASE_DEPARTMENT_ID) REFERENCES T_CASE_DEPARTMENT (ID) ON DELETE CASCADE ",
+        "ALTER TABLE T_CASE_OPS ADD CONSTRAINT FKCC9CI72PHEL1N9WKGV7X30KQJ FOREIGN KEY (T_CASE_WARD_ID) REFERENCES T_CASE_WARD (ID) ON DELETE CASCADE ",
+        "ALTER TABLE T_WM_DOCUMENT ADD CONSTRAINT FKQ11IEY9CP5OM3338QHNT95AW2 FOREIGN KEY (T_CASE_ID) REFERENCES T_CASE (ID) ",
+        "ALTER TABLE T_WM_EVENT ADD CONSTRAINT FKP6IGLJ0H3ULPJ36KQ6LJ8KS8F FOREIGN KEY (T_CASE_ID) REFERENCES T_CASE (ID) ",
+        "ALTER TABLE T_CASE_BILL ADD CONSTRAINT FK5FBPQILWPF8HBPIOISVSD5EK1 FOREIGN KEY (T_CASE_DETAILS_ID) REFERENCES T_CASE_DETAILS (ID) ON DELETE CASCADE ",
+        //"ALTER TABLE T_CASE_FEE ADD CONSTRAINT FK1EV49YPOB98P4XS2461MVY33K FOREIGN KEY (T_CASE_DETAILS_ID) REFERENCES T_CASE_DETAILS (ID) ON DELETE CASCADE ",
+        "ALTER TABLE T_CASE_FEE ADD CONSTRAINT FK1EV49YPOB98P4XS2461MVY33K FOREIGN KEY (T_CASE_DETAILS_ID) REFERENCES T_CASE_DETAILS (ID) ",
+        "ALTER TABLE T_CASE_MERGE_MAPPING ADD CONSTRAINT FKMP6QBQ2K3TYQTROJVS9R8XG9J FOREIGN KEY (T_CASE_ID) REFERENCES T_CASE (ID) ON DELETE CASCADE ",
+        //"ALTER TABLE T_CASE_MERGE_MAPPING ADD CONSTRAINT FKHIJ231899CKUX58YPHJ56GRSI FOREIGN KEY (MERGE_MEMBER_CASE_ID) REFERENCES T_CASE (ID) ON DELETE CASCADE ",
+        "ALTER TABLE T_CASE_MERGE_MAPPING ADD CONSTRAINT FKHIJ231899CKUX58YPHJ56GRSI FOREIGN KEY (MERGE_MEMBER_CASE_ID) REFERENCES T_CASE (ID) ",
+        //"ALTER TABLE T_GROUPING_RESULTS ADD CONSTRAINT FKP582NH1HWT4FOVGNIDUM2BUCT FOREIGN KEY (T_CASE_DETAILS_ID) REFERENCES T_CASE_DETAILS (ID) ON DELETE CASCADE ",
+        "ALTER TABLE T_GROUPING_RESULTS ADD CONSTRAINT FKP582NH1HWT4FOVGNIDUM2BUCT FOREIGN KEY (T_CASE_DETAILS_ID) REFERENCES T_CASE_DETAILS (ID) ",
+        //"ALTER TABLE T_GROUPING_RESULTS ADD CONSTRAINT FKCO0LNGF5HEN43P7XJCF3WOPA6 FOREIGN KEY (T_CASE_ICD_ID) REFERENCES T_CASE_ICD (ID) ON DELETE CASCADE ",
+        "ALTER TABLE T_GROUPING_RESULTS ADD CONSTRAINT FKCO0LNGF5HEN43P7XJCF3WOPA6 FOREIGN KEY (T_CASE_ICD_ID) REFERENCES T_CASE_ICD (ID) ",
+        "ALTER TABLE T_WM_PROCESS_T_CASE ADD CONSTRAINT FKQ21RX0LR60AWMNXV3RVY7JBIQ FOREIGN KEY (T_CASE_ID) REFERENCES T_CASE (ID) ",
+        "ALTER TABLE T_CASE_FEE ADD CONSTRAINT FKPALLHGRKDULU3RUK2D5U933TA FOREIGN KEY (T_CASE_BILL_ID) REFERENCES T_CASE_BILL (ID) ON DELETE CASCADE "
+
+    //  "ALTER TABLE T_CASE ADD CONSTRAINT SYS_C00377583 PRIMARY KEY (ID)",
+    //  "ALTER TABLE T_CASE_DEPARTMENT ADD CONSTRAINT SYS_C00377594 PRIMARY KEY (ID)",
+    //  "ALTER TABLE T_CASE_DETAILS ADD CONSTRAINT SYS_C00377604 PRIMARY KEY (ID)",
+    //  "ALTER TABLE T_CASE_OPS ADD CONSTRAINT SYS_C00377628 PRIMARY KEY (ID)",
+    //  "ALTER TABLE T_CASE_ICD ADD CONSTRAINT SYS_C00377613 PRIMARY KEY (ID)"
+    };
+
+    //Drop the constraints before distributing the data to gain better performance!
+    public void dropConstraints(final Connection pConnection, final ImportConfig<?> pImportConfig) throws SQLException {
+        for (String query : dropConstraints) {
+            try (Statement stmt = pConnection.createStatement()) {
+                //printTime("  drop from T_CASE_ICD_GROUPED...");
+                int updateRows = stmt.executeUpdate(query);
+                //printTime("  T_CASE_ICD_GROUPED dropped!");
+            } catch (SQLException ex) {
+                if (pImportConfig.isCaseDbSqlSrv() && ex.getErrorCode() == 3728
+                        || pImportConfig.isCaseDbOracle() && ex.getErrorCode() == 2443) { //ex.getMessage().contains("ORA-02443")
+                    //Constraint does not exist, but that's okay!
+                    LOG.log(Level.INFO, "Constraint seems to be missing: " + query);
+                } else {
+                    throw ex;
+                }
+            }
+        }
+    }
+
+    //But don't forget to recreate them after import has finished :-)
+    public void createConstraints(final Connection pConnection, final ImportConfig<?> pImportConfig) throws SQLException {
+        for (String query : createConstraints) {
+            try (Statement stmt = pConnection.createStatement()) {
+                //printTime("  drop from T_CASE_ICD_GROUPED...");
+                if (pImportConfig.isCaseDbOracle()) {
+                    query += " NOVALIDATE";
+                } else {
+                    query = query.replace(" ADD CONSTRAINT ", " WITH NOCHECK ADD CONSTRAINT ");
+                }
+                int updatedRows = stmt.executeUpdate(query);
+                //printTime("  T_CASE_ICD_GROUPED dropped!");
+            } catch (SQLException ex) {
+                if (pImportConfig.isCaseDbSqlSrv() && ex.getErrorCode() == 2714
+                        || pImportConfig.isCaseDbOracle() && ex.getErrorCode() == 2275) { // || ex.getMessage().contains("ORA-02275")
+                    //Constraint already exists, but that's okay!
+                    LOG.log(Level.INFO, "Constraint seems to be already exists: " + query);
+                } else {
+                    throw ex;
+                }
+            }
+        }
+    }
+
+}

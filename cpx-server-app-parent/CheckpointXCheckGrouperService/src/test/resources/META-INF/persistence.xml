@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence
+             http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"
+             version="2.1">
+    <persistence-unit name="test_readmission" transaction-type="RESOURCE_LOCAL">
+        <provider>org.hibernate.ejb.HibernatePersistence</provider>
+        <class>de.lb.cpx.model.TCase</class>
+        <class>de.lb.cpx.model.TCaseBill</class>
+        <class>de.lb.cpx.model.TCaseDepartment</class>
+        <class>de.lb.cpx.model.TCaseDetails</class>
+        <class>de.lb.cpx.model.TCaseDrg</class>
+        <class>de.lb.cpx.model.TCaseFee</class>
+        <class>de.lb.cpx.model.TCaseIcd</class>
+        <class>de.lb.cpx.model.TCaseIcdGrouped</class>
+        <class>de.lb.cpx.model.TCaseMergeMapping</class>
+        <class>de.lb.cpx.model.TCaseMergeMappingPepp</class>
+        <class>de.lb.cpx.model.TCaseMergeMappingDrg</class>
+        <class>de.lb.cpx.model.TCaseOps</class>
+        <class>de.lb.cpx.model.TCaseOpsGrouped</class>
+        <class>de.lb.cpx.model.TCasePepp</class>
+        <class>de.lb.cpx.model.TCasePeppGrades</class>
+        <class>de.lb.cpx.model.TCaseSupplFee</class>
+        <class>de.lb.cpx.model.TCaseWard</class>
+        <class>de.lb.cpx.model.TDrug</class>
+        <class>de.lb.cpx.model.TGroupingResults</class>
+        <class>de.lb.cpx.model.TCheckResult</class>
+        <class>de.lb.cpx.model.TRole2Result</class>
+        <class>de.lb.cpx.model.TRole2Check</class>
+        <class>de.lb.cpx.model.TBatchResult</class>
+        <class>de.lb.cpx.model.TBatchResult2Role</class>
+        <class>de.lb.cpx.model.TBatchCheckResult</class>
+        <class>de.lb.cpx.model.TLock</class>
+        <class>de.lb.cpx.model.TInsurance</class>
+        <class>de.lb.cpx.model.TIn4Med</class>
+        <class>de.lb.cpx.model.TPatient</class>
+        <class>de.lb.cpx.model.TPatientDetails</class>
+        <!--
+    <class>de.lb.cpx.model.VwToDoListDrg</class>
+    <class>de.lb.cpx.model.VwToDoListDrgId</class>
+    <class>de.lb.cpx.model.VwToDoPepp</class>
+    <class>de.lb.cpx.model.VwToDoPeppId</class>
+        -->
+        <class>de.lb.cpx.server.imp.model.P21ImportLogEntryBase</class>
+        <class>de.lb.cpx.server.imp.model.P21MeasureLogEntry</class>
+        <class>de.lb.cpx.server.imp.model.P21ImportLogEntry</class>
+        <class>de.lb.cpx.model.TCaseComment</class>
+        <class>de.lb.cpx.server.commonDB.model.CBaserate</class>
+        <exclude-unlisted-classes>true</exclude-unlisted-classes>
+        <properties>
+            <!--property name="connection.driver_class" value="org.h2.Driver"/-->
+            <property name="hibernate.connection.url" value="jdbc:h2:./db/repository"/>
+            <property name="hibernate.connection.url" value="jdbc:h2:mem:test;DB_CLOSE_DELAY=-1"/>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>
+            <property name="hibernate.hbm2ddl.auto" value="create-drop"/>
+            <property name="hibernate.show_sql" value="false"/>
+            <!--
+            <property name="hibernate.generate_statistics" value="true"/>
+            <property name="hibernate.cache.use_query_cache" value="true"/>-->
+            <!-- <property name="hibernate.cache.region.factory_class" value="net.sf.ehcache.hibernate.EhCacheRegionFactory" 
+            /> -->
+            <!--<property name="hibernate.cache.region.factory_class" value="org.hibernate.cache.ehcache.SingletonEhCacheRegionFactory"/>-->
+            <property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
+        </properties>
+    </persistence-unit>
+</persistence>

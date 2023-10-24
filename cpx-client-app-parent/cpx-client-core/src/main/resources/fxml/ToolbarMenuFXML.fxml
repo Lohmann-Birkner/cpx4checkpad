@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Rectangle2D?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="800.0" prefWidth="600.0" styleClass="mainFxmlClass" stylesheets="@../styles/cpx-default.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.lb.cpx.client.core.menu.fx.ToolbarMenuFXMLController">
+    <children>
+        <HBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <VBox fx:id="vBoxToolbar" maxWidth="30.0" minWidth="0.0" styleClass="cpx-toolbar">
+                    <children>
+                        <VBox>
+                            <children>
+                                <VBox fx:id="vBoxImgSpace" alignment="BOTTOM_CENTER" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="203.0" style="-fx-background-color: -menu-background-open;">
+                                    <children>
+                                        <Button fx:id="btnTbInfo" maxHeight="28.0" maxWidth="1.7976931348623157E308" minHeight="28.0" minWidth="0.0" mnemonicParsing="false" styleClass="info-button" text="1">
+                                            <VBox.margin>
+                                                <Insets bottom="4.0" top="4.0" />
+                                            </VBox.margin>
+                                        </Button>
+                                    </children>
+                                </VBox>
+                                <Button fx:id="btnTbDbInfo" maxHeight="28.0" maxWidth="1.7976931348623157E308" minHeight="28.0" minWidth="0.0" mnemonicParsing="false" styleClass="info-button" text="3" />
+                            </children>
+                        </VBox>
+                        <VBox fx:id="vBoxReducedMenu" VBox.vgrow="ALWAYS">
+                            <children>
+                                <!--                        <Button fx:id="btnTbWorkingList" maxWidth="1.7976931348623157E308" minWidth="0.0" mnemonicParsing="false" styleClass="menu-tab-button" text="Button" />
+                                <Button fx:id="btnTbWLItem" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" styleClass="list-info-button" text="Button" VBox.vgrow="ALWAYS" />
+                                <Button fx:id="btnTbWorkflowList" maxWidth="1.7976931348623157E308" minWidth="0.0" mnemonicParsing="false" styleClass="menu-tab-button" text="1" />
+                                <Button fx:id="btnTbWfItem" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" styleClass="list-info-button" text="Button" VBox.vgrow="ALWAYS" />
+                                <Button fx:id="btnTbJobs" maxWidth="1.7976931348623157E308" minWidth="0.0" mnemonicParsing="false" styleClass="menu-tab-button" text="1" />
+                                <Button fx:id="btnTbSettings" maxWidth="1.7976931348623157E308" minWidth="0.0" mnemonicParsing="false" styleClass="menu-tab-button" text="1" />
+                                <Button fx:id="btnTbHelp" maxWidth="1.7976931348623157E308" minWidth="0.0" mnemonicParsing="false" styleClass="menu-tab-button" text="Button" />-->
+                            </children>
+                        </VBox>
+                    </children>
+                </VBox>
+                <VBox fx:id="vBoxMenuPane" alignment="TOP_CENTER" minWidth="0.0" prefWidth="202.0" styleClass="cpx-sidemenu-without-border">
+                    <children>
+                        <VBox fx:id="vBoxProfile" maxHeight="1.7976931348623157E308" minHeight="-Infinity" prefHeight="228.0" VBox.vgrow="SOMETIMES">
+                            <children>
+                                <AnchorPane fx:id="apProfile" maxHeight="-Infinity" minHeight="-Infinity">
+                                    <children>
+                                        <ImageView fx:id="profileImageView" fitWidth="202.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                            <image>
+                                                <Image url="@../img/checkpoint_x_logo_480x480.png" />
+                                            </image>
+                                            <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                            </cursor>
+                                            <viewport>
+                                                <Rectangle2D />
+                                            </viewport>
+                                        </ImageView>
+                                        <Button fx:id="buttonProfileImage" mnemonicParsing="false" style="-fx-background-color: rgba(0,0,0,0.2);; -fx-text-fill: white;" styleClass="cpx-icon-button" text="Button" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                        <AnchorPane layoutX="14.0" layoutY="158.0" style="-fx-background-color: rgba(0,0,0,0.3);" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                                            <children>
+                                                <HBox alignment="CENTER_LEFT" layoutX="8.0" layoutY="4.0" spacing="12.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                    <children>
+                                                        <AnchorPane HBox.hgrow="ALWAYS">
+                                                            <children>
+                                                                <Label fx:id="labelProfileUsername" alignment="CENTER" text="Label" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                                    <font>
+                                                                        <Font name="System Bold" size="14.0" />
+                                                                    </font>
+                                                                </Label>
+                                                            </children>
+                                                        </AnchorPane>
+                                                        <Button fx:id="buttonInfoMenu" mnemonicParsing="false" onAction="#onInfoMenu" styleClass="info-button" text="info" HBox.hgrow="NEVER" />
+                                                    </children>
+                                                    <padding>
+                                                        <Insets bottom="4.0" left="8.0" right="8.0" top="4.0" />
+                                                    </padding>
+                                                </HBox>
+                                            </children>
+                                        </AnchorPane>
+                                    </children>
+                                </AnchorPane>
+                                <HBox alignment="CENTER_LEFT" minHeight="28.0" spacing="12.0">
+                                    <children>
+                                        <Label fx:id="labelDatabase" alignment="CENTER" maxWidth="1.7976931348623157E308" text="Label" HBox.hgrow="ALWAYS" />
+                                        <Button fx:id="buttonServerMenu" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" maxHeight="-Infinity" minHeight="-Infinity" mnemonicParsing="false" onAction="#onServerMenu" prefHeight="24.0" styleClass="info-button" HBox.hgrow="ALWAYS" />
+                                    </children>
+                                    <padding>
+                                        <Insets left="12.0" right="5.0" />
+                                    </padding>
+                                </HBox>
+                            </children>
+                        </VBox>
+                        <VBox fx:id="vBoxExtendedMenu" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" VBox.vgrow="ALWAYS">
+                            <children>
+                                <!--                        <TitledPane fx:id="tpCases" animated="false" collapsible="false" maxHeight="1.7976931348623157E308" styleClass="tab-titled-pane" text="untitled" VBox.vgrow="ALWAYS">
+                                  <content>
+                                      <ListView fx:id="lvOpenCases" maxHeight="1.7976931348623157E308" prefHeight="200.0" prefWidth="200.0" />
+                                  </content>
+                                </TitledPane>
+                                <TitledPane fx:id="tpProcess" animated="false" collapsible="false" maxHeight="1.7976931348623157E308" styleClass="tab-titled-pane" text="untitled" VBox.vgrow="ALWAYS">
+                                  <content>
+                                      <ListView fx:id="lvOpenProcesses" maxHeight="1.7976931348623157E308" prefHeight="200.0" prefWidth="200.0" />
+                                  </content>
+                                </TitledPane>
+                                <Button fx:id="btnSetting" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onSetting" styleClass="menu-tab-button" text="Button" VBox.vgrow="ALWAYS" />
+                                <Button fx:id="btnJobs" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onShowJobs" styleClass="menu-tab-button" text="Button" />
+                                <Button fx:id="btnHelp" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onShowHelp" styleClass="menu-tab-button" text="Button" VBox.vgrow="ALWAYS" />-->
+                            </children>
+                        </VBox>
+                    </children>
+                </VBox>
+                <AnchorPane fx:id="apContent" prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+            </children>
+        </HBox>
+        <ToggleButton fx:id="tbMenu" mnemonicParsing="false" prefHeight="48.0" prefWidth="30.0" selected="true" styleClass="cpx-sidemenu-button" />
+    </children>
+</AnchorPane>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.lb.cpx.client.app.cm.fx.simulation.tables.DrgTableView?>
+<?import de.lb.cpx.client.app.cm.fx.simulation.tables.RulesTableView?>
+<?import de.lb.cpx.client.core.model.fx.section.SectionHeader?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane id="AnchorPane" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.lb.cpx.client.app.job.fx.casemerging.CaseMergingDetailsFXMLController">
+    <stylesheets>
+        <URL value="@/styles/cpx-default.css" />
+    </stylesheets>
+    <children>
+        <VBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <SectionHeader fx:id="shCaseMergeMenu" title="" />
+                <SplitPane fx:id="spContent" dividerPositions="0.3" orientation="VERTICAL" VBox.vgrow="ALWAYS">
+                    <items>
+                        <VBox>
+                            <children>
+                                <DrgTableView fx:id="tvDrgResults" VBox.vgrow="SOMETIMES" />
+                                <Separator prefWidth="200.0" />
+                                <RulesTableView fx:id="tvRules" maxHeight="1.7976931348623157E308">
+                                    <VBox.margin>
+                                        <Insets bottom="5.0" />
+                                    </VBox.margin>
+                                </RulesTableView>
+                            </children>
+                        </VBox>
+                        <AnchorPane>
+                            <children>
+                                <TabPane fx:id="tabPaneCaseContent" prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <tabs>
+                                        <Tab fx:id="tabIcd" closable="false" text="Untitled Tab 1" />
+                                        <Tab fx:id="tabCaseData" closable="false" text="Untitled Tab" />
+                                        <Tab fx:id="tabDepartmentData" closable="false" text="Untitled Tab" />
+                                    </tabs>
+                                </TabPane>
+                            </children>
+                        </AnchorPane>
+                    </items>
+                </SplitPane>
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>

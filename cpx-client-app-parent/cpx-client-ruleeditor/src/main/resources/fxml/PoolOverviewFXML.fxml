@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.lb.cpx.client.core.model.fx.section.SectionHeader?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-border-color: -cpx-tab-pane-background; -fx-border-width: 0 0 0 1;" stylesheets="@../styles/ruleeditor.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.lb.cpx.client.ruleeditor.menu.PoolOverviewFXMLController">
+    <children>
+        <VBox styleClass="edit-popover" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <HBox maxHeight="48.0" prefHeight="48.0" styleClass="cpx-top-pane" />
+                <SplitPane dividerPositions="0.29797979797979796" prefHeight="160.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                    <items>
+                        <AnchorPane>
+                            <children>
+                                <HBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <children>
+                                        <VBox HBox.hgrow="ALWAYS">
+                                            <children>
+                                                <SectionHeader fx:id="shPoolsMenu" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="49.0" title="" />
+                                                <VBox fx:id="boxPools" VBox.vgrow="ALWAYS" />
+                                            </children>
+                                        </VBox>
+                                    </children>
+                                </HBox>
+                            </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="apPoolContent" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" />
+                    </items>
+                </SplitPane>
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>

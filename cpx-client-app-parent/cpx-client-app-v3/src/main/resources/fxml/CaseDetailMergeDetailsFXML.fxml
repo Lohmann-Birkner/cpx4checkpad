@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.lb.cpx.client.app.cm.fx.simulation.tables.CaseDetailsScrollPane?>
+<?import java.lang.String?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane id="AnchorPane" prefHeight="800.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.lb.cpx.client.app.job.fx.casemerging.details.CaseDetailMergeDetailsFXMLController">
+    <stylesheets>
+        <URL value="@/styles/cpx-default.css" />
+    </stylesheets>
+    <children>
+        <SplitPane dividerPositions="0.8" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <items>
+                <CaseDetailsScrollPane fx:id="gpCaseDetails" />
+                <ScrollPane fx:id="spGeneralData" fitToHeight="true" fitToWidth="true">
+                    <content>
+                        <HBox fx:id="hBoxGeneralData">
+                            <children>
+                                <GridPane fx:id="gpGeneralData" HBox.hgrow="ALWAYS">
+                                    <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" />
+                                        <ColumnConstraints hgrow="ALWAYS" maxWidth="1.7976931348623157E308" minWidth="-Infinity" />
+                                        <ColumnConstraints hgrow="ALWAYS" maxWidth="-Infinity" minWidth="-Infinity" />
+                                        <ColumnConstraints hgrow="ALWAYS" maxWidth="80.0" minWidth="-Infinity" />
+                                        <ColumnConstraints hgrow="ALWAYS" maxWidth="-Infinity" minWidth="-Infinity" />
+                                        <ColumnConstraints hgrow="ALWAYS" maxWidth="1.7976931348623157E308" minWidth="-Infinity" />
+                                        <ColumnConstraints hgrow="ALWAYS" maxWidth="-Infinity" minWidth="-Infinity" />
+                                        <ColumnConstraints hgrow="ALWAYS" maxWidth="1.7976931348623157E308" minWidth="-Infinity" />
+                                        <ColumnConstraints hgrow="ALWAYS" maxWidth="-Infinity" minWidth="-Infinity" />
+                                        <ColumnConstraints hgrow="ALWAYS" maxWidth="1.7976931348623157E308" minWidth="-Infinity" />
+                                    </columnConstraints>
+                                    <rowConstraints>
+                                        <RowConstraints vgrow="NEVER" />
+                                        <RowConstraints vgrow="NEVER" />
+                                        <RowConstraints vgrow="NEVER" />
+                                        <RowConstraints vgrow="NEVER" />
+                                        <RowConstraints vgrow="NEVER" />
+                                    </rowConstraints>
+                                    <children>
+                                        <VBox>
+                                            <children>
+                                                <Label fx:id="lblPatientText" text="Label" />
+                                            </children>
+                                        </VBox>
+                                        <VBox GridPane.columnIndex="2">
+                                            <children>
+                                                <Label fx:id="lblAgeText" text="Label" />
+                                            </children>
+                                        </VBox>
+                                        <VBox GridPane.columnIndex="4">
+                                            <children>
+                                                <Label fx:id="lblCaseNumberText" text="Label" />
+                                            </children>
+                                        </VBox>
+                                        <VBox GridPane.columnIndex="1">
+                                            <children>
+                                                <Label fx:id="lblPatientNameData" text="Label" />
+                                                <Label fx:id="lblPatientNumberData" text="Label" />
+                                            </children>
+                                        </VBox>
+                                        <VBox fx:id="vBoxWeightAndAgeData" GridPane.columnIndex="3">
+                                            <children>
+                                                <Label fx:id="lblPatientAgeData" text="Label" />
+                                            </children>
+                                        </VBox>
+                                        <VBox GridPane.columnIndex="5">
+                                            <children>
+                                                <Label fx:id="lblCaseNumberData" text="Label" />
+                                            </children>
+                                        </VBox>
+                                        <VBox GridPane.columnIndex="8">
+                                            <children>
+                                                <Label fx:id="lblInsuranceText" text="Label" />
+                                            </children>
+                                        </VBox>
+                                        <VBox GridPane.columnIndex="9">
+                                            <children>
+                                                <Label fx:id="lblInsuranceCompanyData" text="Label" />
+                                                <Label fx:id="lblInsuranceNumberData" text="Label" />
+                                            </children>
+                                        </VBox>
+                                        <VBox GridPane.columnIndex="7">
+                                            <children>
+                                                <Label fx:id="lblHospitalNameData" text="Label" />
+                                                <Label fx:id="lblHospitalNumberData" text="Label" />
+                                            </children>
+                                        </VBox>
+                                        <VBox GridPane.columnIndex="6">
+                                            <children>
+                                                <Label fx:id="lblHospitalText" text="Label" />
+                                            </children>
+                                        </VBox>
+                                    </children>
+                                    <styleClass>
+                                        <String fx:value="default-distances" />
+                                        <String fx:value="default-grid" />
+                                    </styleClass>
+                                </GridPane>
+                            </children>
+                            <padding>
+                                <Insets bottom="12.0" left="12.0" right="25.0" top="12.0" />
+                            </padding>
+                        </HBox>
+                    </content>
+                </ScrollPane>
+            </items>
+        </SplitPane>
+    </children>
+</AnchorPane>

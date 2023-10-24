@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane minHeight="0.0" minWidth="0.0" prefWidth="850.0" stylesheets="@../styles/cpx-default.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.lb.cpx.client.core.model.image.CropImageFXMLController">
+    <children>
+        <HBox alignment="CENTER_LEFT" spacing="12.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <Button mnemonicParsing="false" onAction="#onOpenFile" text="Bild auswählen" HBox.hgrow="NEVER" />
+                <Label fx:id="labelImagePath" text="Label" HBox.hgrow="NEVER" />
+                <Pane HBox.hgrow="ALWAYS" />
+                <Label fx:id="labelSetSize" alignment="CENTER_RIGHT" contentDisplay="RIGHT" text="Label" HBox.hgrow="NEVER" />
+            </children>
+        </HBox>
+        <VBox layoutY="37.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="37.0">
+            <children>
+                <HBox prefHeight="475.0" spacing="5.0" VBox.vgrow="ALWAYS">
+                    <children>
+                        <ScrollPane fx:id="scrollPane" fitToWidth="true" hbarPolicy="NEVER" pannable="true" HBox.hgrow="ALWAYS">
+                            <padding>
+                                <Insets bottom="-4.0" left="-4.0" right="-4.0" top="-4.0" />
+                            </padding>
+                            <HBox.margin>
+                                <Insets />
+                            </HBox.margin>
+                        </ScrollPane>
+                        <Slider fx:id="selectionSizeSlider" blockIncrement="5.0" majorTickUnit="100.0" orientation="VERTICAL" prefWidth="35.0" showTickLabels="true" showTickMarks="true" />
+                    </children>
+                </HBox>
+                <Label fx:id="labelSelection" text="Label" />
+                <ScrollPane fitToHeight="true" fitToWidth="true" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="114.0" prefWidth="200.0">
+                    <content>
+                        <HBox fx:id="hBoxImageSelection" prefHeight="100.0" prefWidth="200.0" spacing="12.0" />
+                    </content>
+                </ScrollPane>
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>

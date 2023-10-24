@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence              http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+    <persistence-unit name="dbsys_common" transaction-type="JTA">
+        <!-- <jta-data-source>java:/jboss/datasources/CpXCommonDB</jta-data-source> -->
+        <class>de.lb.cpx.server.commonDB.model.CAtc</class>
+        <class>de.lb.cpx.server.commonDB.model.CCase</class>
+        <class>de.lb.cpx.server.commonDB.model.CCatalog</class>
+        <class>de.lb.cpx.server.commonDB.model.CCountry</class>
+        <!--<class>de.lb.cpx.server.commonDB.model.CdbFilter</class>
+        <class>de.lb.cpx.server.commonDB.model.CdbFilterProperties</class>-->
+        <class>de.lb.cpx.server.commonDB.model.CdbUser2Role</class>
+        <class>de.lb.cpx.server.commonDB.model.CdbUserRoles</class>
+        <class>de.lb.cpx.server.commonDB.model.CdbUsers</class>
+        <class>de.lb.cpx.server.commonDB.model.CBaserate</class>
+        <class>de.lb.cpx.server.commonDB.model.CDeadline</class>
+        <class>de.lb.cpx.server.commonDB.model.CDepartment</class>
+        <class>de.lb.cpx.server.commonDB.model.CDoctor</class>
+        <class>de.lb.cpx.server.commonDB.model.CDrgCatalog</class>
+        <class>de.lb.cpx.server.commonDB.model.CDrgCw2DepType</class>
+        <class>de.lb.cpx.server.commonDB.model.CDrgLosDependency</class>
+        <class>de.lb.cpx.server.commonDB.model.CFeeCatalog</class>
+        <class>de.lb.cpx.server.commonDB.model.CFeeDurations</class>
+        <class>de.lb.cpx.server.commonDB.model.CFeeValues</class>
+        <class>de.lb.cpx.server.commonDB.model.CHospital</class>
+        <class>de.lb.cpx.server.commonDB.model.CIcdCatalog</class>
+        <class>de.lb.cpx.server.commonDB.model.CJobLog</class>
+        <class>de.lb.cpx.server.commonDB.model.rules.CIcdTransferCatalog</class>
+        <class>de.lb.cpx.server.commonDB.model.CIn4Med</class>
+        <class>de.lb.cpx.server.commonDB.model.CInsuranceCompany</class>
+        <!-- <class>de.lb.cpx.server.commonDB.model.CMdcSkCatalog</class> -->
+        <class>de.lb.cpx.server.commonDB.model.CMdk</class>
+        <class>de.lb.cpx.server.commonDB.model.CMdkAuditreason</class>
+        <class>de.lb.cpx.server.commonDB.model.CMdkAuditquota</class>
+        <class>de.lb.cpx.server.commonDB.model.COpsCatalog</class>
+        <class>de.lb.cpx.server.commonDB.model.rules.COpsTransferCatalog</class>
+        <class>de.lb.cpx.server.commonDB.model.CPeppCaseWeights</class>
+        <class>de.lb.cpx.server.commonDB.model.CPeppCatalog</class>
+        <class>de.lb.cpx.server.commonDB.model.CPzn</class>
+        <class>de.lb.cpx.server.commonDB.model.CSearchList</class>
+        <class>de.lb.cpx.server.commonDB.model.rules.CrgRule2RoleDev</class>
+        <class>de.lb.cpx.server.commonDB.model.rules.CrgRule2RoleProd</class>
+        <class>de.lb.cpx.server.commonDB.model.rules.CrgRule2TableDev</class>
+        <class>de.lb.cpx.server.commonDB.model.rules.CrgRule2TableProd</class>
+        <class>de.lb.cpx.server.commonDB.model.rules.CrgRulePoolsDev</class>
+        <class>de.lb.cpx.server.commonDB.model.rules.CrgRulePoolsProd</class>
+        <class>de.lb.cpx.server.commonDB.model.rules.CrgRulesDev</class>
+        <class>de.lb.cpx.server.commonDB.model.rules.CrgRulesProd</class>
+        <class>de.lb.cpx.server.commonDB.model.rules.CrgRuleTablesDev</class>
+        <class>de.lb.cpx.server.commonDB.model.rules.CrgRuleTablesProd</class>
+        <class>de.lb.cpx.server.commonDB.model.rules.CrgRuleTypesDev</class>
+        <class>de.lb.cpx.server.commonDB.model.rules.CrgRuleTypesProd</class>
+        <class>de.lb.cpx.server.commonDB.model.CSupplementaryFee</class>
+        <class>de.lb.cpx.server.commonDB.model.CWard</class>
+        <class>de.lb.cpx.server.commonDB.model.VwCatalogOverview</class>
+        <class>de.lb.cpx.server.commonDB.model.CDrafts</class>
+        <class>de.lb.cpx.server.commonDB.model.CWmListActionSubject</class>
+        <class>de.lb.cpx.server.commonDB.model.CWmListDocumentType</class>
+        <class>de.lb.cpx.server.commonDB.model.CWmListDraftType</class>
+        <class>de.lb.cpx.server.commonDB.model.CWmListProcessTopic</class>
+        <class>de.lb.cpx.server.commonDB.model.CWmListReminderSubject</class>
+        <class>de.lb.cpx.server.commonDB.model.CWmListProcessResult</class>
+        <class>de.lb.cpx.server.commonDB.model.CWmListMdkState</class>
+        <class>de.lb.cpx.server.commonDB.model.CdbSequence</class>
+        <class>de.lb.cpx.server.commonDB.model.CIcdThesaurus</class>
+        <class>de.lb.cpx.server.commonDB.model.COpsThesaurus</class>
+        <class>de.lb.cpx.server.commonDB.model.COpsAop</class>
+        <class>de.lb.cpx.server.commonDB.model.CTextTemplate</class>
+        <class>de.lb.cpx.server.commonDB.model.CTextTemplate2UserRole</class>
+        <class>de.lb.cpx.server.commonDB.model.CTextTemplate2Context</class>
+        <class>de.lb.cpx.server.commonDB.model.CBookmarksCustomer</class>
+        <class>de.lb.cpx.server.commonDB.model.CBookmarks</class>
+        <class>de.lb.cpx.server.commonDB.model.CMdkNegotiableAuditquota</class>
+        <exclude-unlisted-classes>false</exclude-unlisted-classes>
+        <shared-cache-mode>ENABLE_SELECTIVE</shared-cache-mode>
+        <properties>
+            <!--   <property name="hibernate.hbm2ddl.auto" value="create"/>  -->
+            <!--  <property name="hibernate.hbm2ddl.auto" value="create-drop"/> -->
+            <!--  <property name="hibernate.hbm2ddl.auto" value="update"/> -->
+            <!--  
+                 <property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@LBBatch-01:1522:ORCL12"/>
+                 <property name="javax.persistence.jdbc.user" value="cpx_common"/>
+                 <property name="javax.persistence.jdbc.password" value="oracle"/>
+                 <property name="hibernate.transaction.jta.platform" value="org.hibernate.service.jta.platform.internal.JBossAppServerJtaPlatform"/>
+                 <property name="javax.persistence.jdbc.driver" value="oracle.jdbc.driver.OracleDriver"/>
+                 <property name="hibernate.dialect" value="org.hibernate.dialect.Oracle10gDialect"/>
+            -->
+            <property name="hibernate.jpa.compliance.global_id_generators" value="false"/>
+        </properties>
+    </persistence-unit>
+</persistence>

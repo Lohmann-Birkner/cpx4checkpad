@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.lb.cpx.client.app.cm.fx.details.RiskSummary?>
+<?import de.lb.cpx.client.core.model.fx.button.AddButton?>
+<?import de.lb.cpx.client.core.model.fx.labeled.LabeledTextArea?>
+<?import de.lb.cpx.client.core.model.fx.section.SectionHeader?>
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane maxHeight="1.7976931348623157E308" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <VBox fx:id="vBoxMainId" maxHeight="1.7976931348623157E308" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+         <children>
+            <SectionHeader fx:id="shTitle" title="Risikobeurteilung">
+               <VBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" />
+               </VBox.margin>
+            </SectionHeader>
+            <CheckBox fx:id="chkActual4Reg" mnemonicParsing="false" text="Zur Risikoauswertung verwendet">
+               <VBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </VBox.margin>
+            </CheckBox>
+            <HBox>
+               <VBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </VBox.margin>
+               <children>
+                  <VBox spacing="5.0">
+                     <children>
+                        <Label fx:id="lblDescript1Id" text="Label" />
+                        <Label fx:id="lblDescript2Id" maxHeight="50.0" maxWidth="1.7976931348623157E308" text="Label" VBox.vgrow="ALWAYS">
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <HBox fx:id="boxOptionalButtons" HBox.hgrow="ALWAYS">
+                     <HBox.margin>
+                        <Insets right="5.0" />
+                     </HBox.margin>
+                  </HBox>
+               </children>
+            </HBox>
+            <HBox fx:id="fullContentId" spacing="12.0" VBox.vgrow="ALWAYS">
+               <children>
+                  <VBox fx:id="vBoxFullRiskId" maxHeight="1.7976931348623157E308" maxWidth="-Infinity" minWidth="-Infinity">
+                     <children>
+                        <Label fx:id="lblFullRiskTitleId" maxWidth="1.7976931348623157E308" text="Vor Rechnungstellung">
+                           <VBox.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </VBox.margin>
+                           <styleClass>
+                              <String fx:value="cpx-detail-label" />
+                              <String fx:value="text-header" />
+                           </styleClass>
+                        </Label>
+                        <RiskSummary fx:id="fullRiskSummaryId" />
+                        <LabeledTextArea fx:id="fullRiskCommentId" maxHeight="1.7976931348623157E308" maxSize="500" VBox.vgrow="ALWAYS">
+                           <VBox.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </VBox.margin>
+                        </LabeledTextArea>
+                     </children>
+                  </VBox>
+                  <Separator fx:id="separatorId" orientation="VERTICAL">
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                  </Separator>
+                  <GridPane vgap="5.0" HBox.hgrow="ALWAYS">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="285.0" />
+                      <ColumnConstraints hgrow="ALWAYS" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints maxHeight="-Infinity" />
+                      <RowConstraints maxHeight="-Infinity" vgrow="ALWAYS" />
+                        <RowConstraints maxHeight="-Infinity" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="-Infinity" minHeight="10.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label fx:id="lblRiskAreasId" maxWidth="1.7976931348623157E308" text="Risiken">
+                           <styleClass>
+                              <String fx:value="cpx-detail-label" />
+                              <String fx:value="text-header" />
+                           </styleClass>
+                           <padding>
+                              <Insets bottom="5.0" right="5.0" top="5.0" />
+                           </padding>
+                        </Label>
+                        <VBox fx:id="vbRiskSelectionId" depthTest="DISABLE" minWidth="-Infinity" GridPane.rowIndex="3">
+                           <children>
+                              <Label fx:id="lblRiskSetId" text="Label">
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" right="5.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <HBox fx:id="selectRiskId" alignment="CENTER_LEFT" spacing="5.0">
+                                 <children>
+                                    <ComboBox fx:id="riskAreasId" maxWidth="1.7976931348623157E308" styleClass="combo-box" HBox.hgrow="ALWAYS">
+                                       <HBox.margin>
+                                          <Insets />
+                                       </HBox.margin>
+                                    </ComboBox>
+                                    <AddButton fx:id="btnAddRiskId">
+                                       <HBox.margin>
+                                          <Insets />
+                                       </HBox.margin>
+                                    </AddButton>
+                                 </children>
+                                 <opaqueInsets>
+                                    <Insets right="5.0" />
+                                 </opaqueInsets>
+                              </HBox>
+                           </children>
+                        </VBox>
+                        <ListView fx:id="lvRisks" prefHeight="459.0" prefWidth="248.0" GridPane.rowIndex="4">
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                           <GridPane.margin>
+                              <Insets />
+                           </GridPane.margin>
+                           <styleClass>
+                              <String fx:value="bordered-list-view" />
+                              <String fx:value="stay-selected-list-view" />
+                           </styleClass>
+                        </ListView>
+                        <VBox fx:id="boxReadWriteContent" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="3" GridPane.rowSpan="2">
+                           <GridPane.margin>
+                              <Insets left="5.0" />
+                           </GridPane.margin>
+                        </VBox>
+                        <VBox fx:id="boxReadOnlyContent" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <GridPane.margin>
+                              <Insets left="5.0" top="-6.0" />
+                           </GridPane.margin>
+                        </VBox>
+                        <VBox fx:id="vbRulesId" GridPane.rowIndex="1">
+                           <GridPane.margin>
+                              <Insets />
+                           </GridPane.margin>
+                           <children>
+                              <HBox alignment="CENTER_LEFT">
+                                 <children>
+                                    <Label fx:id="lblRulesRisks" maxWidth="1.7976931348623157E308" text="Label" HBox.hgrow="ALWAYS">
+                                       <padding>
+                                          <Insets bottom="5.0" />
+                                       </padding>
+                                    </Label>
+                                    <HBox fx:id="boxVersionCompare" alignment="CENTER_LEFT" />
+                                 </children>
+                              </HBox>
+                              <ListView fx:id="lstFromRulesId">
+                                 <styleClass>
+                                    <String fx:value="bordered-list-view" />
+                                    <String fx:value="stay-selected-list-view" />
+                                 </styleClass>
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" />
+                                 </VBox.margin>
+                              </ListView>
+                           </children>
+                        </VBox>
+                        <Separator prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                           <GridPane.margin>
+                              <Insets left="12.0" />
+                           </GridPane.margin></Separator>
+                     </children>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" />
+                     </padding>
+                  </GridPane>
+               </children>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets left="5.0" />
+               </VBox.margin>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="779.0" prefWidth="632.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.lb.cpx.patient.status.HealthStatusController">
+    <children>
+        <ScrollPane fx:id="scrollPane" fitToHeight="true" fitToWidth="true" layoutY="45.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="45.0">
+            <content>
+                <StackPane fx:id="imagePane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" />
+            </content>
+        </ScrollPane>
+        <Button fx:id="showBodyButton" alignment="CENTER" contentDisplay="CENTER" layoutX="22.0" layoutY="14.0" maxWidth="100.0" minWidth="100.0" mnemonicParsing="false" onAction="#showBodyButtonAction" prefWidth="100.0" text="Show Body" AnchorPane.topAnchor="14.0" />
+        <Button fx:id="zoomOutBtn" alignment="CENTER" contentDisplay="CENTER" layoutX="148.0" layoutY="14.0" maxWidth="100.0" minWidth="100.0" mnemonicParsing="false" onAction="#zoomInBtnAction" prefWidth="100.0" text="Zoom In" />
+        <Button fx:id="zoomOutBtn" alignment="CENTER" contentDisplay="CENTER" layoutX="275.0" layoutY="14.0" maxWidth="100.0" minWidth="100.0" mnemonicParsing="false" onAction="#zoomOutBtnAction" prefWidth="100.0" text="Zoom Out" />
+        <Button fx:id="newDiseasesBtn" alignment="CENTER" contentDisplay="CENTER" layoutX="404.0" layoutY="14.0" maxWidth="144.0" minWidth="100.0" mnemonicParsing="false" onAction="#newDiseasesButtonAction" prefHeight="25.0" prefWidth="144.0" text="Roll the disease's dice" />
+    </children>
+</AnchorPane>

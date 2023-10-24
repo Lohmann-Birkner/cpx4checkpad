@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.VBox?>
+
+
+<VBox prefHeight="400.0" prefWidth="600.0" stylesheets="@../styles/ruleeditor.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.lb.cpx.client.ruleeditor.menu.filterlists.RuleListFXMLController">
+    <children>
+        <TabPane fx:id="tpRuleList" prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" VBox.vgrow="ALWAYS" />
+    </children>
+</VBox>

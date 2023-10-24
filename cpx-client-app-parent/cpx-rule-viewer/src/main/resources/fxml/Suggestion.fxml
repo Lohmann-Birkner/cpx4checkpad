@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+
+<HBox minWidth="-Infinity" spacing="5.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <Label fx:id="lblActionId" maxWidth="-Infinity" minWidth="-Infinity" text="Label" />
+        <Label fx:id="lblCriterion" maxWidth="-Infinity" minWidth="-Infinity" text="Label" />
+        <Label fx:id="lblCriterionOperator" maxWidth="-Infinity" minWidth="-Infinity" text="Label" />
+        <Label fx:id="lblCriterionValue" maxWidth="-Infinity" minWidth="-Infinity" text="Label" />
+        <HBox fx:id="boxConditionArea">
+            <children>
+                <Label text="(" />
+                <HBox spacing="5.0">
+                    <children>
+                        <Label fx:id="lblConditionText" text="Label" />
+                        <Label fx:id="lblConditionCriterion" text="Label" />
+                        <Label fx:id="lblConditionOperator" text="Label" />
+                        <Label fx:id="lblConditionValue" text="Label" />
+                    </children>
+                </HBox>
+                <Label text=")" />
+            </children>
+        </HBox>
+    </children>
+</HBox>

@@ -1,0 +1,62 @@
+/*
+Copyright (c) 2019 Lohmann & Birkner.
+NOTICE:  All information contained herein is, and remains
+the property of Lohmann & Birkner Health Care Consulting GmbH and its suppliers,
+if any.  The intellectual and technical concepts contained
+herein are proprietary to Lohmann & Birkner
+and its suppliers and are protected by trade secret or copyright law.
+Dissemination of this information or reproduction of this material
+is strictly forbidden unless prior written permission is obtained
+from Lohmann & Birkner Health Care Consulting GmbH
+http://www.lohmann-birkner.de
+
+Contributors:
+   2019  wilde - initial API and implementation and/or initial documentation
+*/
+/* 
+    Created on : 08.08.2019, 17:33:39
+    Author     : wilde
+*/
+
+/******************************************************************************
+ *                                                                             *
+ * AUTO COMPLETE                                                              *
+ *                                                                             *
+ *****************************************************************************/
+
+.auto-complete-popup > .list-view {
+    /*    -fx-background-color:
+            linear-gradient(to bottom,
+                derive(-fx-color,-17%),
+                derive(-fx-color,-30%)
+            ),
+            white;
+        -fx-background-insets: -1 -2 -1 -1, 0 -1 0 0;
+        -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.2) , 12, 0.0 , 0 , 8 );*/
+    -fx-background-color: -white01;
+    -fx-background-insets: 0, 1;
+    /*    -fx-cell-size: 24px;*/
+    -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.2) , 12, 0.0 , 0 , 8 );
+}
+
+/*.auto-complete-popup > .list-view > .virtual-flow > .clipped-container > .sheet > .list-cell {
+    -fx-padding: 4 0 4 5;
+     No alternate highlighting 
+    -fx-background: white;
+}
+*/.auto-complete-popup > .list-view > .virtual-flow > .clipped-container > .sheet > .list-cell:filled:selected {
+    -fx-background: -table-row-background-selected;
+    -fx-background-color: -table-row-background-selected;
+}
+.auto-complete-popup > .list-view > .virtual-flow > .clipped-container > .sheet > .list-cell{
+    -fx-padding: 4;
+}
+.auto-complete-popup  > .list-view > .virtual-flow > .clipped-container > .sheet > .list-cell:filled:hover,
+.auto-complete-popup  > .list-view > .virtual-flow > .clipped-container > .sheet > .list-cell:filled:selected:hover {
+    -fx-background: -table-row-background-selected;
+    -fx-background-color: -table-row-background-selected;
+    -fx-text-fill:white;
+}/*
+.auto-complete-popup > .list-view > .placeholder > .label {
+    -fx-text-fill: derive(white,-30%);
+}*/

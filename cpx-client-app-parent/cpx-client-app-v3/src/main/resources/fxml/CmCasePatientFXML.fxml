@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.lb.cpx.client.core.model.fx.checked_combobox.CpxComboBox?>
+<?import de.lb.cpx.client.core.model.fx.datepicker.FormatedDatePicker?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane id="AnchorPane" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.lb.cpx.client.app.cm.fx.details.CmCasePatientFXMLController">
+    <stylesheets>
+        <URL value="@/styles/cpx-default.css" />
+    </stylesheets>
+    <children>
+      <HBox layoutY="3.0" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="3.0">
+         <children>
+              <VBox fx:id="labelPane" minWidth="-Infinity" prefHeight="432.0" prefWidth="400.0" spacing="12.0">
+                  <children>
+                      <GridPane alignment="CENTER_LEFT" styleClass="case-management-grid" VBox.vgrow="NEVER">
+                          <columnConstraints>
+                              <ColumnConstraints hgrow="ALWAYS" maxWidth="-Infinity" minWidth="10.0" prefWidth="200.0" />
+                              <ColumnConstraints hgrow="ALWAYS" maxWidth="1.7976931348623157E308" minWidth="10.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                              <RowConstraints fx:id="gpPatient" minHeight="10.0" prefHeight="35.0" valignment="CENTER" vgrow="NEVER" />
+                              <RowConstraints minHeight="10.0" prefHeight="35.0" valignment="CENTER" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="35.0" valignment="CENTER" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="35.0" valignment="CENTER" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="35.0" valignment="CENTER" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="35.0" valignment="CENTER" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="35.0" valignment="CENTER" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="35.0" valignment="CENTER" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="35.0" valignment="CENTER" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="35.0" valignment="CENTER" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="35.0" valignment="CENTER" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="35.0" valignment="CENTER" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="25.0" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                          <children>
+                              <HBox alignment="CENTER_LEFT" styleClass="case-management-grid-even" GridPane.columnIndex="1">
+                                  <children>
+                                      <TextField fx:id="tfPatientNumber" />
+                                  </children>
+                              </HBox>
+                              <HBox alignment="CENTER_LEFT" spacing="12.0" styleClass="case-management-grid-odd" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                  <children>
+                                      <TextField fx:id="tfPatientFirstName" />
+                                  </children>
+                              </HBox>
+                              <HBox alignment="CENTER_LEFT" maxHeight="143.0" spacing="12.0" styleClass="case-management-grid-even" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4">
+                                  <children>
+                                      <FormatedDatePicker fx:id="dpDateOfBirth" editable="false" prefHeight="25.0" prefWidth="150.0" />
+                                  </children>
+                              </HBox>
+                              <HBox alignment="CENTER_LEFT" spacing="12.0" styleClass="case-management-grid-odd" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                                  <children>
+                                      <TextField fx:id="tfStreet" />
+                                  </children>
+                              </HBox>
+                              <HBox alignment="CENTER_LEFT" spacing="12.0" styleClass="case-management-grid-odd" GridPane.columnIndex="1" GridPane.rowIndex="9">
+                                  <children>
+                                      <TextField fx:id="tftCountry" editable="false" />
+                                  </children>
+                              </HBox>
+                              <HBox alignment="CENTER_LEFT" styleClass="case-management-grid-odd" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+                              <HBox alignment="CENTER_LEFT" styleClass="case-management-grid-odd" GridPane.columnIndex="1" GridPane.rowIndex="7">
+                                  <children>
+                                      <TextField fx:id="tfcity" />
+                                  </children>
+                              </HBox>
+                              <HBox alignment="CENTER_LEFT" styleClass="case-management-grid-even" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                  <children>
+                                      <TextField fx:id="tfPatientLastName" />
+                                  </children>
+                              </HBox>
+                              <HBox alignment="CENTER_LEFT" styleClass="case-management-grid-odd" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                  <children>
+                                      <CpxComboBox fx:id="cbGenderText" prefHeight="25.0" prefWidth="149.0" />
+                                  </children>
+                              </HBox>
+                              <HBox alignment="CENTER_LEFT" styleClass="case-management-grid-even" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                                  <children>
+                                      <TextField fx:id="tfZipCode" />
+                                  </children>
+                              </HBox>
+                              <HBox alignment="CENTER_LEFT" styleClass="case-management-grid-even" GridPane.columnIndex="1" GridPane.rowIndex="8">
+                                  <children>
+                                      <TextField fx:id="tfIPatientInsuranceNumber" />
+                                  </children>
+                              </HBox>
+                              <HBox alignment="CENTER_LEFT" styleClass="case-management-grid-even">
+                                  <children>
+                                      <Label fx:id="lblPatientNumber" alignment="BOTTOM_LEFT" contentDisplay="TOP" prefHeight="30.0" prefWidth="178.0" text="Label" />
+                                  </children>
+                              </HBox>
+                              <HBox alignment="CENTER_LEFT" styleClass="case-management-grid-odd" GridPane.rowIndex="1">
+                                  <children>
+                                      <Label fx:id="lblPatientFirstName" prefHeight="21.0" text="Label" />
+                                  </children>
+                              </HBox>
+                              <HBox alignment="CENTER_LEFT" styleClass="case-management-grid-even" GridPane.rowIndex="2">
+                                  <children>
+                                      <Label fx:id="lblPatientLastName" text="Label" />
+                                  </children>
+                              </HBox>
+                              <HBox alignment="CENTER_LEFT" styleClass="case-management-grid-even" GridPane.rowIndex="4">
+                                  <children>
+                                      <Label fx:id="lblDateOfBirth" prefHeight="21.0" text="Label" />
+                                  </children>
+                              </HBox>
+                              <HBox alignment="CENTER_LEFT" minHeight="23.0" prefHeight="23.0" prefWidth="198.0" styleClass="case-management-grid-odd" GridPane.rowIndex="3">
+                                  <children>
+                                      <Label fx:id="lblGender" prefHeight="21.0" text="Label" />
+                                  </children>
+                              </HBox>
+                              <HBox alignment="CENTER_LEFT" styleClass="case-management-grid-even" GridPane.rowIndex="6">
+                                  <children>
+                                      <Label fx:id="lblZipCode" prefHeight="21.0" text="Label" />
+                                  </children>
+                              </HBox>
+                              <HBox alignment="CENTER_LEFT" styleClass="case-management-grid-odd" GridPane.rowIndex="7">
+                                  <children>
+                                      <Label fx:id="lblCity" prefHeight="21.0" text="Label" />
+                                  </children>
+                              </HBox>
+                              <HBox alignment="CENTER_LEFT" styleClass="case-management-grid-odd" GridPane.rowIndex="9">
+                                  <children>
+                                      <Label fx:id="lblCountry" prefHeight="21.0" text="Label" />
+                                  </children>
+                              </HBox>
+                              <HBox alignment="CENTER_LEFT" styleClass="case-management-grid-even" GridPane.rowIndex="8">
+                                  <children>
+                                      <Label fx:id="lblPatientnsuranceNumber" text="Label" />
+                                  </children>
+                              </HBox>
+                              <HBox alignment="CENTER_LEFT" styleClass="case-management-grid-even" GridPane.rowIndex="10">
+                                  <children>
+                                      <Label fx:id="lblInsuranceGroup" prefHeight="21.0" text="Label" />
+                                  </children>
+                              </HBox>
+                              <HBox styleClass="case-management-grid-odd" GridPane.rowIndex="5">
+                                  <children>
+                                      <Label fx:id="lblStreet" prefHeight="18.0" text="Label" />
+                                  </children>
+                              </HBox>
+                              <HBox alignment="CENTER_LEFT" styleClass="case-management-grid-odd" GridPane.rowIndex="11">
+                                  <children>
+                                      <Label fx:id="lblInsurance" prefHeight="21.0" text="Label" />
+                                  </children>
+                              </HBox>
+                              <HBox alignment="CENTER_LEFT" GridPane.columnIndex="1" GridPane.rowIndex="11">
+                                  <children>
+                                      <TextField fx:id="tfInsurance" />
+                                  </children>
+                              </HBox>
+                              <HBox styleClass="case-management-grid-even" GridPane.columnIndex="1" GridPane.rowIndex="10">
+                                  <children>
+                                      <Label fx:id="lblInsuranceGroupText" text="Label" />
+                                  </children>
+                              </HBox>
+                          </children>
+                          <VBox.margin>
+                              <Insets left="12.0" top="12.0" />
+                          </VBox.margin>
+                      </GridPane>
+                  </children>
+              </VBox>
+            <AnchorPane fx:id="anchorPaneParent" HBox.hgrow="ALWAYS" />
+         </children>
+      </HBox>
+    </children>
+</AnchorPane>

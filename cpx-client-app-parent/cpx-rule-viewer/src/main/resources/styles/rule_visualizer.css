@@ -1,0 +1,317 @@
+.rule-view{
+    -fx-background-color: white;
+}
+.suggestion-view{
+    -fx-border-color: white;
+    -fx-border-width: 1; 
+    -fx-background-color: white;
+}
+.term:selected_node_parent{
+    -fx-background-color:white;
+    -fx-effect: dropshadow(two-pass-box, yellow, 9.5, 0.5, 0, 0);
+}
+.element:selected_node_parent{
+    -fx-background-color:white;
+    -fx-border-color:gold;
+    -fx-effect: dropshadow(two-pass-box, gold, 9.5, 0.5, 0, 0);
+}
+.element:selected_node{
+    -fx-border-color: blue ;
+    -fx-border-width: 1; 
+}
+.term:selected_node{
+    -fx-border-color: blue ;
+    -fx-border-width: 1; 
+}
+.link-area .content{
+    -fx-border-color:grey;
+    -fx-border-width:1;
+    -fx-border-style: segments(5, 5)  line-cap round ;
+}
+.link-area .content:not_empty{
+    -fx-border-color:transparent;
+    -fx-border-width:0;
+}
+.link-area .content:drag_hover{
+    -fx-background-color: white;
+    -fx-effect: dropshadow(two-pass-box, grey, 9.5, 0.5, 0, 0);
+}
+.link-area .content .label{
+    -fx-text-fill:grey;
+}
+.term-area .content{
+    -fx-border-color:grey;
+    -fx-border-width:1;
+    -fx-border-style: segments(5, 5)  line-cap round ;
+}
+.term-area .content .label{
+    -fx-text-fill:grey;
+}
+.term-area .content:not_empty{
+    -fx-border-color:transparent;
+    -fx-border-width:0;
+}
+.term-area .content:drag_hover{
+    -fx-background-color: white;
+    -fx-effect: dropshadow(two-pass-box, grey, 9.5, 0.5, 0, 0);
+}
+.suggestion-area .content{
+    -fx-border-color:grey;
+    -fx-border-width:1;
+    -fx-border-style: segments(5, 5)  line-cap round ;
+}
+.suggestion-area .content .label{
+    -fx-text-fill:grey;
+}
+.suggestion-area .content:not_empty{
+    -fx-border-color:transparent;
+    -fx-border-width:0;
+}
+.suggestion-area .content:drag_hover{
+    -fx-background-color: white;
+    -fx-effect: dropshadow(two-pass-box, grey, 9.5, 0.5, 0, 0);
+}
+.link{
+}
+.link:selected_node_parent{
+}
+.link:selected_node{
+    -fx-border-color: blue ;
+    -fx-border-width: 1; 
+}
+
+.dnd-empty{
+    -fx-border-width: 2;
+    -fx-border-color: transparent; 
+}
+.dnd-top{
+    -fx-border-style: solid solid solid solid;
+    -fx-border-width: 2 2 2 2 ;
+    -fx-border-color: transparent grey transparent transparent; 
+}
+.dnd-bottom{
+    -fx-border-style: solid solid solid solid;
+    -fx-border-width: 2 2 2 2 ;
+    -fx-border-color: transparent transparent grey transparent;
+}
+
+/*.test-cell >.tree-cell{
+    -fx-background-color: red;
+}
+.test-cell:test-result >.tree-cell{
+    -fx-background-color: green;
+}*/
+.rule-test-tree-view .virtual-flow .tree-cell{
+    -fx-text-fill:black;
+}
+.rule-test-tree-view .virtual-flow .tree-cell>.tree-disclosure-node .arrow  {
+    -fx-background-color: black;
+}
+.rule-test-tree-view .virtual-flow .tree-cell:expanded  .tree-disclosure-node  .arrow {
+    -fx-background-color: black;
+}
+.rule-test-tree-view .virtual-flow .tree-cell:test-result_neg{
+    -fx-text-fill:white;
+}
+.rule-test-tree-view .virtual-flow .tree-cell:test-result_neg>.tree-disclosure-node .arrow  {
+    -fx-background-color:white;
+}
+.rule-test-tree-view .virtual-flow .tree-cell:expanded::test-result_neg  .tree-disclosure-node  .arrow{
+    -fx-background-color: white;
+}
+/*.tree-cell:test-result_pos{
+    -fx-background-color: green;
+}
+.tree-cell:test-result_neg{
+    -fx-background-color: lightcoral;
+}*/
+.property-pane{
+    -fx-background-color:white;
+}
+.suggestion:selected_node{
+    -fx-border-color: blue ;
+    -fx-border-width: 1; 
+}
+.suggestion{
+    -fx-border-color: white;
+    -fx-border-width: 1; 
+}
+
+/*.text-value{
+    -fx-text-fill:black; 
+    -fx-font-size:15px;
+}
+.text-value:error{
+    -fx-text-fill:red; 
+}
+.text-value:warning{
+    -fx-text-fill:gold; 
+}
+.text-value:info{
+    -fx-text-fill:skyblue; 
+}
+.text-header{
+    -fx-text-fill:black;
+    -fx-font-size:15px;
+}*/
+
+.draw-board{
+    -fx-background-color:white;
+}
+.rule-editor-view{
+    -fx-background-color:white;
+}
+.property-pane{
+    -fx-max-height:infinity;
+    /*-fx-background-color:red;*/
+}
+.value_hyperlink{
+    -fx-padding:0 0 0 0;
+    -fx-border-width: 0 0 0 0;
+}
+.value_hyperlink:disabled{
+    -fx-text-fill:black;
+    -fx-opacity:1.0;
+}
+.ribbon{
+    -fx-background-color:-grey04;
+}
+.ribbon .separator:horizontal .line{
+    -fx-border-color:grey;
+    -fx-border-width: 0.5;
+}
+.ribbon .separator:vertical .line{
+    -fx-border-color:grey;
+    -fx-border-width: 0.5;
+}
+.ribbon .label{
+    -fx-text-fill:white;
+    /*-fx-text-fill:black;*/
+}
+.ribbon .tab-pane .tab-header-area .tab-header-background{
+    -fx-background-color:transparent;
+    /*    -fx-background-color: -grey04;*/
+}
+.ribbon .tab-pane {
+    -fx-tab-min-height: 10px;
+    -fx-tab-max-height: 20px;
+}
+.ribbon .tab-pane > .tab-header-area > .headers-region > .tab{
+    /*-fx-background-color: -grey04;*/
+    -fx-background-color:transparent;
+    -fx-padding:0 0 0 0;
+    -fx-background-insets:0 0 0 0;
+    /*-fx-border-color:white;*/
+}
+.ribbon .tab-pane > .tab-header-area > .headers-region > .tab:top{
+    -fx-padding:0 0 0 0;
+}
+.ribbon .tab-pane > .tab-header-area > .headers-region > .tab>.tab-container >.tab-label{
+    -fx-font-size:15px;
+}
+.ribbon .tab-pane > .tab-header-area > .headers-region > .tab:selected >.tab-container >.tab-label>.text{
+    /*-fx-underline: true;*/
+    -fx-padding:0 0 0 0;
+}
+.ribbon .tab-pane > .tab-header-area > .headers-region > .tab >.tab-container{
+    -fx-padding:0 0 0 0;
+}
+.ribbon .tab-pane > .tab-header-area > .headers-region > .tab >.tab-container >.focus-indicator{
+    -fx-border-width: 0;
+    -fx-border-insets: 0;
+    -fx-border-radius: 0;
+}
+.ribbon .button{
+    -fx-background-color:transparent;
+    /*-fx-text-fill:white;*/
+    -fx-cursor:hand;
+}
+.split-pane-no-divider {
+    -fx-background-color: -white;
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+}
+.split-pane-no-divider > .split-pane-divider {
+    -fx-padding:  0 1 0 1; 
+}
+/* horizontal the two nodes are placed to the left/right of each other. */
+.split-pane-no-divider:horizontal > .split-pane-divider {
+    -fx-background-color: -transparent;
+    -fx-background-insets: 0 0 0 0;
+}
+/* vertical the two nodes are placed on top of each other. */
+.split-pane-no-divider:vertical > .split-pane-divider {
+    -fx-background-color: -transparent;
+    -fx-background-insets: 0;
+}
+.split-pane-no-divider > .split-pane-divider > .horizontal-grabber {
+    -fx-padding: 0 0 0 0;
+    -fx-background-color: -white01;
+    -fx-background-insets: 0;
+    /*-fx-shape: "M0 0 L0 2 L1 2 L1 0 Z";*/
+}
+.split-pane-no-divider > .split-pane-divider > .vertical-grabber {
+    -fx-padding: 0 0 0 0;
+    -fx-background-color: -white01;
+    -fx-background-insets: 0;
+    /*-fx-shape: "M0 0 L2 0 L2 1 L0 1 Z";*/
+}
+
+.split-pane-small-divider {
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+}
+.split-pane-small-divider:horizontal > .split-pane-divider {
+    -fx-background-color: -grey04;
+    -fx-background-insets: 0 0 0 0;
+}
+.split-pane-small-divider:vertical > .split-pane-divider {
+    -fx-background-color: -transparent;
+    -fx-background-insets: 0;
+}
+/*.split-pane-small-divider:horizontal > .split-pane-divider:hover {
+    -fx-background-color: -grey05;
+    -fx-background-insets: 0 0 0 0;
+}*/
+.split-pane-small-divider:vertical > .split-pane-divider:visited{
+    -fx-background-color: -grey05;
+    -fx-background-insets: 0;
+}
+.split-pane-small-divider > .split-pane-divider > .horizontal-grabber {
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+}
+
+.split-pane-small-divider > .split-pane-divider > .vertical-grabber {
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+}
+
+/*.split-pane-small-divider > .split-pane-divider:hover > .horizontal-grabber {
+    -fx-background-color: white;
+    -fx-background-insets: 0;
+}
+
+.split-pane-small-divider > .split-pane-divider:hover > .vertical-grabber {
+    -fx-background-color: white;
+    -fx-background-insets: 0;
+}+/
+
+.criterion-combo-box .list-view{
+    -fx-pref-height:250;
+}
+/*.ribbon-item .button{
+   -fx-background-color:transparent;
+}
+.ribbon-item-group{
+    -fx-background-color:transparent;
+}
+.ribbon-item-group .button{
+    -fx-background-color:transparent;
+}*/
+
+.editor-container:error .combo-box >.list-cell .text{
+    -fx-fill:red;
+}
+

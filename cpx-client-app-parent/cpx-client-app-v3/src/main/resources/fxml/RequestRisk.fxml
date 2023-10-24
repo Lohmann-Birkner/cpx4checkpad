@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.lb.cpx.client.core.model.fx.labeled.LabeledCurrencyTextField?>
+<?import de.lb.cpx.client.core.model.fx.labeled.LabeledNumberTextField?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1">
+   <children>
+      <HBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <VBox prefHeight="200.0" prefWidth="100.0" spacing="10.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <VBox fx:id="boxRiskArea">
+                     <children>
+                        <Label fx:id="lblRiskAreaHeader" text="Prüfbereiche" />
+                        <HBox fx:id="boxRiskAreaListMenu">
+                           <children>
+                              <ComboBox fx:id="cbRiskAreaListMenu" maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS" />
+                              <Button fx:id="btnRiskAreaListMenu" mnemonicParsing="false" styleClass="cpx-icon-button" />
+                           </children>
+                        </HBox>
+                        <VBox fx:id="boxRiskAreaList">
+                           <children>
+                              <ListView fx:id="lvRiskArea" prefWidth="200.0" />
+                           </children>
+                        </VBox>
+                        <Label fx:id="lblRiskAreaPlaceholder" alignment="CENTER" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Keine Angabe" VBox.vgrow="ALWAYS" />
+                     </children>
+                  </VBox>
+                  <HBox fx:id="boxRiskResult" alignment="CENTER" spacing="5.0">
+                     <children>
+                        <LabeledNumberTextField fx:id="lblRisk" maxWidth="-Infinity" minWidth="-Infinity" title="Risiko in %(ges.)" />
+                        <LabeledCurrencyTextField fx:id="lblRiskValue" maxWidth="-Infinity" minWidth="-Infinity" title="Verlustvol. in €(ges.)" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.lb.cpx.client.core.model.fx.labeled.LabeledPasswortField?>
+<?import de.lb.cpx.client.core.model.fx.labeled.LabeledTextField?>
+<?import de.lb.cpx.client.core.model.fx.login.DatabaseCombobox?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="apRoot" stylesheets="@../styles/cpx-default.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.lb.cpx.client.core.model.fx.login.LoginFXMLController">
+    <children>
+        <VBox fx:id="vBoxImageWrapper" styleClass="menu-bg" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+        <VBox alignment="CENTER" prefHeight="400.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1">
+            <children>
+                <VBox alignment="BOTTOM_CENTER" maxHeight="1.7976931348623157E308" maxWidth="-Infinity" spacing="10.0" VBox.vgrow="ALWAYS">
+                    <children>
+                        <ImageView fx:id="cpxLogo" fitHeight="150.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true" VBox.vgrow="ALWAYS" />
+                        <HBox alignment="BOTTOM_CENTER" VBox.vgrow="NEVER">
+                            <children>
+                                <DatabaseCombobox fx:id="databases" HBox.hgrow="ALWAYS" />
+                                <!--                                <Button fx:id="createDatabaseBtn" contentDisplay="CENTER" graphicTextGap="2.0" mnemonicParsing="false" onAction="#createDatabase" prefHeight="25.0" styleClass="login-add-button">
+                                    <tooltip>
+                                        <Tooltip text="Create new database" />
+                                    </tooltip>
+                                    <HBox.margin>
+                                        <Insets />
+                                    </HBox.margin>
+                                </Button>-->
+                                <Button fx:id="webAppBtn" contentDisplay="CENTER" graphicTextGap="2.0" mnemonicParsing="false" onAction="#openWebApp" prefHeight="25.0" styleClass="login-add-button">
+                                    <tooltip>
+                                        <Tooltip text="Systemkonfiguration (Web App)" />
+                                    </tooltip>
+                                    <HBox.margin>
+                                        <Insets />
+                                    </HBox.margin>
+                                </Button>
+                            </children>
+                        </HBox>
+                        <LabeledTextField fx:id="userName" />
+                        <LabeledPasswortField fx:id="password" />
+                        <Button fx:id="loginBtn" defaultButton="true" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onLoginAction" prefHeight="25.0" styleClass="login-confirm-button" text="Anmelden" />
+                        <Text fx:id="message" fill="#fc0000" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="login-message-label" textAlignment="CENTER" wrappingWidth="314.13671875" />
+                        <HBox alignment="BASELINE_CENTER">
+                            <children>
+                                <Button fx:id="glyphHelp" onAction="#showHelp" styleClass="cpx-icon-button" text="Handbuch" />
+                                <Button fx:id="glyphSupportInfo" onAction="#showSupportInfo" styleClass="cpx-icon-button" text="Support" />
+                                <Button fx:id="glyphSystemInfo" onAction="#showSystemInfo" styleClass="cpx-icon-button" text="System" />
+                                <Button fx:id="glyphLicenseInfo" onAction="#showLicenseInfo" styleClass="cpx-icon-button" text="Lizenz" />
+                            </children>
+                        </HBox>
+                    </children>
+                </VBox>
+                <VBox alignment="BOTTOM_RIGHT" maxWidth="1.7976931348623157E308" prefHeight="30" spacing="5" VBox.vgrow="ALWAYS">
+                    <VBox.margin>
+                        <Insets bottom="5.0" right="5.0" />
+                    </VBox.margin>
+                    <children>
+                        <Label fx:id="version" text="CPX Version " wrapText="true" />
+                        <Label fx:id="build" text="" wrapText="true" />
+                    </children>
+                </VBox>
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>

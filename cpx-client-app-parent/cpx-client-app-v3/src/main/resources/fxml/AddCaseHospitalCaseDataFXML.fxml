@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.lb.cpx.client.core.model.fx.labeled.LabeledComboBox?>
+<?import de.lb.cpx.client.core.model.fx.labeled.LabeledDatePicker?>
+<?import de.lb.cpx.client.core.model.fx.labeled.LabeledIntegerTextField?>
+<?import de.lb.cpx.client.core.model.fx.labeled.LabeledTextField?>
+<?import de.lb.cpx.client.core.model.fx.labeled.LabeledTimeSpinner?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane id="AnchorPane" prefWidth="1150.0" stylesheets="@../styles/cpx-default.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.lb.cpx.client.app.addcasewizard.fx.control.AddCaseHospitalCaseDataFXMLController">
+
+    <children>
+        <VBox prefWidth="950.0" spacing="12.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <GridPane hgap="12.0" minHeight="-Infinity" vgap="5.0">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints maxHeight="47.0" minHeight="0.0" prefHeight="47.0" />
+                        <RowConstraints maxHeight="47.0" minHeight="0.0" prefHeight="0.0" />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                    </rowConstraints>
+                    <children>
+                        <HBox prefHeight="40.0" prefWidth="309.0">
+                            <children>
+                                <LabeledTextField fx:id="tfHospitalIdent" HBox.hgrow="ALWAYS" />
+                            </children>
+                        </HBox>
+                        <HBox prefHeight="30.0" prefWidth="309.0" GridPane.columnIndex="1">
+                            <children>
+                                <LabeledTextField fx:id="tfCaseNumber" maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS" />
+                                <!--                                <Button fx:id="editCommentButton" mnemonicParsing="false" onMouseClicked="#editCommentHandler" prefHeight="25.0" prefWidth="46.0" styleClass="cpx-icon-button" text="...">
+                                    <HBox.margin>
+                                        <Insets top="25.0" />
+                                    </HBox.margin>
+                                </Button>-->
+                            </children>
+                        </HBox>
+                        <HBox spacing="12.0" GridPane.rowIndex="2">
+                            <children>
+                                <LabeledDatePicker fx:id="dpAdmissionDate" />
+                                <LabeledTimeSpinner fx:id="tsAdmissionDate" />
+                            </children>
+                        </HBox>
+                        <LabeledComboBox fx:id="cbAdmissionCause" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <LabeledComboBox fx:id="cbAdmissionReason12" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                        <LabeledComboBox fx:id="cbAdmissionReason34" GridPane.rowIndex="3" />
+                        <HBox prefWidth="200.0" spacing="12.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                            <children>
+                                <LabeledDatePicker fx:id="dpBirthDate" prefWidth="120.0" />
+                                <LabeledIntegerTextField fx:id="nsAge" prefWidth="50.0" />
+                                <LabeledComboBox fx:id="cbAge" prefWidth="120.0" />
+                                <LabeledIntegerTextField fx:id="nsWeight" prefWidth="50.0" />
+                            </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" spacing="12.0" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                            <children>
+                                <LabeledTextField fx:id="tfDoctor" prefHeight="47.0" prefWidth="126.0" />
+                                <LabeledTextField fx:id="tfOriginHospital" prefHeight="47.0" prefWidth="168.0" />
+                            </children>
+                        </HBox>
+                        <VBox GridPane.columnIndex="2">
+                            <children>
+                                <Label fx:id="labelFeeGroup" text="feegroup_" />
+                                <HBox fx:id="hBoxCaseTypes" alignment="CENTER_LEFT" spacing="12.0" VBox.vgrow="ALWAYS">
+                                    <children>
+                                        <RadioButton fx:id="rbCaseTypeDrg" alignment="CENTER_LEFT" mnemonicParsing="false" text="drg_" />
+                                        <RadioButton fx:id="rbCaseTypePepp" alignment="CENTER_LEFT" mnemonicParsing="false" text="pepp_" />
+                                        <RadioButton fx:id="rbCaseTypeOther" alignment="CENTER_LEFT" mnemonicParsing="false" text="other_" />
+                                    </children>
+                                </HBox>
+                            </children>
+                        </VBox>
+                        <!--                        <Button fx:id="buttonSuche" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#addSucheDialog" prefHeight="21.0" prefWidth="36.0" styleClass="cpx-icon-button" text="...">
+                            <GridPane.margin>
+                                <Insets left="270.0" top="25.0" />
+                            </GridPane.margin>
+                        </Button>-->
+                    </children>
+                </GridPane>
+                <Separator prefWidth="200.0" />
+            <TabPane fx:id="tbPaneContent" prefWidth="1150.0" tabClosingPolicy="UNAVAILABLE" VBox.vgrow="ALWAYS">
+              <tabs>
+                <Tab fx:id="tbCaseData" text="Falldaten">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefWidth="1150.0" />
+                  </content>
+                </Tab>
+               <Tab fx:id="tbBillData" text="Rechnungen">
+                  <content>
+                    <AnchorPane maxHeight="1.7976931348623157E308" minHeight="0.0" minWidth="0.0" />
+                  </content>
+                </Tab>
+              </tabs>
+            </TabPane>
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>

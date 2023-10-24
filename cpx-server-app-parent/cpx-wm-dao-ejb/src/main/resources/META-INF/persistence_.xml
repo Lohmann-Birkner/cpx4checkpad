@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.0" xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+    <persistence-unit name="dbsys1" transaction-type="JTA">
+        <provider>org.hibernate.ejb.HibernatePersistence</provider>
+        <!-- Do not indicate Wildfly Data Source here! -->
+        <class>de.lb.cpx.model.TCase</class>
+        <class>de.lb.cpx.model.TCaseBill</class>
+        <class>de.lb.cpx.model.TCaseDepartment</class>
+        <class>de.lb.cpx.model.TCaseDetails</class>
+        <class>de.lb.cpx.model.TCaseDrg</class>
+        <class>de.lb.cpx.model.TCaseFee</class>
+        <class>de.lb.cpx.model.TCaseIcd</class>
+        <class>de.lb.cpx.model.TCaseIcdGrouped</class>
+        <class>de.lb.cpx.model.TCaseMergeMapping</class>
+        <class>de.lb.cpx.model.TCaseOps</class>
+        <class>de.lb.cpx.model.TCaseOpsGrouped</class>
+        <class>de.lb.cpx.model.TCasePepp</class>
+        <class>de.lb.cpx.model.TCasePeppGrades</class>
+        <class>de.lb.cpx.model.TCaseSupplFee</class>
+        <class>de.lb.cpx.model.TCaseWard</class>
+        <class>de.lb.cpx.model.TGroupingResults</class>
+        <class>de.lb.cpx.model.TCheckResult</class>
+        <class>de.lb.cpx.model.TRole2Result</class>
+        <class>de.lb.cpx.model.TRole2Check</class>
+        <class>de.lb.cpx.model.TBatchResult</class>
+        <class>de.lb.cpx.model.TBatchResult2Role</class>
+        <class>de.lb.cpx.model.TBatchCheckResult</class>
+        <class>de.lb.cpx.model.TLock</class>
+        <class>de.lb.cpx.model.TInsurance</class>
+        <class>de.lb.cpx.model.TPatient</class>
+        <class>de.lb.cpx.model.TPatientDetails</class>
+        <class>de.lb.cpx.wm.model.TWmAction</class>
+        <class>de.lb.cpx.wm.model.TWmActionType</class>
+        <class>de.lb.cpx.wm.model.TWmReminder</class>
+        <!-- <class>de.lb.cpx.wm.model.TWmReminderSubject</class> -->
+        <class>de.lb.cpx.wm.model.TWmDocument</class>
+        <class>de.lb.cpx.wm.model.TWmEvent</class>
+        <!-- <class>de.lb.cpx.wm.model.TWmEventType</class> -->
+        <class>de.lb.cpx.wm.model.TWmProcessCase</class>
+        <class>de.lb.cpx.wm.model.TWmProcess</class>
+        <class>de.lb.cpx.wm.model.TWmRequest</class>
+        <class>de.lb.cpx.wm.model.TP301Inka</class>
+        <class>de.lb.cpx.wm.model.TP301KainInka</class>
+        <class>de.lb.cpx.wm.model.TP301KainInkaPvt</class>
+        <class>de.lb.cpx.wm.model.TP301KainInkaPvv</class>
+        <class>de.lb.cpx.wm.model.TP301Kain</class>
+        <class>de.lb.cpx.model.TSapFiBill</class>
+        <class>de.lb.cpx.model.TSapFiBillposition</class>
+        <class>de.lb.cpx.model.TSapFiOpenItems</class>
+        <class>de.lb.cpx.model.TCaseComment</class>
+        <exclude-unlisted-classes>false</exclude-unlisted-classes>
+        <shared-cache-mode>ENABLE_SELECTIVE</shared-cache-mode>
+        <properties>
+            <!--<property name="hibernate.hbm2ddl.auto" value="create-drop"/>--> 
+        </properties>
+    </persistence-unit>
+    <persistence-unit name="dbsys2" transaction-type="JTA">
+        <provider>org.hibernate.ejb.HibernatePersistence</provider>
+        <!-- Do not indicate Wildfly Data Source here! -->
+        <class>de.lb.cpx.model.TCase</class>
+        <class>de.lb.cpx.model.TCaseBill</class>
+        <class>de.lb.cpx.model.TCaseDepartment</class>
+        <class>de.lb.cpx.model.TCaseDetails</class>
+        <class>de.lb.cpx.model.TCaseDrg</class>
+        <class>de.lb.cpx.model.TCaseFee</class>
+        <class>de.lb.cpx.model.TCaseIcd</class>
+        <class>de.lb.cpx.model.TCaseIcdGrouped</class>
+        <class>de.lb.cpx.model.TCaseMergeMapping</class>
+        <class>de.lb.cpx.model.TCaseOps</class>
+        <class>de.lb.cpx.model.TCaseOpsGrouped</class>
+        <class>de.lb.cpx.model.TCasePepp</class>
+        <class>de.lb.cpx.model.TCasePeppGrades</class>
+        <class>de.lb.cpx.model.TCaseSupplFee</class>
+        <class>de.lb.cpx.model.TCaseWard</class>
+        <class>de.lb.cpx.model.TGroupingResults</class>
+        <class>de.lb.cpx.model.TCheckResult</class>
+        <class>de.lb.cpx.model.TRole2Result</class>
+        <class>de.lb.cpx.model.TRole2Check</class>
+        <class>de.lb.cpx.model.TBatchResult</class>
+        <class>de.lb.cpx.model.TBatchResult2Role</class>
+        <class>de.lb.cpx.model.TBatchCheckResult</class>
+        <class>de.lb.cpx.model.TLock</class>
+        <class>de.lb.cpx.model.TInsurance</class>
+        <class>de.lb.cpx.model.TPatient</class>
+        <class>de.lb.cpx.model.TPatientDetails</class>
+        <class>de.lb.cpx.wm.model.TWmAction</class>
+        <class>de.lb.cpx.wm.model.TWmActionType</class>
+        <class>de.lb.cpx.wm.model.TWmReminder</class>
+        <!-- <class>de.lb.cpx.wm.model.TWmReminderSubject</class> -->
+        <class>de.lb.cpx.wm.model.TWmDocument</class>
+        <class>de.lb.cpx.wm.model.TWmEvent</class>
+        <class>de.lb.cpx.wm.model.TWmEventType</class>
+        <class>de.lb.cpx.wm.model.TWmProcessCase</class>
+        <class>de.lb.cpx.wm.model.TWmProcess</class>
+        <class>de.lb.cpx.wm.model.TWmRequest</class>
+        <class>de.lb.cpx.wm.model.TP301Inka</class>
+        <class>de.lb.cpx.wm.model.TP301KainInka</class>
+        <class>de.lb.cpx.wm.model.TP301KainInkaPvt</class>
+        <class>de.lb.cpx.wm.model.TP301KainInkaPvv</class>
+        <class>de.lb.cpx.wm.model.TP301Kain</class>
+        <class>de.lb.cpx.model.TSapFiBill</class>
+        <class>de.lb.cpx.model.TSapFiBillposition</class>
+        <class>de.lb.cpx.model.TSapFiOpenItems</class>
+        <class>de.lb.cpx.model.TCaseComment</class>
+        <exclude-unlisted-classes>false</exclude-unlisted-classes>
+        <shared-cache-mode>ENABLE_SELECTIVE</shared-cache-mode>
+        <properties>
+            <!--<property name="hibernate.hbm2ddl.auto" value="create-drop"/>--> 
+        </properties>
+    </persistence-unit>
+    <persistence-unit name="dbsys3" transaction-type="JTA">
+        <provider>org.hibernate.ejb.HibernatePersistence</provider>
+        <!--Do not indicate Wildfly Data Source here! -->
+        <class>de.lb.cpx.model.TCase</class>
+        <class>de.lb.cpx.model.TCaseBill</class>
+        <class>de.lb.cpx.model.TCaseDepartment</class>
+        <class>de.lb.cpx.model.TCaseDetails</class>
+        <class>de.lb.cpx.model.TCaseDrg</class>
+        <class>de.lb.cpx.model.TCaseFee</class>
+        <class>de.lb.cpx.model.TCaseIcd</class>
+        <class>de.lb.cpx.model.TCaseIcdGrouped</class>
+        <class>de.lb.cpx.model.TCaseMergeMapping</class>
+        <class>de.lb.cpx.model.TCaseOps</class>
+        <class>de.lb.cpx.model.TCaseOpsGrouped</class>
+        <class>de.lb.cpx.model.TCasePepp</class>
+        <class>de.lb.cpx.model.TCasePeppGrades</class>
+        <class>de.lb.cpx.model.TCaseSupplFee</class>
+        <class>de.lb.cpx.model.TCaseWard</class>
+        <class>de.lb.cpx.model.TGroupingResults</class>
+        <class>de.lb.cpx.model.TCheckResult</class>
+        <class>de.lb.cpx.model.TRole2Result</class>
+        <class>de.lb.cpx.model.TRole2Check</class>
+        <class>de.lb.cpx.model.TBatchResult</class>
+        <class>de.lb.cpx.model.TBatchResult2Role</class>
+        <class>de.lb.cpx.model.TBatchCheckResult</class>
+        <class>de.lb.cpx.model.TLock</class>
+        <class>de.lb.cpx.model.TInsurance</class>
+        <class>de.lb.cpx.model.TPatient</class>
+        <class>de.lb.cpx.model.TPatientDetails</class>
+        <class>de.lb.cpx.wm.model.TWmAction</class>
+        <class>de.lb.cpx.wm.model.TWmActionType</class>
+        <class>de.lb.cpx.wm.model.TWmReminder</class>
+        <!-- <class>de.lb.cpx.wm.model.TWmReminderSubject</class> -->
+        <class>de.lb.cpx.wm.model.TWmDocument</class>
+        <class>de.lb.cpx.wm.model.TWmEvent</class>
+        <class>de.lb.cpx.wm.model.TWmEventType</class>
+        <class>de.lb.cpx.wm.model.TWmProcessCase</class>
+        <class>de.lb.cpx.wm.model.TWmProcess</class>
+        <class>de.lb.cpx.wm.model.TWmRequest</class>
+        <class>de.lb.cpx.wm.model.TP301Inka</class>
+        <class>de.lb.cpx.wm.model.TP301KainInka</class>
+        <class>de.lb.cpx.wm.model.TP301KainInkaPvt</class>
+        <class>de.lb.cpx.wm.model.TP301KainInkaPvv</class>
+        <class>de.lb.cpx.wm.model.TP301Kain</class>
+        <class>de.lb.cpx.model.TSapFiBill</class>
+        <class>de.lb.cpx.model.TSapFiBillposition</class>
+        <class>de.lb.cpx.model.TSapFiOpenItems</class>
+        <class>de.lb.cpx.model.TCaseComment</class>
+        <exclude-unlisted-classes>false</exclude-unlisted-classes>
+        <shared-cache-mode>ENABLE_SELECTIVE</shared-cache-mode>
+        <properties>
+            <!--<property name="hibernate.hbm2ddl.auto" value="create-drop"/>--> 
+        </properties>
+    </persistence-unit>
+</persistence>

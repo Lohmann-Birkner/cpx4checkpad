@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane id="AnchorPane" prefHeight="200" prefWidth="320" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.lb.cpx.ruleviewer.FXMLController">
+    <children>
+        <VBox fx:id="contentBox" alignment="CENTER" layoutX="126.0" layoutY="90.0" spacing="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <HBox VBox.vgrow="ALWAYS">
+                    <children>
+                        <AnchorPane fx:id="hbStructure" />
+                        <AnchorPane fx:id="hbDisplay" HBox.hgrow="ALWAYS" />
+                    </children>
+                </HBox>
+                <HBox spacing="10.0">
+                    <children>
+                        <Button fx:id="button" onAction="#handleButtonAction" text="Click Me!" />
+                        <Button mnemonicParsing="false" onAction="#onOpenEditor" text="Open Editor" />
+                    </children>
+                </HBox>
+                <Label fx:id="label" minHeight="16" minWidth="69" />
+                <HBox>
+                    <children>
+                        <ComboBox fx:id="cbViewMode" prefWidth="150.0" />
+                        <ComboBox fx:id="cbSide" prefWidth="150.0" />
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.lb.cpx.client.core.model.fx.ribbon.Ribbon?>
+<?import de.lb.cpx.client.core.model.fx.section.SectionHeader?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import org.controlsfx.control.PropertySheet?>
+
+<SplitPane fx:id="spMenu" dividerPositions="0.0" style="-fx-border-color: -cpx-tab-pane-background; -fx-border-width: 1 0 0 0;" styleClass="split-pane-no-divider" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+    <items>
+        <Ribbon fx:id="ribbonTools" maxWidth="150.0" minWidth="65.0" prefWidth="65.0" side="LEFT">
+            <padding>
+                <Insets top="38.0" />
+            </padding>
+        </Ribbon>
+        <GridPane hgap="2.0" styleClass="rule-editor-view">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" percentWidth="55.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" percentWidth="45.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+                <HBox GridPane.rowIndex="1">
+                    <children>
+                        <SplitPane fx:id="spDrawBoard" dividerPositions="0.8" orientation="VERTICAL" HBox.hgrow="ALWAYS">
+                            <items>
+                                <VBox prefHeight="200.0" prefWidth="100.0">
+                                    <children>
+                                        <VBox fx:id="boxRuleContent" prefHeight="200.0" prefWidth="100.0" VBox.vgrow="ALWAYS" />
+                                    </children>
+                                </VBox>
+                                <VBox prefHeight="200.0" prefWidth="100.0">
+                                    <children>
+                                        <SectionHeader title="Vorschlag">
+                                            <padding>
+                                                <Insets left="5.0" right="5.0" />
+                                            </padding>
+                                        </SectionHeader>
+                                        <VBox fx:id="boxSuggestionContent" prefHeight="200.0" prefWidth="100.0" VBox.vgrow="ALWAYS" />
+                                    </children>
+                                </VBox>
+                            </items>
+                        </SplitPane>
+                        <Separator orientation="VERTICAL" />
+                    </children>
+                </HBox>
+                <VBox fx:id="boxSettingArea1" prefWidth="200.0" spacing="10.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                    <children>
+                        <VBox fx:id="vBoxInfo" VBox.vgrow="ALWAYS">
+                            <children>
+                                <TitledPane fx:id="tpRuleSettings" animated="false" text="untitled 1">
+                                    <content>
+                                        <PropertySheet fx:id="psMetaSettings" modeSwitcherVisible="false" searchBoxVisible="false" />
+                                    </content>
+                                </TitledPane>
+                                <TitledPane fx:id="tpSelection" animated="false" ellipsisString=" ... " maxHeight="1.7976931348623157E308" minWidth="-Infinity" text="untitled 2" textOverrun="CENTER_ELLIPSIS" wrapText="true">
+                                    <content>
+                                        <PropertySheet fx:id="psItemSettings" maxHeight="-Infinity" minHeight="-Infinity" modeSwitcherVisible="false" searchBoxVisible="false" />
+                                    </content>
+                                </TitledPane>
+                                <TitledPane fx:id="tpNotice" animated="false" maxHeight="1.7976931348623157E308" text="Notizen" VBox.vgrow="ALWAYS" />
+                            </children>
+                        </VBox>
+                    </children>
+                </VBox>
+                <SectionHeader fx:id="shRule" title="Regel">
+                    <padding>
+                        <Insets left="5.0" right="5.0" />
+                    </padding>
+                </SectionHeader>
+                <SectionHeader fx:id="shInformation" maxWidth="1.7976931348623157E308" title="Informationen" GridPane.columnIndex="1" />
+            </children>
+        </GridPane>
+    </items>
+    <stylesheets>
+        <URL value="@../styles/cpx-default.css" />
+        <URL value="@../styles/rule_visualizer.css" />
+    </stylesheets>
+</SplitPane>

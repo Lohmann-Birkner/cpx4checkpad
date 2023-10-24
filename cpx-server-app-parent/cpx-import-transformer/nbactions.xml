@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actions>
+        <action>
+            <actionName>debug</actionName>
+            <packagings>
+                <packaging>jar</packaging>
+            </packagings>
+            <goals>
+                <goal>process-classes</goal>
+                <goal>org.codehaus.mojo:exec-maven-plugin:1.2.1:exec</goal>
+            </goals>
+            <properties>
+                <exec.args>-agentlib:jdwp=transport=dt_socket,server=n,address=${jpda.address} -Xmx400m -classpath %classpath process.impl.ImportProcess E:\p21-import\inek-huge dbsys1:CPX_TEST</exec.args>
+                <exec.executable>java</exec.executable>
+                <jpda.listen>true</jpda.listen>
+                <exec.workingdir>C:\workspace\CheckpointX_Repository\trunk\WD_CPX_Server</exec.workingdir>
+            </properties>
+        </action>
+        <action>
+            <actionName>run</actionName>
+            <packagings>
+                <packaging>jar</packaging>
+            </packagings>
+            <goals>
+                <goal>process-classes</goal>
+                <goal>org.codehaus.mojo:exec-maven-plugin:1.2.1:exec</goal>
+            </goals>
+            <properties>
+                <exec.args>-classpath %classpath process.impl.ImportProcess E:\p21-import\inek-big dbsys1:DIRK22</exec.args>
+                <exec.executable>java</exec.executable>
+                <exec.workingdir>C:\workspace\CheckpointX_Repository\trunk\WD_CPX_Server</exec.workingdir>
+            </properties>
+        </action>
+        <action>
+            <actionName>profile</actionName>
+            <packagings>
+                <packaging>jar</packaging>
+            </packagings>
+            <goals>
+                <goal>process-classes</goal>
+                <goal>org.codehaus.mojo:exec-maven-plugin:1.2.1:exec</goal>
+            </goals>
+            <properties>
+                <exec.args>-classpath %classpath process.impl.ImportProcess E:\p21-import\inek-big dbsys1:DIRK22</exec.args>
+                <exec.executable>java</exec.executable>
+                <exec.workingdir>C:\workspace\CheckpointX_Repository\trunk\WD_CPX_Server</exec.workingdir>
+            </properties>
+        </action>
+    </actions>

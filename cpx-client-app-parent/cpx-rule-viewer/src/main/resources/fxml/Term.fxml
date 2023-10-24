@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox spacing="5.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <HBox fx:id="boxFirstLine" stylesheets="@../styles/rule_visualizer.css">
+            <children>
+                <Label fx:id="lblInverted">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                    <HBox.margin>
+                        <Insets />
+                    </HBox.margin>
+                </Label>
+                <Label fx:id="lblBrackedOpen" text="(">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Label>
+                <HBox fx:id="boxTerm" spacing="5.0">
+                    <children>
+                        <Label fx:id="lblFirstCondition" minWidth="-Infinity" text="noVal">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                        </Label>
+                        <HBox fx:id="optionalData" spacing="5.0">
+                            <children>
+                                <Label fx:id="lblOperator" text="noVal">
+                                    <font>
+                                        <Font size="14.0" />
+                                    </font>
+                                </Label>
+                                <!--                        <Label fx:id="lblSecondCondition" text="noVal">
+                                    <font>
+                                        <Font size="14.0" />
+                                    </font>
+                                </Label>-->
+                                <Hyperlink fx:id="hlSecondCondition" maxWidth="-Infinity" minWidth="-Infinity" styleClass="value_hyperlink" text="Hyperlink" wrapText="true" HBox.hgrow="ALWAYS">
+                                    <font>
+                                        <Font size="14.0" />
+                                    </font>
+                                </Hyperlink>
+                            </children>
+                        </HBox>
+                    </children>
+                </HBox>
+                <Label fx:id="lblBrackedClose" text=")">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Label>
+            </children>
+            <VBox.margin>
+                <Insets left="3.0" />
+            </VBox.margin>
+        </HBox>
+        <Label fx:id="lblInterval" maxWidth="1.7976931348623157E308" minWidth="-Infinity" visible="false" wrapText="true">
+            <font>
+                <Font size="10.0" />
+            </font>
+            <VBox.margin>
+                <Insets />
+            </VBox.margin>
+        </Label>
+    </children>
+</VBox>

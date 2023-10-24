@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.lb.cpx.client.app.wm.fx.dialog.editor.MdInfoTextField?>
+<?import de.lb.cpx.client.app.wm.fx.dialog.editor.ReminderLabeledCheckboxLink?>
+<?import de.lb.cpx.client.core.model.fx.combobox.RequestStateCombobox?>
+<?import de.lb.cpx.client.core.model.fx.labeled.LabeledCheckComboBox?>
+<?import de.lb.cpx.client.core.model.fx.labeled.LabeledDatePicker?>
+<?import de.lb.cpx.client.core.model.fx.labeled.LabeledTextArea?>
+<?import de.lb.cpx.client.core.model.fx.labeled.LabeledTextField?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefWidth="700.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+    <stylesheets>
+        <URL value="@/styles/cpx-default.css" />
+    </stylesheets>
+    <children>
+        <VBox spacing="5.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <VBox spacing="12.0">
+                    <children>
+                        <HBox alignment="BOTTOM_LEFT" spacing="5.0">
+                            <children>
+                        <MdInfoTextField fx:id="tfMdkName" prefWidth="458.0" />
+                                <!--                                <Button fx:id="btnMdkSearch" mnemonicParsing="false" styleClass="cpx-icon-button" text="Button" textAlignment="RIGHT" textOverrun="CLIP">
+                                    <opaqueInsets>
+                                        <Insets />
+                                    </opaqueInsets>
+                                </Button>-->
+                                <LabeledTextField fx:id="tfEditor" maxSize="50" maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS" />
+                            </children>
+                        </HBox>
+                        <HBox spacing="12.0">
+                            <children>
+                                <LabeledDatePicker fx:id="dpReqCreationDate" prefHeight="47.0" prefWidth="200.0" />
+                                <LabeledDatePicker fx:id="dpMdkStartAuditDate" />
+                                <LabeledDatePicker fx:id="dpBillCorrectionDeadlineDate" prefHeight="47.0" prefWidth="220.0" />
+                                <LabeledDatePicker fx:id="dpMdkAuditCompletionDeadlineDate" prefWidth="190.0" />
+                            </children>
+                        </HBox>
+                        <HBox spacing="12.0">
+                            <children>
+                                <RequestStateCombobox fx:id="cbMdkStatus" prefHeight="47.0" prefWidth="359.0" />
+                                <HBox alignment="BOTTOM_LEFT" spacing="12.0">
+                                    <children>
+                                        <CheckBox fx:id="ckMdkReport" mnemonicParsing="false" textOverrun="CLIP" />
+                                        <LabeledDatePicker fx:id="dpMdkReportCreationDate" prefHeight="47.0" />
+                                        <LabeledDatePicker fx:id="dpMdkReportReceiveDate" prefHeight="47.0" />
+                                    </children>
+                                </HBox>
+                            </children>
+                        </HBox>
+                  <HBox spacing="12.0">
+                     <children>
+                        <LabeledDatePicker fx:id="dpInsuranceRecivedBillDate" prefHeight="48.0" prefWidth="204.0" />
+                              <LabeledCheckComboBox fx:id="ckcbAuditReasons" prefHeight="48.0" prefWidth="516.0" />
+                     </children>
+                  </HBox>
+                        <HBox prefWidth="200.0" spacing="12.0">
+                            <children>
+                                <LabeledDatePicker fx:id="dpMdkStartAuditExtendedDate" disable="true" prefHeight="48.0" prefWidth="204.0" />
+                                <LabeledCheckComboBox fx:id="ckcbExtendedAuditReasons" prefHeight="48.0" prefWidth="516.0" />
+                            </children>
+                        </HBox>
+                        <Label fx:id="lbMdkDocuments" text="Label">
+                            <font>
+                                <Font name="System Bold" size="12.0" />
+                            </font>
+                            <padding>
+                                <Insets bottom="-10.0" top="-10.0" />
+                            </padding>
+                        </Label>
+                        <HBox alignment="BOTTOM_LEFT" spacing="12.0">
+                            <children>
+                                <HBox alignment="BOTTOM_LEFT" prefHeight="47.0" prefWidth="170.0" spacing="5.0">
+                                    <children>
+                                        <CheckBox fx:id="ckMdkDocumentRequest" mnemonicParsing="false" textOverrun="CLIP" />
+                                        <LabeledDatePicker fx:id="dpMdkDocumentRequestDate" prefHeight="47.0" prefWidth="139.0" HBox.hgrow="ALWAYS" />
+                                    </children>
+                                </HBox>
+                                <HBox alignment="BOTTOM_LEFT" prefHeight="47.0" prefWidth="240.0" spacing="12.0">
+                                    <children>
+                                        <LabeledDatePicker fx:id="dpMdkDocumentDeliverDeadlineDate" prefWidth="139.0" />
+                                        <VBox alignment="BOTTOM_LEFT" prefHeight="200.0" prefWidth="100.0">
+                                            <children>
+                                    <ReminderLabeledCheckboxLink fx:id="cklinkkWvDocDeliDead" />
+                                            </children>
+                                        </VBox>
+                                    </children>
+                                </HBox>
+                                <HBox alignment="BOTTOM_LEFT" prefHeight="47.0" prefWidth="170.0" spacing="5.0">
+                                    <children>
+                                        <CheckBox fx:id="ckMdkDocumentDelivered" mnemonicParsing="false" prefWidth="5.0" />
+                                        <LabeledDatePicker fx:id="ckMdkDocumentDeliveredDate" prefWidth="139.0" />
+                                    </children>
+                                </HBox>
+                                <HBox prefHeight="47.0" prefWidth="110.0" />
+                            </children>
+                        </HBox>
+                        <HBox alignment="BOTTOM_LEFT" prefWidth="600.0" spacing="12.0">
+                            <children>
+                                <HBox alignment="BOTTOM_LEFT" prefHeight="47.0" prefWidth="170.0" spacing="5.0">
+                                    <children>
+                                        <CheckBox fx:id="ckMdkFeePaid" mnemonicParsing="false" />
+                                        <LabeledDatePicker fx:id="dpMdkFeePaidDate" prefHeight="47.0" prefWidth="139.0" HBox.hgrow="ALWAYS" />
+                                    </children>
+                                </HBox>
+                                <HBox alignment="BOTTOM_LEFT" prefHeight="47.0" prefWidth="240.0">
+                                    <children>
+                                        <VBox alignment="BOTTOM_LEFT" prefHeight="200.0" prefWidth="100.0">
+                                            <children>
+                                    <ReminderLabeledCheckboxLink fx:id="ckWvFeePaid" />
+                                            </children>
+                                        </VBox>
+                                    </children>
+                                </HBox>
+                                <HBox alignment="BOTTOM_LEFT" prefHeight="47.0" prefWidth="170.0" spacing="5.0">
+                                    <children>
+                                        <CheckBox fx:id="mdkSubseqProcCheckBox" mnemonicParsing="false" />
+                                        <LabeledDatePicker fx:id="dpMdkSubseqProcDate" prefWidth="139.0" />
+                                    </children>
+                                </HBox>
+                                <HBox prefHeight="47.0" prefWidth="110.0">
+                                    <children>
+                                        <VBox alignment="BOTTOM_LEFT" prefHeight="200.0" prefWidth="100.0">
+                                            <children>
+                                    <ReminderLabeledCheckboxLink fx:id="ckWvSubseqProc" />
+                                            </children>
+                                        </VBox>
+                                    </children>
+                                </HBox>
+                            </children>
+                        </HBox>
+                        <HBox fx:id="hbMdkReminders" maxHeight="160.0" />
+                        <VBox>
+                            <children>
+                                <LabeledTextArea fx:id="taMdkComment" prefHeight="30.0" />
+                                <LabeledTextArea fx:id="taUserComment" prefHeight="30.0" />
+                            </children>
+                        </VBox>
+                    </children>
+                </VBox>
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>

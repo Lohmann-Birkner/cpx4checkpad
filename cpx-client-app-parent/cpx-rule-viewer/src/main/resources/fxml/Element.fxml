@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxWidth="1.7976931348623157E308" styleClass="element" stylesheets="@../styles/Styles.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <HBox>
+            <children>
+                <Label fx:id="lblInverted">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Label>
+                <Label fx:id="lbOpenClip" text="(">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Label>
+            </children>
+        </HBox>
+        <VBox fx:id="boxItems" prefWidth="100.0" spacing="5.0">
+            <VBox.margin>
+                <Insets bottom="7.0" left="14.0" right="14.0" top="7.0" />
+            </VBox.margin>
+        </VBox>
+        <Label fx:id="lbCloseClip" text=")">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </Label>
+    </children>
+</VBox>

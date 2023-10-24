@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.lb.cpx.client.core.model.fx.labeled.LabeledTextArea?>
+<?import de.lb.cpx.client.core.model.fx.ribbon.Ribbon?>
+<?import de.lb.cpx.client.core.model.fx.section.SectionHeader?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<SplitPane fx:id="spMenu" dividerPositions="0.0" style="-fx-border-color: -cpx-tab-pane-background; -fx-border-width: 1 0 0 0;" styleClass="split-pane-small-divider" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+    <items>
+        <Ribbon fx:id="ribbonTools" maxWidth="150.0" minWidth="65.0" prefWidth="65.0" side="LEFT">
+            <padding>
+                <Insets top="38.0" />
+            </padding>
+        </Ribbon>
+        <SplitPane fx:id="spContainer" orientation="VERTICAL">
+            <items>
+                <VBox spacing="5.0">
+                    <children>
+                        <GridPane hgap="2.0" styleClass="rule-editor-view" VBox.vgrow="ALWAYS">
+                            <columnConstraints>
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="55.0" />
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="45.0" />
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                            </rowConstraints>
+                            <children>
+                                <VBox GridPane.rowIndex="1">
+                                    <children>
+                                        <HBox VBox.vgrow="ALWAYS">
+                                            <children>
+                                                <SplitPane fx:id="spDrawBoard" dividerPositions="0.8" orientation="VERTICAL" HBox.hgrow="ALWAYS">
+                                                    <items>
+                                                        <VBox prefHeight="200.0" prefWidth="100.0">
+                                                            <children>
+                                                                <VBox fx:id="boxRuleContent" prefHeight="200.0" prefWidth="100.0" VBox.vgrow="ALWAYS" />
+                                                            </children>
+                                                        </VBox>
+                                                        <VBox prefHeight="200.0" prefWidth="100.0">
+                                                            <children>
+                                                                <SectionHeader title="Vorschlag">
+                                                                    <padding>
+                                                                        <Insets left="5.0" right="5.0" />
+                                                                    </padding>
+                                                                </SectionHeader>
+                                                                <VBox fx:id="boxSuggestionContent" prefHeight="200.0" prefWidth="100.0" VBox.vgrow="ALWAYS" />
+                                                            </children>
+                                                        </VBox>
+                                                    </items>
+                                                </SplitPane>
+                                                <Separator orientation="VERTICAL" />
+                                            </children>
+                                        </HBox>
+                                        <Separator prefWidth="200.0">
+                                            <padding>
+                                                <Insets left="5.0" right="5.0" />
+                                            </padding>
+                                        </Separator>
+                                    </children>
+                                </VBox>
+                                <VBox fx:id="boxSettingArea1" maxWidth="1.7976931348623157E308" prefWidth="200.0" spacing="10.0" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS">
+                                    <children>
+                                        <ScrollPane fx:id="spInfo" fitToWidth="true" VBox.vgrow="ALWAYS">
+                                            <content>
+                                                <VBox fx:id="vBoxInfo" minWidth="10.0">
+                                                    <children>
+                                                        <TitledPane fx:id="tpRuleSettings" animated="false" text="untitled 1" />
+                                                        <TitledPane fx:id="tpSelection" animated="false" ellipsisString=" ... " maxHeight="1.7976931348623157E308" textOverrun="CENTER_ELLIPSIS" wrapText="true" />
+                                          <TitledPane fx:id="tpRisk" animated="false" expanded="false" maxWidth="1.7976931348623157E308" text="untitled">
+                                            <content>
+                                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                                            </content>
+                                          </TitledPane>
+                                          <TabPane tabClosingPolicy="UNAVAILABLE" VBox.vgrow="ALWAYS">
+                                            <tabs>
+                                              <Tab text="Regel-Notiz">
+                                                <content>
+                                                  <AnchorPane minHeight="0.0" minWidth="0.0">
+                                                         <children>
+                                                            <LabeledTextArea fx:id="taRuleNotice" maxSize="4000" title="" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                               <padding>
+                                                                  <Insets left="8.0" right="8.0" />
+                                                               </padding>
+                                                            </LabeledTextArea>
+                                                         </children></AnchorPane>
+                                                </content>
+                                              </Tab>
+                                              <Tab text="Vorschlag-Notiz">
+                                                <content>
+                                                  <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="0.0" minWidth="0.0">
+                                                         <children>
+                                                            <LabeledTextArea fx:id="taSuggNotice" maxSize="500" title="" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                               <padding>
+                                                                  <Insets left="8.0" right="8.0" />
+                                                               </padding>
+                                                            </LabeledTextArea>
+                                                         </children></AnchorPane>
+                                                </content>
+                                              </Tab>
+                                                <Tab text="Risiko-Notiz">
+                                                   <content>
+                                                      <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity">
+                                                         <children>
+                                                            <LabeledTextArea fx:id="taRiskNotice" maxSize="500" title="" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                               <padding>
+                                                                  <Insets left="8.0" right="8.0" />
+                                                               </padding>
+                                                            </LabeledTextArea>
+                                                         </children></AnchorPane>
+                                                   </content>
+                                                </Tab>
+                                            </tabs>
+                                             <VBox.margin>
+                                                <Insets top="5.0" />
+                                             </VBox.margin>
+                                          </TabPane>
+                                                    </children>
+                                                </VBox>
+                                            </content>
+                                        </ScrollPane>
+                                        <Separator prefWidth="200.0" />
+                                    </children>
+                                </VBox>
+                                <SectionHeader fx:id="shRule" title="Regel">
+                                    <padding>
+                                        <Insets left="5.0" right="5.0" />
+                                    </padding>
+                                </SectionHeader>
+                                <SectionHeader fx:id="shInformation" minWidth="10.0" title="Informationen" GridPane.columnIndex="1" />
+                            </children>
+                        </GridPane>
+                        <VBox>
+                            <VBox.margin>
+                                <Insets left="6.0" />
+                            </VBox.margin>
+                            <children>
+                                <HBox fx:id="boxAnalyserHeader" alignment="CENTER_LEFT" styleClass="analyser-header" stylesheets="@../styles/rule_analyser.css">
+                                    <children>
+                                        <Label style="-fx-font-size: 15;" text="Regel-Analyser">
+                                            <font>
+                                                <Font size="15.0" />
+                                            </font>
+                                            <HBox.margin>
+                                                <Insets />
+                                            </HBox.margin>
+                                        </Label>
+                                        <Button fx:id="btnOpenAnalyzer" mnemonicParsing="false" styleClass="cpx-icon-button" />
+                                    </children>
+                                </HBox>
+                            </children>
+                        </VBox>
+                    </children>
+                </VBox>
+            </items>
+        </SplitPane>
+    </items>
+    <stylesheets>
+        <URL value="@../styles/cpx-default.css" />
+        <URL value="@../styles/rule_visualizer.css" />
+    </stylesheets>
+</SplitPane>

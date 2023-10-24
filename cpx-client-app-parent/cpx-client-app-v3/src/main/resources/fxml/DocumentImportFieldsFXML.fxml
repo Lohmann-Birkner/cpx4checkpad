@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.lb.cpx.client.core.model.fx.autocompletion.AutocompletionMultiColDatePicker?>
+<?import de.lb.cpx.client.core.model.fx.labeled.LabeledAutocompletionMultiColTextField?>
+<?import de.lb.cpx.client.core.model.fx.section.SectionHeader?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<GridPane fx:id="gpRoot" styleClass="default-distances" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.lb.cpx.client.app.job.fx.DocumentImportFieldsFXMLController">
+    <columnConstraints>
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        <ColumnConstraints maxWidth="0.0" minWidth="0.0" prefWidth="0.0" />
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints vgrow="NEVER" />
+        <RowConstraints vgrow="NEVER" />
+        <RowConstraints vgrow="NEVER" />
+        <RowConstraints vgrow="NEVER" />
+        <RowConstraints minHeight="10.0" vgrow="NEVER" />
+        <RowConstraints vgrow="NEVER" />
+        <RowConstraints vgrow="NEVER" />
+        <RowConstraints vgrow="NEVER" />
+        <RowConstraints vgrow="NEVER" />
+        <RowConstraints vgrow="NEVER" />
+    </rowConstraints>
+    <children>
+        <HBox GridPane.hgrow="ALWAYS" GridPane.rowIndex="1">
+            <children>
+                <LabeledAutocompletionMultiColTextField fx:id="txtCaseNumber" title="Fallnummer" />
+                <Button fx:id="openCaseBtn" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" maxWidth="24.0" mnemonicParsing="false" onAction="#openCase" styleClass="cpx-icon-button" text="">
+                    <HBox.margin>
+                        <Insets top="22.0" />
+                    </HBox.margin>
+                </Button>
+            </children>
+        </HBox>
+        <HBox GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1">
+            <children>
+                <LabeledAutocompletionMultiColTextField fx:id="txtProcessNumber" title="Vorgangsnummer" />
+                <Button fx:id="openProcessBtn" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" maxWidth="24.0" mnemonicParsing="false" onAction="#openProcess" styleClass="cpx-icon-button" text="">
+                    <HBox.margin>
+                        <Insets top="22.0" />
+                    </HBox.margin>
+                </Button>
+            </children>
+        </HBox>
+        <HBox fx:id="boxRecognizedCaseNumber" alignment="CENTER" prefWidth="75.0" GridPane.rowIndex="2">
+            <children>
+                <ProgressIndicator fx:id="throbberCase" focusTraversable="false" prefHeight="15.0" prefWidth="15.0">
+                    <tooltip>
+                        <Tooltip text="Automatische Dokumentenerkennung läuft..." />
+                    </tooltip>
+                </ProgressIndicator>
+            </children>
+            <padding>
+                <Insets right="5.0" />
+            </padding>
+        </HBox>
+        <Button fx:id="btnApplyCaseNumber" alignment="CENTER" contentDisplay="CENTER" disable="true" mnemonicParsing="false" text="Übernehmen" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <GridPane.margin>
+                <Insets />
+            </GridPane.margin>
+            <tooltip>
+                <Tooltip text="Gefundene Fallnummer übernehmen" />
+            </tooltip>
+        </Button>
+        <LabeledAutocompletionMultiColTextField fx:id="txtPatientNumber" title="Patientennummer" GridPane.rowIndex="5" />
+        <LabeledAutocompletionMultiColTextField fx:id="txtInsuranceNumerPatient" prefWidth="100.0" title="Versichertennummer" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+        <AutocompletionMultiColDatePicker fx:id="dtBirthdate" title="Geburtsdatum" GridPane.rowIndex="7" />
+        <LabeledAutocompletionMultiColTextField fx:id="txtPatientName" title="Name, Vorname" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="7" />
+        <SectionHeader fx:id="headerCaseProcess" title="Fall/Vorgang" GridPane.columnSpan="2" />
+        <SectionHeader fx:id="headerPatient" title="Patient" GridPane.columnSpan="2" GridPane.rowIndex="4" />
+        <!-- <Button fx:id="btnImportSelected" visible="false" mnemonicParsing="false" onAction="#importSelectedDocuments" text="Ausgewählte Dokumente (x) importieren" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="17" GridPane.valignment="CENTER" /> -->
+        <HBox fx:id="boxRecognizedPatientNumber" alignment="CENTER" prefWidth="75.0" GridPane.rowIndex="6">
+            <children>
+                <ProgressIndicator fx:id="throbberPatient" focusTraversable="false" prefHeight="15.0" prefWidth="15.0">
+                    <tooltip>
+                        <Tooltip text="Automatische Dokumentenerkennung läuft..." />
+                    </tooltip>
+                </ProgressIndicator>
+            </children>
+            <padding>
+                <Insets right="5.0" />
+            </padding>
+        </HBox>
+        <Button fx:id="btnApplyPatientNumber" alignment="CENTER" contentDisplay="CENTER" disable="true" mnemonicParsing="false" text="Übernehmen" GridPane.columnIndex="1" GridPane.rowIndex="6">
+            <tooltip>
+                <Tooltip text="Gefundene Fallnummer übernehmen" />
+            </tooltip>
+        </Button>
+    </children>
+</GridPane>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.lb.cpx.client.core.model.fx.labeled.LabeledTreeView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<GridPane hgap="12.0" vgap="5.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.lb.cpx.client.app.addcasewizard.fx.control.AddCaseHospitalCaseDetailsFXMLController">
+   <columnConstraints>
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="100.0" />
+      <ColumnConstraints hgrow="SOMETIMES" />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints vgrow="ALWAYS" />
+   </rowConstraints>
+   <children>
+      <VBox spacing="5.0">
+         <children>
+            <HBox alignment="CENTER_LEFT" VBox.vgrow="ALWAYS">
+               <children>
+                  <Button fx:id="buttonAddDepartment" minHeight="25.0" minWidth="25.0" mnemonicParsing="false" onAction="#addDepartment" styleClass="cpx-icon-button" text="+" />
+                  <Button fx:id="buttonRemoveDepartment" minHeight="25.0" minWidth="25.0" mnemonicParsing="false" onAction="#removeDepartment" styleClass="cpx-icon-button" text="-" />
+               </children>
+            </HBox>
+            <ScrollPane fx:id="spDepartments" fitToHeight="true" fitToWidth="true" VBox.vgrow="ALWAYS">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <content>
+                  <VBox>
+                     <children>
+                        <LabeledTreeView fx:id="tvDepartments" styleClass="stay-selected-tree-view" VBox.vgrow="ALWAYS" />
+                        <Separator prefWidth="200.0" />
+                     </children>
+                  </VBox>
+               </content>
+            </ScrollPane>
+         </children>
+      </VBox>
+      <VBox fx:id="vbDepartmentDetails" GridPane.columnIndex="1" GridPane.vgrow="ALWAYS">
+         <GridPane.margin>
+            <Insets />
+         </GridPane.margin>
+      </VBox>
+   </children>
+   <padding>
+      <Insets bottom="5.0" />
+   </padding>
+</GridPane>

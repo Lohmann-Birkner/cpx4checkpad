@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.lb.cpx.client.core.model.fx.section.SectionHeader?>
+<?import java.lang.String?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox prefHeight="600.0" prefWidth="900.0" spacing="5.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+      <GridPane hgap="5.0" vgap="5.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="90.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" />
+            <ColumnConstraints minWidth="150.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" />
+            <ColumnConstraints minWidth="10.0" prefWidth="150.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" />
+            <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+                <Label fx:id="lblNumber" text="Label">
+                    <styleClass>
+                        <String fx:value="cpx-detail-label" />
+                        <String fx:value="text-header" />
+                    </styleClass>
+                </Label>
+                <Label fx:id="lblType" text="Label" GridPane.rowIndex="1">
+                    <styleClass>
+                        <String fx:value="cpx-detail-label" />
+                        <String fx:value="text-header" />
+                    </styleClass>
+                </Label>
+            <Label fx:id="lblRiskAuditPercent" text="Label" GridPane.rowIndex="2">
+               <styleClass>
+                  <String fx:value="cpx-detail-label" />
+                  <String fx:value="text-header" />
+               </styleClass>
+            </Label>
+                  <Label fx:id="lblFrom" text="Label" GridPane.rowIndex="3">
+                      <styleClass>
+                          <String fx:value="cpx-detail-label" />
+                          <String fx:value="text-header" />
+                      </styleClass>
+                  </Label>
+                <Label fx:id="lblNumberValue" styleClass="text-value" text="Label" GridPane.columnIndex="1" />
+                <Label fx:id="lblTypeValue" styleClass="text-value" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Label fx:id="lblFromValue" styleClass="text-value" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <Label fx:id="lblRiskAuditPercentValue" styleClass="text-value" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                <Label fx:id="lblName" text="Label" GridPane.columnIndex="2">
+                    <styleClass>
+                        <String fx:value="cpx-detail-label" />
+                        <String fx:value="text-header" />
+                    </styleClass>
+                </Label>
+                <Label fx:id="lblCategory" text="Label" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                    <styleClass>
+                        <String fx:value="cpx-detail-label" />
+                        <String fx:value="text-header" />
+                    </styleClass>
+                </Label>
+            <Label fx:id="lblRiskWastePercent" text="Label" GridPane.columnIndex="2" GridPane.rowIndex="2">
+               <styleClass>
+                  <String fx:value="text-header" />
+                  <String fx:value="cpx-detail-label" />
+               </styleClass>
+            </Label>
+                  <Label fx:id="lblTo" text="Label" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                      <styleClass>
+                          <String fx:value="cpx-detail-label" />
+                          <String fx:value="text-header" />
+                      </styleClass>
+                  </Label>
+                <Label fx:id="lblNameValue" styleClass="text-value" text="Label" GridPane.columnIndex="3" GridPane.columnSpan="2147483647" />
+                  <Label fx:id="lblCategoryValue" styleClass="text-value" text="LabelLabelLabelLabelLabelLabelLabel" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                  <Label fx:id="lblToValue" styleClass="text-value" text="Label" GridPane.columnIndex="3" GridPane.columnSpan="2147483647" GridPane.rowIndex="3" />
+            <Label fx:id="lblRiskWastePercentValue" styleClass="text-value" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+            <Label fx:id="lblRuleType" text="Label" GridPane.columnIndex="4" GridPane.rowIndex="1">
+               <styleClass>
+                  <String fx:value="cpx-detail-label" />
+                  <String fx:value="text-header" />
+               </styleClass>
+            </Label>
+            <Label fx:id="lblRiskAreas" text="Label" GridPane.columnIndex="4" GridPane.rowIndex="2">
+               <styleClass>
+                  <String fx:value="text-header" />
+                  <String fx:value="cpx-detail-label" />
+               </styleClass>
+            </Label>
+            <Label fx:id="lblRuleTypeValue" styleClass="text-value" text="Label" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+                  <Label fx:id="lblRoles" text="Label" GridPane.columnIndex="6" GridPane.rowIndex="1">
+                      <styleClass>
+                          <String fx:value="cpx-detail-label" />
+                          <String fx:value="text-header" />
+                      </styleClass>
+                  </Label>
+                  <Label fx:id="lblRolesValue" styleClass="text-value" text="Label" GridPane.columnIndex="7" GridPane.rowIndex="1" />
+            <Label fx:id="lblRiskAreasValue" styleClass="text-value" GridPane.columnIndex="5" GridPane.columnSpan="2147483647" GridPane.rowIndex="2" />
+         </children>
+      </GridPane>
+        <HBox prefHeight="100.0" prefWidth="200.0" spacing="5.0" VBox.vgrow="ALWAYS">
+            <children>
+                <VBox prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
+                    <children>
+                        <SplitPane fx:id="spDefinition" dividerPositions="0.7" orientation="VERTICAL" VBox.vgrow="ALWAYS">
+                            <items>
+                                <VBox fx:id="boxRule">
+                                    <children>
+                                        <SectionHeader title="Regeldefinition" />
+                                    </children>
+                                </VBox>
+                                <VBox fx:id="boxSuggestion" prefHeight="200.0" prefWidth="100.0">
+                                    <children>
+                                        <SectionHeader title="Vorschlag" />
+                                        <HBox spacing="5.0">
+                                            <children>
+                                                <Label fx:id="lblSuggText" minWidth="-Infinity" text="Label">
+                                                    <styleClass>
+                                                        <String fx:value="cpx-detail-label" />
+                                                        <String fx:value="text-header" />
+                                                    </styleClass>
+                                                </Label>
+                                                <Label fx:id="lblSuggTextValue" alignment="TOP_LEFT" styleClass="text-value" text="LabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabel" wrapText="true" HBox.hgrow="ALWAYS" />
+                                            </children>
+                                            <padding>
+                                                <Insets left="8.0" top="5.0" />
+                                            </padding>
+                                        </HBox>
+                                    </children>
+                                </VBox>
+                            </items>
+                        </SplitPane>
+                    </children>
+                </VBox>
+                <Separator orientation="VERTICAL" prefHeight="200.0" />
+                <VBox prefHeight="200.0" prefWidth="100.0" spacing="5.0" HBox.hgrow="ALWAYS">
+                    <children>
+                        <SectionHeader title="Regelnotiz" />
+                        <ScrollPane fx:id="spNotice" fitToWidth="true" VBox.vgrow="ALWAYS">
+                            <content>
+                                <Label fx:id="lblNoticeValue" styleClass="text-value" text="Label" wrapText="true" />
+                            </content>
+                            <padding>
+                                <Insets left="8.0" top="8.0" />
+                            </padding>
+                        </ScrollPane>
+                    </children>
+                    <HBox.margin>
+                        <Insets />
+                    </HBox.margin>
+                </VBox>
+            </children>
+        </HBox>
+    </children>
+    <stylesheets>
+        <URL value="@../styles/rule_visualizer.css" />
+        <URL value="@../styles/cpx-default.css" />
+    </stylesheets>
+</VBox>

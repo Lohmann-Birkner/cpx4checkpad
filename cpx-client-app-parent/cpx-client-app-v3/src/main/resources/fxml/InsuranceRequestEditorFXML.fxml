@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.lb.cpx.client.app.wm.fx.dialog.editor.InsuranceInfoTextField?>
+<?import de.lb.cpx.client.core.model.fx.combobox.RequestStateCombobox?>
+<?import de.lb.cpx.client.core.model.fx.labeled.LabeledCheckComboBox?>
+<?import de.lb.cpx.client.core.model.fx.labeled.LabeledComboBox?>
+<?import de.lb.cpx.client.core.model.fx.labeled.LabeledDatePicker?>
+<?import de.lb.cpx.client.core.model.fx.labeled.LabeledTextArea?>
+<?import de.lb.cpx.client.core.model.fx.labeled.LabeledTextField?>
+<?import de.lb.cpx.client.core.model.fx.labeled.LabeledToggleGroup?>
+<?import java.net.URL?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane id="AnchorPane" prefWidth="700.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+    <stylesheets>
+        <URL value="@/styles/cpx-default.css" />
+    </stylesheets>
+    <children>
+        <VBox spacing="12.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <VBox spacing="12.0">
+                    <children>
+                        <HBox alignment="BOTTOM_LEFT" prefWidth="200.0" spacing="12.0">
+                            <children>
+                        <InsuranceInfoTextField fx:id="ltfInsName" prefWidth="485.0" />
+                                <!--<Button fx:id="btnInsSearch" mnemonicParsing="false" text="Button" />-->
+                                <LabeledTextField fx:id="ltfInsEmployee" maxSize="50" prefWidth="186.0" HBox.hgrow="ALWAYS" />
+                            </children>
+                        </HBox>
+                        <HBox spacing="12.0">
+                            <children>
+                                <LabeledTextField fx:id="ltfInsNumber" prefHeight="47.0" prefWidth="182.0" HBox.hgrow="ALWAYS" />
+                            </children>
+                        </HBox>
+                        <HBox spacing="12.0">
+                            <children>
+                                <LabeledDatePicker fx:id="ldpAuditStart" maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS" />
+                                <LabeledDatePicker fx:id="ldpStartReport" HBox.hgrow="ALWAYS" />
+                                <RequestStateCombobox fx:id="lcbRequestState" maxWidth="-Infinity" prefHeight="47.0" prefWidth="331.0" HBox.hgrow="ALWAYS" />
+                            </children>
+                        </HBox>
+                  <LabeledCheckComboBox fx:id="chkcbAuditReasons" />
+                        <HBox alignment="BOTTOM_LEFT" prefWidth="200.0" spacing="12.0">
+                            <children>
+                                <LabeledComboBox fx:id="lcbPrivateInsured" prefHeight="47.0" prefWidth="358.0" />
+                                <LabeledToggleGroup fx:id="ltgAuditType" prefHeight="47.0" prefWidth="308.0" />
+                            </children>
+                        </HBox>
+                        <HBox spacing="12.0">
+                            <children>
+                                <LabeledTextField fx:id="ltfRequestResult" info="" maxSize="255" maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS" />
+                            </children>
+                        </HBox>
+                        <LabeledTextArea fx:id="ltaComment" maxHeight="1.7976931348623157E308" prefHeight="100.0" VBox.vgrow="ALWAYS" />
+                    </children>
+                </VBox>
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>

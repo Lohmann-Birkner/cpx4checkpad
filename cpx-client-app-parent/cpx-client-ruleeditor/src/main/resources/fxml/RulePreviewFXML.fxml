@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.lb.cpx.client.core.model.fx.section.SectionHeader?>
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox fx:id="boxRoot" prefHeight="400.0" prefWidth="600.0" stylesheets="@../styles/rule_visualizer.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <SectionHeader fx:id="shTitle" title="Allgemeine Regeldaten" />
+      <GridPane hgap="5.0" vgap="5.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" />
+            <ColumnConstraints maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefWidth="180.0" />
+            <ColumnConstraints maxWidth="-Infinity" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints maxWidth="-Infinity" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints maxWidth="-Infinity" minWidth="-Infinity" />
+            <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+                  <Label fx:id="lblNumber" text="Label">
+                      <styleClass>
+                          <String fx:value="cpx-detail-label" />
+                          <String fx:value="text-header" />
+                      </styleClass>
+                  </Label>
+                  <Label fx:id="lblType" text="Label" GridPane.rowIndex="1">
+                      <styleClass>
+                          <String fx:value="cpx-detail-label" />
+                          <String fx:value="text-header" />
+                      </styleClass>
+                  </Label>
+                  <Label fx:id="lblRuleType" text="Label" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                      <styleClass>
+                          <String fx:value="cpx-detail-label" />
+                          <String fx:value="text-header" />
+                      </styleClass>
+                  </Label>
+            <Label fx:id="lblRiskAuditPercent" text="Label" GridPane.rowIndex="3">
+               <styleClass>
+                  <String fx:value="cpx-detail-label" />
+                  <String fx:value="text-header" />
+               </styleClass>
+            </Label>
+                  <Label fx:id="lblNumberValue" styleClass="text-value" text="Label" GridPane.columnIndex="1" />
+                  <Label fx:id="lblTypeValue" styleClass="text-value" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Label fx:id="lblRuleTypeValue" styleClass="text-value" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+            <Label fx:id="lblRiskAuditPercentValue" styleClass="text-value" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <Label fx:id="lblName" text="Label" GridPane.columnIndex="2">
+                      <styleClass>
+                          <String fx:value="cpx-detail-label" />
+                          <String fx:value="text-header" />
+                      </styleClass>
+                  </Label>
+                  <Label fx:id="lblCategory" text="Label" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                      <styleClass>
+                          <String fx:value="cpx-detail-label" />
+                          <String fx:value="text-header" />
+                      </styleClass>
+                  </Label>
+                  <Label fx:id="lblRoles" text="Label" GridPane.columnIndex="4" GridPane.rowIndex="2">
+                      <styleClass>
+                          <String fx:value="cpx-detail-label" />
+                          <String fx:value="text-header" />
+                      </styleClass>
+                  </Label>
+            <Label fx:id="lblRiskWastePercent" text="Label" GridPane.columnIndex="2" GridPane.rowIndex="3">
+               <styleClass>
+                  <String fx:value="text-header" />
+                  <String fx:value="cpx-detail-label" />
+               </styleClass>
+            </Label>
+                <Label fx:id="lblNameValue" styleClass="text-value" text="Label" GridPane.columnIndex="3" GridPane.columnSpan="2147483647" />
+                    <Label fx:id="lblCategoryValue" styleClass="text-value" text="Label" GridPane.columnIndex="3" GridPane.columnSpan="3" GridPane.rowIndex="1" />
+                      <Label fx:id="lblRolesValue" styleClass="text-value" text="Label" GridPane.columnIndex="5" GridPane.columnSpan="2147483647" GridPane.rowIndex="2" />
+            <Label fx:id="lblRiskWastePercentValue" styleClass="text-value" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+            <Label fx:id="lblRiskAreas" text="Label" GridPane.columnIndex="6" GridPane.rowIndex="3">
+               <styleClass>
+                  <String fx:value="text-header" />
+                  <String fx:value="cpx-detail-label" />
+               </styleClass>
+            </Label>
+            <Label fx:id="lblRiskAreasValue" styleClass="text-value" GridPane.columnIndex="7" GridPane.columnSpan="2147483647" GridPane.rowIndex="3" />
+                      <Label fx:id="lblToValue" styleClass="text-value" text="Label" GridPane.columnIndex="9" GridPane.rowIndex="1" />
+                      <Label fx:id="lblTo" text="Label" GridPane.columnIndex="8" GridPane.rowIndex="1">
+                          <styleClass>
+                              <String fx:value="cpx-detail-label" />
+                              <String fx:value="text-header" />
+                          </styleClass>
+                      </Label>
+                      <Label fx:id="lblFromValue" styleClass="text-value" text="Label" GridPane.columnIndex="7" GridPane.rowIndex="1" />
+                      <Label fx:id="lblFrom" text="Label" GridPane.columnIndex="6" GridPane.rowIndex="1">
+                          <styleClass>
+                              <String fx:value="cpx-detail-label" />
+                              <String fx:value="text-header" />
+                          </styleClass>
+                      </Label>
+                      <Label fx:id="lblFeeGroup" text="Label" GridPane.rowIndex="2">
+                          <styleClass>
+                              <String fx:value="cpx-detail-label" />
+                              <String fx:value="text-header" />
+                          </styleClass>
+                      </Label>
+                      <Label fx:id="lblFeeGroupValue" styleClass="text-value" text="Label" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.rowIndex="2" />
+            <Label fx:id="lblRiskWaist" text="Label" GridPane.columnIndex="4" GridPane.rowIndex="3">
+               <styleClass>
+                  <String fx:value="cpx-detail-label" />
+                  <String fx:value="text-header" />
+               </styleClass>
+            </Label>
+            <Label fx:id="lblRiskWaistValue" styleClass="text-value" GridPane.columnIndex="5" GridPane.rowIndex="3" />
+         </children>
+      </GridPane>
+        <HBox prefHeight="100.0" prefWidth="200.0" spacing="3.0" VBox.vgrow="ALWAYS">
+            <children>
+                <VBox prefHeight="200.0" prefWidth="100.0" spacing="3.0" HBox.hgrow="ALWAYS">
+                    <children>
+                        <SectionHeader title="Regeldefinition">
+                            <padding>
+                                <Insets right="6.0" />
+                            </padding>
+                        </SectionHeader>
+                        <HBox prefHeight="100.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                            <children>
+                                <VBox fx:id="boxRule" HBox.hgrow="ALWAYS" />
+                                <Separator orientation="VERTICAL" prefHeight="200.0" />
+                            </children>
+                        </HBox>
+                    </children>
+                </VBox>
+                <VBox prefHeight="200.0" prefWidth="100.0" spacing="3.0" HBox.hgrow="ALWAYS">
+                    <children>
+                        <SectionHeader title="Vorschlag">
+                            <padding>
+                                <Insets right="6.0" />
+                            </padding>
+                        </SectionHeader>
+                        <HBox prefHeight="100.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                            <children>
+                                <VBox fx:id="boxSuggestion" HBox.hgrow="ALWAYS">
+                                    <children>
+                                        <HBox spacing="5.0">
+                                            <children>
+                                                <Label fx:id="lblSuggText" minWidth="-Infinity" text="Label">
+                                                    <styleClass>
+                                                        <String fx:value="cpx-detail-label" />
+                                                        <String fx:value="text-header" />
+                                                    </styleClass>
+                                                </Label>
+                                                <Label fx:id="lblSuggTextValue" alignment="TOP_LEFT" styleClass="text-value" text="LabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabel" wrapText="true" HBox.hgrow="ALWAYS" />
+                                            </children>
+                                            <padding>
+                                                <Insets left="8.0" top="5.0" />
+                                            </padding>
+                                        </HBox>
+                                    </children>
+                                </VBox>
+                                <Separator orientation="VERTICAL" prefHeight="200.0" />
+                            </children>
+                        </HBox>
+                    </children>
+                </VBox>
+                <VBox prefHeight="200.0" prefWidth="100.0" spacing="3.0" HBox.hgrow="ALWAYS">
+                    <children>
+                        <SectionHeader title="Regelnotiz" />
+                        <HBox prefHeight="100.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                            <children>
+                                <ScrollPane fx:id="spNotice" fitToWidth="true" prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
+                                    <content>
+                                        <Label fx:id="lblNoticeValue" styleClass="text-value" text="Label" wrapText="true" />
+                                    </content>
+                                    <HBox.margin>
+                                        <Insets left="8.0" right="8.0" />
+                                    </HBox.margin>
+                                </ScrollPane>
+                            </children>
+                        </HBox>
+                    </children>
+                </VBox>
+            </children>
+        </HBox>
+    </children>
+    <padding>
+        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+    </padding>
+</VBox>

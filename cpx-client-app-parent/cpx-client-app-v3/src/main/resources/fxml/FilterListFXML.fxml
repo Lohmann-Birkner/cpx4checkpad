@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox stylesheets="@../styles/cpx-default.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <HBox styleClass="cpx-top-pane" VBox.vgrow="NEVER">
+            <VBox.margin>
+                <Insets />
+            </VBox.margin>
+            <children>
+                <HBox alignment="CENTER" spacing="12.0">
+                    <children>
+                        <Label fx:id="lblTitle" styleClass="filter_list_header" text="Label" />
+                        <VBox alignment="CENTER_LEFT">
+                            <children>
+                                <Label fx:id="lblFilter" style="-fx-font-size: 15;" styleClass="white-text" text="Label" />
+                                <Label fx:id="lblFilterRows" style="-fx-font-size: 15;" styleClass="white-text" text="Label" />
+                            </children>
+                        </VBox>
+                    </children>
+                    <HBox.margin>
+                        <Insets left="12.0" right="12.0" />
+                    </HBox.margin>
+                </HBox>
+                <HBox fx:id="hBoxMenu" alignment="CENTER_RIGHT" maxHeight="48.0" prefHeight="48.0" spacing="12.0" HBox.hgrow="ALWAYS">
+                    <padding>
+                        <Insets left="12.0" right="12.0" />
+                    </padding>
+                    <children>
+                        <ComboBox fx:id="cbListType" disable="true">
+                            <styleClass>
+                                <String fx:value="combo-box-top-pane" />
+                                <String fx:value="header-combo-box" />
+                            </styleClass>
+                        </ComboBox>
+                    </children>
+                </HBox>
+            </children>
+        </HBox>
+        <AnchorPane id="AnchorPane" fx:id="apContent" prefHeight="400.0" prefWidth="600.0" VBox.vgrow="ALWAYS" />
+    </children>
+</VBox>
