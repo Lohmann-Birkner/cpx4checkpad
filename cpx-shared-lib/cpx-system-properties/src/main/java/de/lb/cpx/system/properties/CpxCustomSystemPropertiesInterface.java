@@ -66,4 +66,5 @@ public interface CpxCustomSystemPropertiesInterface {
      */
     String getCpxCatalogDir();
 
+    String getCpxCriteriaFilePath();
 }

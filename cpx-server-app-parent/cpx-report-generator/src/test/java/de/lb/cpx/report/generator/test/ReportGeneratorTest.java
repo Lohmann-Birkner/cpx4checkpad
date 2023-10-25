@@ -42,7 +42,7 @@ import de.lb.cpx.server.dao.TCaseCommentDao;
 import de.lb.cpx.server.dao.TCaseDao;
 import de.lb.cpx.server.dao.TCaseDetailsDao;
 import de.lb.cpx.server.dao.TGroupingResultsDao;
-import de.lb.cpx.server.dao.TPatientDao;
+import de.lb.cpx.server.dao.TPatientDao; 
 import de.lb.cpx.system.properties.CpxSystemProperties;
 import java.io.File;
 import java.util.Date;

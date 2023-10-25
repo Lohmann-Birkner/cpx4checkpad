@@ -34,6 +34,7 @@ public class CpxCustomSystemProperties implements CpxCustomSystemPropertiesInter
     public final String cpxConfigFile;
     public final boolean cpxSkipUpdate;
     private final String cpxCatalogDir;
+    private final String cpxCriteriaPath;
 
     protected CpxCustomSystemProperties(
             final String cpxUsername,
@@ -41,7 +42,8 @@ public class CpxCustomSystemProperties implements CpxCustomSystemPropertiesInter
             final String cpxDatabase,
             final String cpxConfigFile,
             final String cpxSkipUpdate,
-            final String cpxCatalogDir
+            final String cpxCatalogDir,
+            final String cpx_criteria_path
     ) {
         /*
     String configFile = toStr(cpxConfigFile);
@@ -57,6 +59,7 @@ public class CpxCustomSystemProperties implements CpxCustomSystemPropertiesInter
         this.cpxSkipUpdate = toBool(cpxSkipUpdate);
 
         this.cpxCatalogDir = toStr(cpxCatalogDir) ;//+ (toStr(cpxCatalogDir).isEmpty()?"":File.separator + cpxUsername + File.separator );
+        this.cpxCriteriaPath = toStr(cpx_criteria_path);
         
     }
 
@@ -66,13 +69,16 @@ public class CpxCustomSystemProperties implements CpxCustomSystemPropertiesInter
         if(!catalogDir.isEmpty()){
             catalogDir += File.separator + toStr(props.getProperty("user.name")) + File.separator;
         }
+        String cpx_criteria_path = toStr(props.getProperty("cpx_criteria_path"));
+
         return new CpxCustomSystemProperties(
                 props.getProperty("cpx_username"), //CPX Username
                 props.getProperty("cpx_password"), //CPX Password
                 props.getProperty("cpx_database"), //CPX Database
                 props.getProperty("cpx_config_file"), //CPX Database
                 props.getProperty("cpx_skip_update"), //CPX Skip Update
-                catalogDir//props.getProperty("cpx_catalog_dir") //CPX Catalog Directory
+                catalogDir,//props.getProperty("cpx_catalog_dir") //CPX Catalog Directory
+                cpx_criteria_path
 //                props.getProperty("user.dir")
         );
     }
@@ -139,6 +145,10 @@ public class CpxCustomSystemProperties implements CpxCustomSystemPropertiesInter
     @Override
     public String getCpxCatalogDir() {
         return this.cpxCatalogDir;
+    }
+
+    public String getCpxCriteriaFilePath() {
+        return cpxCriteriaPath;
     }
 
 }

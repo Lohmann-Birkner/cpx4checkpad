@@ -361,6 +361,8 @@ public interface CpxSystemPropertiesInterface extends Serializable {
      * @return database directory
      */
     String getCpxClientCatalogDir();
+    
+    String getCpxCriteriaPath();
 
 //    /**
 //     * Output directory for log files (e.g. ..\WD_CPX_Client\log\)

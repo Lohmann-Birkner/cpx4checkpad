@@ -1377,6 +1377,7 @@ public class CpxSystemProperties implements CpxSystemPropertiesInterface {
                     + "\nConfig file: " + getCpxClientConfigFile()
                     + "\nUser config file: " + getCpxClientUserConfigFile()
                     + "\nCatalog directory: " + getCpxClientCatalogDir()
+                    + "\nCriteria file: " + getCpxCriteriaPath()
                     + "\nFont directory: " + getCpxClientFontDir()
                     + "\nFont file: " + getCpxClientFontFile()
                     + "\nDictionary directory: " + getCpxClientDictionariesDir()
@@ -1558,5 +1559,25 @@ public class CpxSystemProperties implements CpxSystemPropertiesInterface {
         }
         return javaFxVersion;
     }
+
+    @Override
+    public String getCpxCriteriaPath() {
+        if (!isClient()) {
+            return "";
+        }
+        return getCpxClientCriteriaPath();
+    }
+
+    private String getCpxClientCriteriaPath(){
+        CpxCustomSystemPropertiesInterface cpxCustomProps = CpxCustomSystemProperties.getInstance();
+        String criteriaPath = cpxCustomProps.getCpxCriteriaFilePath(); 
+        if(criteriaPath.isEmpty()){
+        String dir = "criteria";
+        String file = "criteria.xml";
+            return toStr(getUserDir() + dir + getFileSeparator() + file);
+        }
+        return criteriaPath;
+
+    }      
 
 }

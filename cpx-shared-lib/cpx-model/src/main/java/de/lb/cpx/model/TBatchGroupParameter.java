@@ -15,10 +15,8 @@
  */
 package de.lb.cpx.model;
 
-import de.checkpoint.drg.GDRGModel;
 import de.lb.cpx.model.enums.DetailsFilterEn;
 import de.lb.cpx.server.commons.dao.AbstractEntity;
-import java.util.ArrayList;
 import java.util.Date;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -32,6 +30,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
+//import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.Temporal;

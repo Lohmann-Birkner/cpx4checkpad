@@ -21,6 +21,7 @@ import de.lb.cpx.rule.criteria.model.CriterionTree;
 import de.lb.cpx.rule.criteria.model.CriterionTree.Supergroup.Group;
 import de.lb.cpx.rule.criteria.model.CriterionTree.Supergroup.Group.Criterion;
 import de.lb.cpx.rule.util.XMLHandler;
+import de.lb.cpx.system.properties.CpxSystemProperties;
 import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URI;
@@ -77,7 +78,7 @@ public class CriteriaManager {
 //    private static final String VPS_CRITERIA_RESOURCE = RESOURCE_FILE + VPS_CRITERIA;
     private static final String VPS_CRITERIA_RESOURCE = "D:\\Labor\\cpx_xml\\" + VPS_CRITERIA;
 */
-    private static final String criteriaPath = "D:\\Projekte\\rule_processor_parent\\workspace\\Kriterien.xml";
+    private static final String criteriaPath = CpxSystemProperties.getInstance().getCpxCriteriaPath();
     private static final String USE_RULE_ONLY = "CRIT_RULE_ONLY";
     private static final String USE_RULE_SUGG = "CRIT_RULE_AND_SUGG";
     private static CriteriaManager instance;
